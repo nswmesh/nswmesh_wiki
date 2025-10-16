@@ -36,8 +36,9 @@ As of October 2025, Meshcore identifies repeaters and roomservers using the firs
 | 50 | VK2FRTS/Sonic - Green P | 50ff816be5a008fff552a13d2b5f473d17a0988d75be9417422bef94c84e2f96 |
 | 53 | Ultimo 🌱 | 5339913b6d4657c76a5a2ad29bf3f0f3a5a81c7564fc49be674cb69abf071345 |
 | 5F | 🌱Tree Repeater | 5f776a2c99246ca282123b256a14c6b2aea1e5c0b41e20b19c96f830da694acb |
+| 65 | 🐄 North Sydney | 65beef87abb2539dc4761bab7a2c7b30409b6271ad7707837c51cc2f3d722957 |
 | 67 | HangingRock Repeater | 67d693ad2bf9d5f5984a1f9ec8fa0dc2c65d774b865cd945f301c0c0db88270a | |
-| 68 | Marsden Park 🐄 | 68beeffb44555e09fc8e5696394352d9eb6e9d6454785cf107d7628d08b5d763 |
+| 68 | 🐄 Marsden Park | 68beeffb44555e09fc8e5696394352d9eb6e9d6454785cf107d7628d08b5d763 |
 | 6D | 🛜LUX06 - Kiama | 6d4ec1f2204fafe7f778490dbdfcf1f96553a00ca16c33f2e942eaaa022b631c |
 | 6E | Cleric 🥾 ✝️ | 6e6ee46839fc0f22ac4e15e34af5cba1807301e4ad4b3d31bac3e13c9c0748f5 |
 | 6F | Overkill - Normanhurst | 6f6ce7b924327af4016e9ebd9a6a0f9591fd63461062ef3085517c5969b7ef49 |
