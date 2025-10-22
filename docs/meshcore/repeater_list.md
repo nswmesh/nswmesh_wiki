@@ -17,7 +17,7 @@ As of 21 October 2025, Meshcore identifies repeaters and roomservers using the f
 | 20 | 2211 Padstow | 202f1356b085c24490c9bacb13c9032b95c6991f8bbf28bb856c40a50b1463e5 |
 | 22 | ✝️ Cleric Test Repe | 22e3daa55da62589ee5c93fe0313762d9268f7f5243fb20ba1d279ccf4a53524 |
 | 23 | Gregory Hills Rpt | 23fc50160778f87caf7af401d786692b74efded66d9bff5b20cf40395341d688 |
-| 27 | 🌱Ivy Desk | 27ecf222f0f7ff9628db54b0b2a492d72a2300c3c9f0430738bbca2840461b7d |
+| 26 | 🌱ESPNow Brdg 442.5 | 26c5471dbe0f6134dc6c98004b02296346b7bf42b6df6d3607f3a1e87ecd3aca | 
 | 28 | Mount Annan ☠️ | 28c222747e12122a04b8a4196e82d7f2dd490d8a5789b194bd8d6514845b4b16 |
 | 2E | 🛜LUX08 - Knights Hil | 2eabc4c665c7785321aafb5dbd8ae8e07355e64739e78d3fbb5cf790871cca05 |
 | 30 | Overkill - Asquith | 30b0840ed68aff84bab3721f956191ee51098970b429b730798e9eb01f7422ff |
@@ -31,13 +31,14 @@ As of 21 October 2025, Meshcore identifies repeaters and roomservers using the f
 | 3F | SIR | 3fcd74ecde23058c3ea8afc4d74a1fec6e115be4f603f627e2f92ebab4fd38cb |
 | 41 | RR2 | 41d3de71e5690239fead4860bd14679f1f284bcbf36f2d8d87f34a491d205ad6 |
 | 42 | RobCo Platinum Chip | 42b17e605d18948f668cf91e3846a11f7b34e2d03bd6ad862aba9d0ed1a4a635 |
+| 44 | 🌱ESPNow Brdg 915.8 | 44bd5a8a4008317e20d95d485d67483be35c0b08152c87f2cbbedc7eaab2d280 | 
 | 47 | Haberfield MerrMan | 4703c8e6363830fddc200d6953e5c4b902086bb6cbde2e3de7efb3555494f1e4 |
 | 49 | Overkill - St Leonards | 49296fae69a742e2c7be2092712860320cd2cec80d69bf64b637d4eeda9ebdff |
 | 4B | Dingus repeater | 4ba9c51b34d518ec8f22bf3f93621d1a11b67368818ae228adc63dbff250dd6a |
 | 4C | 🛜LUX03 - Keira Nth | 4c05703c81e953185a2d4282827c3e8a3aef846749a32e7b1a215e1edc03911a |
 | 4E | Overkill - Cherrybrook | 4eddfdd6e9ccafa99ce893e5f3d0223befa7d0c9ca7b1c98572a223dd1671e6c |
 | 50 | VK2FRTS/Sonic - Green P | 50ff816be5a008fff552a13d2b5f473d17a0988d75be9417422bef94c84e2f96 |
-| 53 | Ultimo 🌱 | 5339913b6d4657c76a5a2ad29bf3f0f3a5a81c7564fc49be674cb69abf071345 |
+| 53 | ENGADINE REPEATER | 53eb11e51bae391c09d1aa7869dbbac4e40cfc1064feb2519afd3ba8e0d3024c | 
 | 5F | 🌱Tree Repeater | 5f776a2c99246ca282123b256a14c6b2aea1e5c0b41e20b19c96f830da694acb |
 | 65 | 🐄 North Sydney | 65beef87abb2539dc4761bab7a2c7b30409b6271ad7707837c51cc2f3d722957 |
 | 67 | HangingRock Repeater | 67d693ad2bf9d5f5984a1f9ec8fa0dc2c65d774b865cd945f301c0c0db88270a |
@@ -47,7 +48,6 @@ As of 21 October 2025, Meshcore identifies repeaters and roomservers using the f
 | 6E | Cleric 🥾 ✝️ | 6e6ee46839fc0f22ac4e15e34af5cba1807301e4ad4b3d31bac3e13c9c0748f5 |
 | 6F | Overkill - Normanhurst | 6f6ce7b924327af4016e9ebd9a6a0f9591fd63461062ef3085517c5969b7ef49 |
 | 71 | Breakfast Point Repeate | 71f10c438880eff9bc36317f5a97f83e043f71f14d71b40727137d4fdac570f9 |
-| 77 | 🌱Currently Balcony | 77e23abdcd640dec47ca7361a3f0dc6a492871c6ddcb0240926d97978174baf9 |
 | 78 | Waterloo 🌱 | 78e13262da7898dfd72f7c57cde2862603c444a8a716c6e9c13046b077b295d4 |
 | 7C | CN01 - Circular Quay | 7c01528294e97c9119b7014acd9d81e3f7783300c973d7c5cb49a998a0362ec4 |
 | 86 | Sonic - MQTT | 8637ff6e804652051f49597232e5d1fdf66aee02f5d1e067b5ced5f7eb68b064 |
@@ -58,7 +58,8 @@ As of 21 October 2025, Meshcore identifies repeaters and roomservers using the f
 | A4 | 🛜LUX02 - Keira Sth | a468c8cda7d0531cc5b8f7607c0f234a1647e3ee89ab8b7443a8c75c540e3f1f |
 | A7 | Pfych Repeater | a7fc405db7cead41c105522020879c6ca19ac06f97f85a63dc8e7914aa9932a3 |
 | A7 | ✝️Cleric G2 🛻 | a70565285faeacff0b330779577cb25865d215fcc23664080ba5ab3c8602b89c |
-| A9 | Greendale Repeater | a97b453e4f9622cd013acf59bfbf3d0eb510d2d13b3b218ba4c700780ac8e8ea |
+| A8 | 🌱ESPNow Brdg Narrow | a86575f57734a68dbe09d8a0e8d1f478b78084a041a168364a5f32d02238bb74 |
+| A9 | Greendale Repeater☠️ | a97b453e4f9622cd013acf59bfbf3d0eb510d2d13b3b218ba4c700780ac8e8ea |
 | AA | VK2BRM Repeater | aa7083bb94e776410d17cfed356172ec580a4d8481b4bc4a73f9a562da8c420e |
 | AB | 🛜LUX07 - Mt Gibralta | ab687e3dbbef93fbba17101f2b81e498c50ca6c1898b941586baf9f15d37d575 |
 | B7 | Kenny Hill Repeater☠️ | b745d1254f0639695fd7326c23f3a0bcb92aa4c5e08f6cfc43ba9527db88515d |
@@ -77,7 +78,7 @@ As of 21 October 2025, Meshcore identifies repeaters and roomservers using the f
 | E1 | Cleric v4 ✝️ | e18afe9fca04fb86286e47501a211eb8d19e35a3e9d013b9b67e190278dce15b |
 | E4 | 🛜LUX04 - Port Kembla | e4093953a6408506c962a158b65d07eac37782f4d428d23e6eb11ddc6652e4fd |
 | E9 | ✝️Fairlight | e95170cc52e2d5a39bacc92fb60922bfefff12d553bc56e733533709943dfcab |
-| EB | Pipehead | eb00c2c51c76eb233a036a75eea562681814cc391cc5cb9d42ca25e94b814181 |
+| EB | Guildford West | eb00c2c51c76eb233a036a75eea562681814cc391cc5cb9d42ca25e94b814181 |
 | F1 | ✝️Lapstone | f1fc699ff05e41738524af480a24ccf5ada1f3248bd23d83f47ae69f44060193 |
 | F5 | ✝️ Leonay | f58e1ca5e95ca03d516b80c4839ecd8c76855f63e9e9dea371f3384b24a1b705 |
 | F9 | XiaoS3 Repeater | f93549c8600ee5c7c063b66e7636d237bd49470c61dcb5ec8cc310e85ae9afab |
