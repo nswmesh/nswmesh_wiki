@@ -116,10 +116,6 @@
     "public_key": "4eddfdd6e9ccafa99ce893e5f3d0223befa7d0c9ca7b1c98572a223dd1671e6c"
   },
   {
-    "name": "VK2FRTS/Sonic - Green P",
-    "public_key": "50ff816be5a008fff552a13d2b5f473d17a0988d75be9417422bef94c84e2f96"
-  },
-  {
     "name": "ENGADINE REPEATER",
     "public_key": "53eb11e51bae391c09d1aa7869dbbac4e40cfc1064feb2519afd3ba8e0d3024c"
   },
@@ -294,10 +290,6 @@
   {
     "name": "Breakfast Point Repeate",
     "public_key": "71f10c438880eff9bc36317f5a97f83e043f71f14d71b40727137d4fdac570f9"
-  },
-  {
-    "name": "Sonic - MQTT",
-    "public_key": "8637ff6e804652051f49597232e5d1fdf66aee02f5d1e067b5ced5f7eb68b064"
   },
   {
     "name": "BTQ - Hornsby - Roof",
