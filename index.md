@@ -35,6 +35,7 @@ We're experimenters, bushwalkers, emergency‑comms nerds and tinkerers. Jump in
     - [Meshcore Repeater/Roomserver USB Setup web client](https://config.meshcore.dev/).
     - [Meshcore Repeater and Roomserver CLI Reference](https://github.com/meshcore-dev/MeshCore/wiki/Repeater-&-Room-Server-CLI-Reference).
     - [Meshcore web Client By Liam Cottle](https://meshcore.liamcottle.net/#/).
+    - [General tips for setting up your T-Deck/T-Deck Pro/T-Pager/T-Watch on Meshcore](https://buymeacoffee.com/ripplebiz/ultra-v7-7-guide-meshcore-users).
     
 - Meshtastic Tools and Links (secondary system still in use in Sydney)
     - [Live Map](https://map.nswmesh.au/map)
