@@ -1,4 +1,4 @@
-#!/home/craigp/.venv/meshcore-py/bin/python3
+#!/usr/bin/env python
 import asyncio
 import json
 import argparse
