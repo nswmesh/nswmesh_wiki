@@ -30,7 +30,7 @@ CSV_HEADER_ALIASES = {
     "public key": "Public Key",
     "height above ground": "Antenna Height Above Ground (m)",
     "antenna height above ground (m)": "Antenna Height Above Ground (m)",
-    "status": "Status",
+    "status": "Status",   # accept lowercase in existing CSVs
     "Status": "Status",
 }
 
@@ -101,7 +101,7 @@ def _iter_entries(payload: Any) -> Iterable[Dict[str, Any]]:
 
 def normalize_contact(entry: Dict[str, Any], keep_location: bool) -> Tuple[str, Dict[str, Any]]:
     pubkey = (entry.get("public_key") or "").strip()
-    # Name field can vary across file types
+    # Name field can vary across sources
     name = (entry.get("name") or entry.get("adv_name") or entry.get("Name") or "").strip()
     last_advert = entry.get("last_advert")
     if not pubkey or not isinstance(last_advert, (int, float)):
@@ -114,6 +114,7 @@ def normalize_contact(entry: Dict[str, Any], keep_location: bool) -> Tuple[str, 
         "last_seen": last_seen,
     }
 
+    # Location handling
     lat = float(entry.get("adv_lat", entry.get("latitude", 0.0)))
     lon = float(entry.get("adv_lon", entry.get("longitude", 0.0)))
     if (lat, lon) != (0.0, 0.0):
@@ -152,6 +153,7 @@ def transform_type2_contacts_from_payloads(payloads: List[Any], days: int, keep_
             pk, contact = normalize_contact(entry, keep_location)
             if not pk:
                 continue
+
             prev_la = best_la.get(pk)
             if prev_la is None or contact["last_advert"] > prev_la:
                 best[pk] = contact
@@ -271,40 +273,57 @@ def _write_hag_csv(path: str, rows: List[Dict[str, str]]) -> None:
 
 
 def _sync_contacts_with_csv(contacts: Dict[str, Any], csv_path: str) -> None:
+    """
+    Sync CSV 'Status' and 'Name' with JSON:
+      - CSV rows not in JSON: add if Status != 'delete' (status 'park'/'parked' -> 'parked'; else 'active'), using CSV Name.
+      - CSV rows with Status 'delete': remove from JSON.
+      - CSV rows with Status 'park' or 'parked': set JSON status to 'parked'.
+      - Otherwise: set JSON status to 'active'.
+      - If JSON name missing/empty, backfill from CSV Name.
+      - Rewrites CSV sorted by first octet then Name, preserving existing heights and Status if JSON lacks them.
+    """
     csv_records = _read_hag_csv(csv_path)
 
-    # CSV rows not in JSON
+    # 1) Add rows present in CSV but not in JSON
     for pk, row in csv_records.items():
         status_raw = (row.get("Status") or "").strip().lower()
         if pk not in contacts:
             if status_raw == "delete":
                 continue
             name = row.get("Name", "")
+            status = "parked" if status_raw in ("park", "parked") else "active"
             entry = {
                 "name": name,
-                "status": "park" if status_raw == "park" else "active",
+                "status": status,
                 "public_key": pk,
             }
             contacts[pk] = reorder_contact_keys(entry)
 
-    # Apply Status + backfill names from CSV
+    # 2) Apply Status effects and backfill names from CSV for contacts already in JSON
     to_delete: List[str] = []
     for pk, entry in contacts.items():
         status_raw = (csv_records.get(pk, {}).get("Status") or "").strip().lower()
+
         if status_raw == "delete":
             to_delete.append(pk)
             continue
-        entry["status"] = "park" if status_raw == "park" else "active"
+        elif status_raw in ("park", "parked"):
+            entry["status"] = "parked"
+        else:
+            entry["status"] = "active"
+
+        # Backfill name from CSV if missing/empty in JSON
         if not entry.get("name"):
             csv_name = (csv_records.get(pk, {}).get("Name") or "").strip()
             if csv_name:
                 entry["name"] = csv_name
+
         contacts[pk] = reorder_contact_keys(entry)
 
     for pk in to_delete:
         contacts.pop(pk, None)
 
-    # Rewrite CSV: keep existing rows, refresh with JSON (JSON name preferred if non-empty)
+    # 3) Rewrite CSV: include all contacts + keep existing rows; prefer JSON name when non-empty
     rows_by_pk = dict(csv_records)
     for pk, entry in contacts.items():
         existing = rows_by_pk.get(pk, {})
@@ -313,7 +332,7 @@ def _sync_contacts_with_csv(contacts: Dict[str, Any], csv_path: str) -> None:
             "Name": name_for_csv,
             "Public Key": pk,
             "Antenna Height Above Ground (m)": existing.get("Antenna Height Above Ground (m)", ""),
-            "Status": existing.get("Status", entry.get("status", "")),
+            "Status": existing.get("Status", entry.get("status", "")),  # write JSON->CSV mapping directly
         }
 
     rows = list(rows_by_pk.values())
@@ -341,6 +360,7 @@ async def main():
     args = parser.parse_args()
     node_keys = fetch_node_pubkeys(args.nodes_url)
 
+    # Build current from sources
     payloads: List[Any] = []
     if args.contacts_file:
         file_payload = get_contacts_from_file(args.contacts_file)
@@ -374,6 +394,8 @@ async def main():
     final_out = merge_with_previous(previous, current, keep_location=args.keep_location)
     matched = apply_internet_location_flags(final_out, node_keys)
     print(f"Applied internet_location=True to {matched} contact(s) based on nodes list.")
+
+    # CSV sync (Status mapping, name backfill)
     _sync_contacts_with_csv(final_out, args.hag_csv)
 
     # Enforce key order and write JSON sorted by first octet then name
