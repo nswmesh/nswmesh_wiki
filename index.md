@@ -12,20 +12,40 @@ We're experimenters, bushwalkers, emergency‑comms nerds and tinkerers. Jump in
 {% assign docs_pages = docs_pages | where_exp: "item", "item.title" %}
 {% assign grouped_pages = docs_pages | group_by: "dir" %}
 
-{% for group in grouped_pages %}
-  {% assign folder_name = group.name | remove: "/docs/" | remove: "/" | replace: "-", " " | capitalize %}
-  {% if folder_name == "" %}
-    {% assign folder_name = "General Articles" %}
-  {% endif %}
+{% assign folder_order = "/docs/,meshcore,meshtastic,builds" | split: "," %}
+
+{% for folder in folder_order %}
+  {% for group in grouped_pages %}
+    {% if folder == "/docs/" and group.name == "/docs/" %}
+      {% assign folder_name = "General" %}
 - {{ folder_name }}
 {% for page in group.items %}
     - [{{ page.title | escape }}]({{ page.url | relative_url }})
 {% endfor %}
+    {% elsif group.name contains folder and folder != "/docs/" %}
+      {% assign folder_name = group.name | remove: "/docs/" | remove: "/" | replace: "-", " " | capitalize %}
+- {{ folder_name }}
+{% for page in group.items %}
+    - [{{ page.title | escape }}]({{ page.url | relative_url }})
 {% endfor %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
+{% for group in grouped_pages %}
+  {% assign folder_name = group.name | remove: "/docs/" | remove: "/" | replace: "-", " " | capitalize %}
+  {% unless group.name == "/docs/" or group.name contains "meshcore" or group.name contains "builds" or group.name contains "meshtastic" %}
+- {{ folder_name }}
+{% for page in group.items %}
+    - [{{ page.title | escape }}]({{ page.url | relative_url }})
+{% endfor %}
+  {% endunless %}
+{% endfor %}
+
+## Other Resources
 
 - Meshcore Links and Tools (primary system in use in Sydney currently)
     - [Live World Meshcore Map](https://meshcore.co.uk/map.html)
-    - [Sydney Meshcore Map](https://nswmesh.github.io/NSW-Sydney-Meshcore-Map).
     - [Meshcore site](https://meshcore.co.uk/index.html).
     - [Meshcore Wiki](https://github.com/meshcore-dev/MeshCore/blob/main/docs/faq.md).
     - [How to get started with Meshcore Video](https://youtu.be/t1qne8uJBAc?si=0vyErpZz1wsbG_hJ).
