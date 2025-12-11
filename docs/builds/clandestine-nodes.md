@@ -7,7 +7,7 @@ Meshtastic and Meshcore are open-source, off-grid communication platform using L
 
 To extend your networks reach, you generally need to deploy router nodes in a high up locations. This can present problems, as many high locations are public, private or not easily accessible. Nodes may need to be deployed in public spaces, and you will need to prevent these nodes from being discovered and removed, either by authorities or by thieves. For those seeking to deploy nodes discreetly—whether for privacy, security, or resilience—clandestine placement is key. This article talks about creative and practical ways to conceal mesh nodes while ensuring optimal performance, along with essential safety tips to keep in mind. This article isn’t about building nodes or setting up Mesh nodes. There is plenty of information on these two subjects on the internet in places like Youtube and the Meshcore/Meshtastic official sites, and others.
 
-![Node disguised as a Shed Light](../images/img_4966.jpeg)
+![Node disguised as a Shed Light](../../images/img_4966.jpeg)
 **Node disguised as a Shed Light**
 
 ## Mastering Concealment Through Camouflage
@@ -16,12 +16,12 @@ The art of hiding a Mesh nodes begins with blending it into its environment. Cam
 
 Start by painting the node’s enclosure with camo spray paint using colours like greens, beiges or brown to match the surroundings, such as trees, grass and plants in the hiding spot. Paint the darker base colour first like the brown or dark green then use a tree or plant branch as a shield and spray the other colours on this to create a camouflage pattern. Work back from darkest colour to lightest colour. This helps the human eye not pick up solid objects with darker colours being in the back showing as a false depth.
 
-![Camo spray paint using colours like greens, beiges or brown](../images/img_4967.png)
+![Camo spray paint using colours like greens, beiges or brown](../../images/img_4967.png)
 **Camo spray paint using colours like greens, beiges or brown to match the surroundings, such as trees, grass and plants in the hiding spot**
 
 If you intend to mount the node on urban infrastructure, use colours such as greys, blacks and silver.  Mask off solar panels to avoid painting over the solar cells, and paint screw heads and anything shiny to eliminate reflective metal that could catch the eye. The closer you can match the background colour the better.  Do not paint antennas as some paints contain metallic ingredients which will throw out the antennas tuning. Wrap antenna connectors well with amalgamation tape then electrical tape.  A well-camouflaged node, especially in natural settings like parks or bushland, becomes nearly invisible to passersby.
 
-![Camo tape and camo netting can also be used to hide a node](../images/img_4968.jpeg)
+![Camo tape and camo netting can also be used to hide a node](../../images/img_4968.jpeg)
 **Camo tape and camo netting can also be used to hide a node in foliage and trees**
 
 Other options like camo tape and camo netting can also be used to hide a node in foliage and trees. The better you can hide your node, the harder it will be for others to spot it. Just remember, humans vision rarely goes upwards and people won’t notice a well camouflaged node hidden high above their line of sight. Humans in general are not that observant.
@@ -38,7 +38,7 @@ Solar panels should at least face the sky or point to the north and be angled to
 
 Physical security is crucial to protect your node from tampering or theft. Use tamper-proof screws or locks and chains on enclosures to deter unauthorised access. Even having nodes fixed with U- Bolts on a pole means potential thieves need tools to remove your node which is a deterrent. For hard-to-reach placements, consider obstacles like high trees or difficult terrain to discourage casual interference. A lot of people may be deterred by seeing how much time/resources it would take to get it vs potential reward. Many thieves will not even be aware of what they are taking, and just take a node for the easy challenge. So make it hard. Official looking stickers from government departments may also deter the dumber thieves and authorities from removing a node. Add trackers such as Air Tags to inside of nodes to help them be recovered. Secure nodes well enough so the elements and wildlife will not take them out as well. Cockatoos are known destructive birds and will enjoy destroying a node till it falls apart.'
 
-![Node disguised as a solar light for urban environments](../images/img_4970.jpeg)
+![Node disguised as a solar light for urban environments](../../images/img_4970.jpeg)
 
 **For urban environments, consider disguising the node as a solar light**
 
@@ -48,7 +48,7 @@ For data security, never set a nodes precise locations. Meshtastic allows contro
 
 If using solar power, select a weatherproof, non-metallic enclosure to protect charging components while maintaining signal integrity. Position solar panels for maximum sunlight exposure without compromising concealment. Best faced to the north in Australia and around 30 degrees angle upwards to capture the most sun light during the day.  Before permanent deployment, test the node’s functionality to make sure it will go the distance. You can do this at home for a few weeks to make sure the node will handle a day with overcast weather.
 
-![The Meshtastic Site Planner for signal simulation](../images/img_4972.jpeg)
+![The Meshtastic Site Planner for signal simulation](../../images/img_4972.jpeg)
 
 **The Meshtastic Site Planner, a free tool, can simulate signal range based on terrain and obstacles, helping optimise placement at your remote location.**
 **The Meshcore tools menu in the app has included tools such as the coverage tool and line of site tool helping choose the best remote node location.**
@@ -61,7 +61,7 @@ Antennas for Mesh nodes should be vertical polarised but this can mean an antenn
 
 Some nodes such as the Seeed XAIO are so small they could be easily put into a small container the size of a tuna tin and hidden on top of a location with a solar panel and a small antenna. Node cases must be water proof and be able to withstand the elements. A breather hole is also a good idea to stop humidity building up inside the case. Consider researching into Geocache containers as some of these make the best clandestine node containers.
 
-![Node disguised as electrical equipment in urban environments](../images/img_4969.jpeg)
+![Node disguised as electrical equipment in urban environments](../../images/img_4969.jpeg)
 
 **For urban environments, consider disguising the node as a piece of electrical equipment and hiding it in plain sit**
 
