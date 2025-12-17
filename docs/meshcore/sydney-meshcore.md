@@ -2,10 +2,24 @@
 title: New South Wales Meshcore Network & Repeater Configuration Guide
 ---
 
-## Radio Settings
+### Getting started with MeshCore
+📺 [How to get started with MeshCore off grid text messaging](https://www.youtube.com/watch?v=t1qne8uJBAc&t=372s)
+
+### Setting Up Your Companion
+
+**1. Flash and setup**
+
+Flash using [Meshcore firmware flasher](https://flasher.meshcore.co.uk/). It is important you decide now what mode of connection to the node you are using as the firmware supports one connection type at a time (BLE,USB,Wifi).
+
+**2. Connect and setup**
+
+Now connect to your companion using the method you chose and configure the Name, radio settings and channels.
 
 > **Important:** All nodes connecting to the Sydney mesh must use the **Australia preset** with SF11 (modified from the default SF10).
 
+**Why SF11?** The NSW Mesh uses SF11 instead of the standard SF10 to provide improved range across Sydney's unique geography and wide user spacing. This means we are **not directly interoperable** with standard ANZ meshes running SF10.
+
+### Radio Settings
 | Setting | Value |
 |---------|-------|
 | Frequency | 915.800 MHz |
@@ -13,10 +27,25 @@ title: New South Wales Meshcore Network & Repeater Configuration Guide
 | Spreading Factor (SF) | **11** ⚠️ |
 | Coding Rate (CR) | 5 |
 
-**Why SF11?** The NSW Mesh uses SF11 instead of the standard SF10 to provide improved range across Sydney's unique geography and wide user spacing. This means we are **not directly interoperable** with standard ANZ meshes running SF10.
+The name and radio settings are set in the settings page. The channels are added in the channel page by hitting add channel and putting in a `#` before the channel name
 
-### Getting started with MeshCore
-📺 [How to get started with MeshCore off grid text messaging](https://www.youtube.com/watch?v=t1qne8uJBAc&t=372s)
+### Channels
+| Channel | Key |
+|---------|-----|
+| Public Channel | Public Channel |
+| Test Channel (with test bot) | `#test` (auto-generated) |
+| Sydney Channel | `#sydney` (auto-generated) |
+| NSW Wide Channel | `#nsw` (auto-generated) |
+| Macarthur Channel | `#macarthur` (auto-generated) |
+| Nepean Channel | `#nepean` (auto-generated) |
+| Central Coast Channel | `#centralcoast` (auto-generated) |
+| Illawarra | `#illawarra` (auto-generated) |
+| Discord Bridge AI bot | `#jeff` (auto-generated) |
+| RoloJnr | `#rolojnr` (auto-generated) |
+
+**3. Join the mesh**
+
+send a greeting to the public channel or a `test` to the **#test** channel. Next to the message will say heard `x` repeats. If this is 0 then a repeater was unable to be reached, or the radio settings are wrong. Double check the radio settings and then check the [map](https://nswmesh.github.io/NSW-Sydney-Meshcore-Map/) to see if there are repeaters near you. Double click or long press on your location to check if there is expected coverage at your location
 
 ---
 
@@ -31,15 +60,17 @@ title: New South Wales Meshcore Network & Repeater Configuration Guide
 
 ### Setting Up Your Repeater
 
-**1. Set a Position**
+**1. Flash and setup**
 
-We encourage all repeaters to set a location for mesh planning purposes. It doesn't need to be exact, but accurate positions help other users with signal and line-of-sight tools.
+Flash and setup the repeater using [Meshcore firmware flasher](https://flasher.meshcore.co.uk/) including Naming using the convention. Setting a position we encourage all repeaters to have a location for mesh planning purposes. It doesn't need to be exact, but accurate positions help other users with signal and line-of-sight tools. Set your guest password to `guest` to allow other mesh users to query your repeater's status and neighbors (without admin access). **Do not reboot node yet**
 
-📺 [Watch: How to set position (video, 6:12)](https://youtu.be/t1qne8uJBAc?t=372)
+**2. Prefix Setting**
 
-**2. Sync the Clock**
+Go to [NSW key generator and configurator](https://nswmesh.au/docs/meshcore/key_generator) And generate a key either with the prefix you are already using, or an unused prefix. This is important as routes are based off the first two characters of the public key, and duplicates cause confusion. Once the key is generated it can be sent to the device from the page. Now you can reboot node.
 
-New repeaters default to a clock time of 15 May 2024 unless connected to a computer or GPS. This causes:
+**3. Sync the Clock**
+
+Repeaters default to a clock time of 15 May 2024 unless connected to a computer or GPS. This causes:
 - Adverts not being heard
 - Node appearing at bottom of contact list (when sorted by Last Heard)
 
@@ -48,30 +79,7 @@ New repeaters default to a clock time of 15 May 2024 unless connected to a compu
 2. Go to **Settings** tab → Scroll to **Sync Clock** → Tap it
 3. Wait for green success notification
 
-*Alternative:* Use Command Line tab, type `clock sync`, press Send.
-
-📺 [Watch: More about repeaters (video, 11:18)](https://youtu.be/t1qne8uJBAc?t=678) | [Clock sync (video, 16:08)](https://youtu.be/t1qne8uJBAc?t=968)
-
-**3. Set Guest Password**
-
-Set your guest password to `guest` to allow other mesh users to query your repeater's status and neighbors (without admin access).
-
----
-
-## Channels
-
-| Channel | Key |
-|---------|-----|
-| Public Channel | Public Channel |
-| Test Channel (with test bot) | `#test` (auto-generated) |
-| Sydney Channel | `#sydney` (auto-generated) |
-| NSW Wide Channel | `#nsw` (auto-generated) |
-| Macarthur Channel | `#macarthur` (auto-generated) |
-| Nepean Channel | `#nepean` (auto-generated) |
-| Central Coast Channel | `#centralcoast` (auto-generated) |
-| Illawarra | `#illawarra` (auto-generated) |
-| Discord Bridge AI bot | `#jeff` (auto-generated) |
-| RoloJnr | `#rolojnr` (auto-generated) |
+📺 [Watch: More about repeaters (video, 11:18)](https://youtu.be/t1qne8uJBAc?t=678)
 
 ---
 
