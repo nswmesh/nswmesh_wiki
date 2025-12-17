@@ -13,13 +13,14 @@ Flash using [Meshcore firmware flasher](https://flasher.meshcore.co.uk/). It is 
 
 **2. Connect and setup**
 
-Now connect to your companion using the method you chose and configure the Name, radio settings and channels.
+Now connect to your companion using the method you chose and configure the Name, radio settings and channels. The name and radio settings are set in the settings page. The channels are added in the channel page by hitting add channel and putting in a `#` before the channel name.
 
 > **Important:** All nodes connecting to the Sydney mesh must use the **Australia preset** with SF11 (modified from the default SF10).
 
 **Why SF11?** The NSW Mesh uses SF11 instead of the standard SF10 to provide improved range across Sydney's unique geography and wide user spacing. This means we are **not directly interoperable** with standard ANZ meshes running SF10.
 
 ### Radio Settings
+
 | Setting | Value |
 |---------|-------|
 | Frequency | 915.800 MHz |
@@ -27,9 +28,9 @@ Now connect to your companion using the method you chose and configure the Name,
 | Spreading Factor (SF) | **11** ⚠️ |
 | Coding Rate (CR) | 5 |
 
-The name and radio settings are set in the settings page. The channels are added in the channel page by hitting add channel and putting in a `#` before the channel name
 
 ### Channels
+
 | Channel | Key |
 |---------|-----|
 | Public Channel | Public Channel |
