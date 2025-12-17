@@ -71,12 +71,15 @@ Set your guest password to `guest` to allow other mesh users to query your repea
 | Central Coast Channel | `#centralcoast` (auto-generated) |
 | Illawarra | `#illawarra` (auto-generated) |
 | Discord Bridge AI bot | `#jeff` (auto-generated) |
+| RoloJnr | `#rolojnr` (auto-generated) |
 
 ---
 
 ## Repeater Configuration Profiles
 
 Choose the profile that matches your repeater's role and position in the mesh network. These settings work together to optimize packet flow and minimize collisions based on your repeater's location and how many neighbors it can hear.
+
+> **📝 MeshCore Defaults:** `txdelay=0.5`, `direct.txdelay=0.2`, `rxdelay=0`, `af=1.0`. All profiles below modify these to optimize for the Sydney mesh.
 
 ### 🔴 CRITICAL — Hilltop/Tower Infrastructure
 
@@ -162,6 +165,8 @@ set af 1
 
 Apply these settings to **all repeaters** regardless of role:
 
+> **📝 Note:** Most of these differ from MeshCore defaults. See the Quick Reference table below for default comparisons.
+
 ```
 set int.thresh 14
 set agc.reset.interval 500
@@ -174,15 +179,15 @@ set radio 915.8,250,11,5
 
 ### Quick Reference
 
-| Setting | Value | What it does |
-|---------|-------|--------------|
-| `int.thresh` | 14 | Interference threshold (dB above noise floor) for Listen-Before-Talk |
-| `agc.reset.interval` | 500 | AGC reset every 500 seconds (~8 min) to prevent sensitivity drift |
-| `multi.acks` | 1 | Send redundant ACKs for better delivery reliability |
-| `advert.interval` | 240 | Local advert every 240 minutes (neighbors only) |
-| `flood.advert.interval` | 12 | Network-wide advert every 12 hours |
-| `guest.password` | guest | Standard guest access password |
-| `radio` | 915.8,250,11,5 | Sydney mesh radio parameters (freq, bw, sf, cr) |
+| Setting | Value | MeshCore Default | What it does |
+|---------|-------|------------------|--------------|
+| `int.thresh` | 14 | 0 (disabled) | Interference threshold (dB above noise floor) for Listen-Before-Talk |
+| `agc.reset.interval` | 500 | 0 (disabled) | AGC reset every 500 seconds (~8 min) to prevent sensitivity drift |
+| `multi.acks` | 1 | 1 | Send redundant ACKs for better delivery reliability |
+| `advert.interval` | 240 | 2 | Local advert every 240 minutes (neighbors only) |
+| `flood.advert.interval` | 12 | 12 | Network-wide advert every 12 hours |
+| `guest.password` | guest | (none) | Standard guest access password |
+| `radio` | 915.8,250,11,5 | 915.0,250,10,5 | Sydney mesh radio parameters (freq, bw, sf, cr) |
 
 ---
 
@@ -278,12 +283,12 @@ These four settings work together to optimize mesh performance based on your rep
 
 ### Overview
 
-| Setting | What it controls | Key insight |
-|---------|------------------|-------------|
-| `txdelay` | Wait time before retransmitting floods | Higher = lets other nodes go first |
-| `direct.txdelay` | Wait time before retransmitting direct packets | Usually lower than txdelay |
-| `rxdelay` | Signal-based processing priority | Higher = waits for strongest signal copy |
-| `af` | Radio silence after transmitting | Higher = more listening, less transmitting |
+| Setting | MeshCore Default | What it controls | Key insight |
+|---------|------------------|------------------|-------------|
+| `txdelay` | 0.5 | Wait time before retransmitting floods | Higher = lets other nodes go first |
+| `direct.txdelay` | 0.2 | Wait time before retransmitting direct packets | Usually lower than txdelay |
+| `rxdelay` | 0 (disabled) | Signal-based processing priority | Higher = waits for strongest signal copy |
+| `af` | 1.0 (50% duty) | Radio silence after transmitting | Higher = more listening, less transmitting |
 
 ---
 
