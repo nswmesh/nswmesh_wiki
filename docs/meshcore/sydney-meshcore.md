@@ -23,6 +23,8 @@ Now connect to your companion using the method you chose and configure the Name,
 
 Send a greeting to the public channel or a `test` to the **#test** channel. Next to the message will say `heard X repeats` x representing the number of repeaters that you heard retransmitting your sent message. If this is 0 then a repeater was unable to be reached, or the radio settings are wrong. Double check the radio settings and then check the [NSW Meshcore Map](https://nswmesh.github.io/NSW-Sydney-Meshcore-Map/) to see if there are repeaters near you. Double click or long press on your location to check if there is expected coverage at your location.
 
+Repeaters send a local advert (an advert that can be heard if you are directly connected to that repeater only) every 240 minutes. And a flood advert every 12 hours. This means that the node list can take a while to populate. Companions also only advert when manually triggered. This means that a connection to the mesh can be present but there is not an advert being sent at that moment (This is good as it means that the mesh is not congested)
+
 
 > **Important:** All nodes connecting to the Sydney mesh must use the **Australia preset** with SF11 (modified from the default SF10).
 **Why SF11?** The NSW Mesh uses SF11 instead of the standard SF10 to provide improved range across Sydney's unique geography and wide user spacing. This means we are **not directly interoperable** with standard ANZ meshes running SF10.
@@ -265,8 +267,10 @@ Repeaters periodically announce themselves so other nodes can discover them. The
 
 | Setting | Type | Scope | Value Unit | MeshCore Default | Purpose |
 |---------|------|-------|------------|------------------|---------|
-| `advert.interval` | Local (zero-hop) | Immediate neighbors only | Minutes | 2 min | Neighbor discovery, NOT forwarded |
+| `advert.interval` | Local (zero-hop) | Immediate neighbors only | Minutes | 240 min | Neighbor discovery, NOT forwarded |
 | `flood.advert.interval` | Network-wide | Entire mesh | Hours | 12 hrs | Network-wide discovery, IS forwarded |
+
+Having all the repeaters adverting too fast will cause mesh congestion, so longer intervals are necessary to prevent too much traffic.
 
 **How they interact:** The local advert timer automatically adjusts when a flood advert is sent to prevent overlap.
 
