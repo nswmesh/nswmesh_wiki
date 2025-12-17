@@ -21,7 +21,7 @@ Now connect to your companion using the method you chose and configure the Name,
 
 **3. Join the mesh**
 
-Send a greeting to the public channel or a `test` to the **#test** channel. Next to the message will say heard `2` repeats representing the number of repeaters that you heard retransmitting your sent message. If this is 0 then a repeater was unable to be reached, or the radio settings are wrong. Double check the radio settings and then check the [map](https://nswmesh.github.io/NSW-Sydney-Meshcore-Map/) to see if there are repeaters near you. Double click or long press on your location to check if there is expected coverage at your location.
+Send a greeting to the public channel or a `test` to the **#test** channel. Next to the message will say `heard X repeats` x representing the number of repeaters that you heard retransmitting your sent message. If this is 0 then a repeater was unable to be reached, or the radio settings are wrong. Double check the radio settings and then check the [NSW Meshcore Map](https://nswmesh.github.io/NSW-Sydney-Meshcore-Map/) to see if there are repeaters near you. Double click or long press on your location to check if there is expected coverage at your location.
 
 
 > **Important:** All nodes connecting to the Sydney mesh must use the **Australia preset** with SF11 (modified from the default SF10).
@@ -41,13 +41,13 @@ Send a greeting to the public channel or a `test` to the **#test** channel. Next
 
 | Channel | Key |
 |---------|-----|
-| Public Channel | Public Channel |
-| Test Channel (with test bot) | `#test` (auto-generated) |
-| Sydney Channel | `#sydney` (auto-generated) |
-| NSW Wide Channel | `#nsw` (auto-generated) |
-| Macarthur Channel | `#macarthur` (auto-generated) |
-| Nepean Channel | `#nepean` (auto-generated) |
-| Central Coast Channel | `#centralcoast` (auto-generated) |
+| Public | Public Channel |
+| Test (with test bot) | `#test` (auto-generated) |
+| Sydney | `#sydney` (auto-generated) |
+| NSW Wide | `#nsw` (auto-generated) |
+| Macarthur | `#macarthur` (auto-generated) |
+| Nepean | `#nepean` (auto-generated) |
+| Central Coast | `#centralcoast` (auto-generated) |
 | Illawarra | `#illawarra` (auto-generated) |
 | Discord Bridge AI bot | `#jeff` (auto-generated) |
 | RoloJnr | `#rolojnr` (auto-generated) |
