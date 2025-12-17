@@ -77,7 +77,7 @@ Go to [NSW key generator and configurator](https://nswmesh.au/docs/meshcore/key_
 
 **3. Sync the Clock and configure repeater**
 
-Repeaters default to a clock time of 15 May 2024 unless connected to a computer or GPS. This causes:
+Repeaters default to a clock time of 15 May 2024 on every reboot unless connected to a computer or GPS. This causes:
 - Adverts not being heard
 - Node appearing at bottom of contact list (when sorted by Last Heard)
 
