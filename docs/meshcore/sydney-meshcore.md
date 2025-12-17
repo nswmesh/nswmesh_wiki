@@ -103,7 +103,7 @@ Choose the profile that matches your repeater's role and position in the mesh ne
 
 > **Role:** Highest elevation, most neighbors, backbone of the mesh
 
-**When to use:** Your repeater is on a hilltop, tower, or tall building with clear line-of-sight to many other nodes. You can see 10+ neighbors and your repeater is a key link in the network backbone.
+**When to use:** Your repeater is on a hilltop, tower, or tall building with clear line-of-sight to many other nodes. You can see 10+ neighbors well and your repeater is a key link in the network backbone.
 
 ```
 set txdelay 2
@@ -143,7 +143,7 @@ set af 2
 
 > **Role:** Average positioning, serves local area, moderate neighbors
 
-**When to use:** Typical residential deployment. Your repeater is on a house roof or elevated position, serving your local neighborhood. You see 3-8 neighbors.
+**When to use:** Typical deployment. Your repeater is in an elevated position, serving your local neighborhood. You see 3-8 neighbors.
 
 ```
 set txdelay 0.8
@@ -163,7 +163,7 @@ set af 1.5
 
 > **Role:** Low elevation, few neighbors, serves immediate area
 
-**When to use:** Indoor repeater, ground-level installation, or endpoint coverage. You only see 1-3 neighbors and primarily serve your immediate area.
+**When to use:** Indoor repeater, rooftop repeater, ground-level installation, or endpoint coverage. You only see 1-3 neighbors and primarily serve your immediate area.
 
 ```
 set txdelay 0.3
