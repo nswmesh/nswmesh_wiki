@@ -9,16 +9,19 @@ title: New South Wales Meshcore Network & Repeater Configuration Guide
 
 **1. Flash and setup**
 
-Flash using [Meshcore firmware flasher](https://flasher.meshcore.co.uk/). It is important you decide now what mode of connection to the node you are using as the firmware supports one connection type at a time (BLE,USB,Wifi).
+Flash using [Meshcore firmware flasher](https://flasher.meshcore.co.uk/). It is important you decide now what mode of connection to the node you are using as the firmware supports one connection type at a time (BLE,USB,Wifi). Make sure to erase before flashing meshcore for the first time.
 
 **2. Connect and setup**
 
-Now connect to your companion using the method you chose and configure the Name, radio settings and channels. The name and radio settings are set in the settings page. The channels are added in the channel page by hitting add channel and putting in a `#` before the channel name.
+Now connect to your companion using the method you chose and configure the Name, radio settings and channels.
+
+- The name and radio settings are set in the settings page (found under the `⚙️` at the top right of the app). Make sure to tap the `✔️` at the top right to save the settings.W ait for green success notification.
+
+- The channels are added from the channel page at the top right `⋮` → `+ Add Channel` → `Join a Hashtag Channel` Then entering the name of the channel (shown below such as `test`) and press join channel.
+
 
 > **Important:** All nodes connecting to the Sydney mesh must use the **Australia preset** with SF11 (modified from the default SF10).
-
 **Why SF11?** The NSW Mesh uses SF11 instead of the standard SF10 to provide improved range across Sydney's unique geography and wide user spacing. This means we are **not directly interoperable** with standard ANZ meshes running SF10.
-
 ### Radio Settings
 
 | Setting | Value |
@@ -69,7 +72,7 @@ Flash and setup the repeater using [Meshcore firmware flasher](https://flasher.m
 
 Go to [NSW key generator and configurator](https://nswmesh.au/docs/meshcore/key_generator) And generate a key either with the prefix you are already using, or an unused prefix. This is important as routes are based off the first two characters of the public key, and duplicates cause confusion. Once the key is generated it can be sent to the device from the page. Now you can reboot node.
 
-**3. Sync the Clock**
+**3. Sync the Clock and configure repeater**
 
 Repeaters default to a clock time of 15 May 2024 unless connected to a computer or GPS. This causes:
 - Adverts not being heard
@@ -79,6 +82,9 @@ Repeaters default to a clock time of 15 May 2024 unless connected to a computer 
 1. Log into your repeater via your companion node
 2. Go to **Settings** tab → Scroll to **Sync Clock** → Tap it
 3. Wait for green success notification
+
+Once logged in and the clock is synced go to the `>_` - **`Command Line`** tab and enter the commands from the profiles below with your chosen repeater profile and common settings. Copy and paste each line and send. Wait up to 30 seconds to see an `OK` response - if no response then resend command.
+
 
 📺 [Watch: More about repeaters (video, 11:18)](https://youtu.be/t1qne8uJBAc?t=678)
 
@@ -183,7 +189,6 @@ set multi.acks 1
 set advert.interval 240
 set flood.advert.interval 12
 set guest.password guest
-set radio 915.8,250,11,5
 ```
 
 ### Quick Reference
