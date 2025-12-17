@@ -96,7 +96,7 @@ set af 1
 
 ### Common Settings (All Repeaters)
 
-These settings should apply to all repeaters regardless of their role:
+These settings should apply to all repeaters regardless of their role
 
 ```
 set int.thresh 14
@@ -110,11 +110,197 @@ set radio 915.8,250,11,5
 
 | Setting | Value | Description |
 |---------|-------|-------------|
-| `int.thresh` | 14 | Interference threshold |
-| `agc.reset.interval` | 500 | AGC reset interval |
-| `multi.acks` | 1 | Enable multiple acknowledgments |
-| `advert.interval` | 240 | Advertisement interval (seconds) |
-| `flood.advert.interval` | 12 | Flood advertisement interval |
-| `guest.password` | guest | Standard guest access password |
-| `radio` | 915.8,250,11,5 | Sydney radio protocol setting |
+| `int.thresh` | 14 | Interference threshold (dB above noise floor). Used for Listen-Before-Talk (LBT) - if RSSI exceeds noise floor + this value, the channel is considered busy. Set to 0 to disable. |
+| `agc.reset.interval` | 500 | AGC (Automatic Gain Control) reset interval in seconds. Periodically resets the radio's AGC to prevent sensitivity drift. Set to 0 to disable. |
+| `multi.acks` | 1 | Enable multiple acknowledgments (0=off, 1=on). When enabled, sends an extra ACK packet before the main ACK for improved delivery reliability on direct messages. |
+| `advert.interval` | 240 | Local advertisement interval in minutes. How often the repeater broadcasts a zero-hop advert to announce itself to immediate neighbors. Range: 60-240 minutes, or 0 to disable. |
+| `flood.advert.interval` | 12 | Flood advertisement interval in hours. How often the repeater sends a network-wide flooded advert to announce itself across the entire mesh. Set to 0 to disable. |
+| `guest.password` | guest | Standard guest access password. Allows other mesh users to query repeater status and neighbors without full admin access. |
+| `radio` | 915.8,250,11,5 | Radio parameters: frequency (MHz), bandwidth (kHz), spreading factor, coding rate. Format: `freq,bw,sf,cr`. This sets the Sydney mesh standard: 915.8MHz, 250kHz BW, SF11, CR5. |
+
+---
+
+### Common Settings Explained
+
+#### Interference Threshold (`int.thresh`)
+The interference threshold works with the radio's noise floor calibration to implement Listen-Before-Talk (LBT). The radio periodically samples the channel to establish a baseline noise floor (typically around -120dBm). Before transmitting, it checks if the current RSSI exceeds `noise_floor + int.thresh`. If so, the channel is considered busy and transmission is delayed.
+
+- **Higher values (e.g., 14):** More tolerant of background noise, transmits more readily
+- **Lower values:** More conservative, waits longer for a clear channel
+- **Value of 0:** Disables interference checking entirely
+
+#### AGC Reset Interval (`agc.reset.interval`)
+The Automatic Gain Control (AGC) in LoRa radios adjusts receiver sensitivity automatically. However, in busy environments, AGC can sometimes drift and reduce sensitivity. This setting periodically resets the AGC by re-initializing the receiver. There is also a known issue where loud rf signals inn or out of band can lockup the AGC preventing repeaters from being able to recieve packets.
+
+- **Value of 500:** Resets AGC every 500 seconds (~8 minutes)
+- **Value of 0:** Disables AGC reset (not recommended for busy repeaters)
+
+#### Radio Parameters (`radio`)
+Sets the LoRa radio configuration in a single command. The Sydney mesh uses:
+- **915.8 MHz:** Operating frequency (within Australian ISM band)
+- **250 kHz:** Bandwidth (wider = faster but shorter range)
+- **SF11:** Spreading Factor (higher = longer range but slower)
+- **CR 5:** Coding Rate 4/5 (error correction level)
+
+---
+
+### Role-Specific Settings Explained
+
+These settings vary based on the repeater's position and role in the mesh network:
+
+| Setting | Description |
+|---------|-------------|
+| `txdelay` | Transmission delay factor for flooded packets. Multiplied by estimated airtime to calculate max random delay before retransmitting. |
+| `direct.txdelay` | Transmission delay factor for direct (point-to-point) packets. Same calculation as txdelay but for routed traffic. |
+| `rxdelay` | Receive delay base value. Controls signal-strength-based processing priority for flood packets. |
+| `af` | Airtime Factor - enforces radio silence after transmitting. Multiplied by transmission time to determine how long to wait before next transmission. |
+
+---
+
+### Transmission Delay (`txdelay` and `direct.txdelay`)
+
+These settings control how long a repeater waits before retransmitting a packet it needs to forward.
+
+**The Formula:**
+```
+max_delay = estimated_airtime × txdelay_factor × 5
+actual_delay = random(0, max_delay)
+```
+
+**How it works:**
+1. The repeater calculates the estimated airtime for the packet
+2. Multiplies by the txdelay factor (e.g., 2.0 for CRITICAL nodes)
+3. Multiplies by 5 to get the maximum delay window
+4. Picks a random delay between 0 and max_delay
+
+**Why is this needed?**
+
+In a mesh network, when a packet is flooded, multiple repeaters receive it almost simultaneously. Without transmission delays, they would all try to retransmit at roughly the same time, causing:
+
+1. **Packet collisions:** Multiple transmissions overlap, corrupting both signals
+2. **Wasted airtime:** Failed transmissions consume channel capacity
+3. **Reduced reliability:** Messages fail to propagate properly
+
+**The effect of different values:**
+
+- **Higher txdelay (e.g., 2.0):**
+  - Creates a wider random delay window
+  - Spreads out retransmissions over more time
+  - Reduces collision probability
+  - **Trade-off:** Slower message propagation across the mesh
+
+- **Lower txdelay (e.g., 0.3):**
+  - Creates a narrow delay window
+  - Retransmissions happen quickly
+  - Higher collision risk when multiple repeaters are involved
+  - **Trade-off:** Faster propagation but less reliable in dense areas
+
+**Why CRITICAL nodes use higher values:**
+
+Hilltop/tower repeaters typically hear many other repeaters. When they receive a flooded packet, dozens of other nodes may have also received it. If the critical node retransmits quickly with a low txdelay, it might:
+- Collide with transmissions from nodes that received the packet slightly later
+- "Step on" retransmissions from lower-elevation nodes that haven't transmitted yet
+- Cause the packet to fail reaching nodes that could only hear the critical repeater
+
+By using a higher txdelay, critical infrastructure nodes essentially say "I'll wait and let the smaller nodes go first." This improves overall network reliability because:
+- Local nodes serve their immediate area quickly
+- Critical nodes fill in gaps after the initial wave of retransmissions
+- Fewer collisions occur at the critical node's wide coverage area
+
+**Why randomization matters:**
+
+Even with the same txdelay setting, the random selection ensures that two repeaters with identical configurations don't transmit at the same instant. The randomness creates natural separation between transmissions.
+
+**txdelay vs direct.txdelay:**
+- `txdelay` applies to **flooded packets** - messages being broadcast across the mesh
+- `direct.txdelay` applies to **direct/routed packets** - point-to-point messages following a specific path
+
+Direct packets typically use lower delays because they follow a predetermined path with fewer nodes involved, reducing collision risk.
+
+**Example values:**
+| Role | txdelay | direct.txdelay | Effect |
+|------|---------|----------------|--------|
+| CRITICAL | 2.0 | 2.0 | Long delays - lets other nodes transmit first, reduces collisions in high-traffic areas |
+| LINK | 1.5 | 1.0 | Moderate delays - balances speed with collision avoidance |
+| STANDARD | 0.8 | 0.4 | Short delays - responsive local coverage |
+| LOCAL | 0.3 | 0.1 | Minimal delays - serves immediate area quickly, few neighbors to collide with |
+
+---
+
+### Airtime Factor (`af`)
+
+The airtime factor enforces a "radio silence" period after each transmission, implementing a duty cycle limit.
+
+**The Formula:**
+```
+silence_period = transmission_time × airtime_factor
+```
+
+**How it works:**
+After transmitting a packet, the repeater calculates how long the transmission took (in milliseconds), then multiplies by the airtime factor to determine how long it must wait before transmitting again.
+
+**Example:**
+- A packet takes 200ms to transmit
+- With `af 3`, the repeater waits 200 × 3 = 600ms before it can transmit again
+- During this 600ms, the repeater can only listen
+
+**Why this matters:**
+- **Prevents channel hogging:** High-traffic nodes (like hilltop repeaters) would otherwise dominate the airwaves
+- **Improves fairness:** Gives other nodes a chance to transmit
+- **Reduces collisions:** More listening time means better awareness of channel activity
+
+**Recommended values:**
+| af Value | Duty Cycle | Use Case |
+|----------|------------|----------|
+| 1 | 50% (1:1) | Local/endpoint nodes |
+| 1.5 | 40% (1:1.5) | Standard suburban repeaters |
+| 2 | 33% (1:2) | Link nodes |
+| 3 | 25% (1:3) | Critical infrastructure |
+
+Higher values = more conservative = more listening, less transmitting.
+
+---
+
+### How RX Delay Works (Signal-Based Processing)
+
+The `rxdelay` setting is more sophisticated than a simple timer. It uses signal strength to determine processing priority:
+
+**The Formula:**
+```
+delay = (rxdelay^(0.85 - score) - 1.0) × airtime
+```
+
+Where:
+- **rxdelay** is the configured base value (e.g., 10, 15)
+- **score** is a signal quality metric (0.0 to 1.0) calculated from SNR relative to the spreading factor threshold
+- **airtime** is the transmission time of the packet
+
+**What This Means:**
+- **Strong signals (high score → closer to 1.0):** Result in a **shorter delay** or immediate processing
+- **Weak signals (low score → closer to 0.0):** Result in a **longer delay** before processing
+
+**Why This Matters:**
+When a repeater receives the same flooded packet from multiple sources (which is common in a mesh), the signal-based delay ensures that:
+
+1. **Packets from nearby/stronger nodes are processed first** - they have shorter delays
+2. **Packets from distant/weaker nodes are delayed longer** - giving time for a better copy to arrive
+3. **Duplicate packets are discarded** - once a packet is processed and marked as "seen," subsequent copies (even with better signal) are dropped
+
+This creates a natural selection mechanism where the mesh prefers relaying packets received via the strongest/most reliable path. Critical infrastructure nodes use higher `rxdelay` values because they hear many nodes and want to wait longer to receive the best copy of each packet before deciding to forward it.
+
+**Practical Example:**
+If a hilltop repeater receives the same packet from two sources:
+- Source A: Strong signal (score 0.8) → delay calculated as ~50ms
+- Source B: Weak signal (score 0.3) → delay calculated as ~800ms
+
+The packet from Source A is processed first. When Source B's delayed copy finally comes up for processing, it's already marked as "seen" and is discarded.
+
+---
+
+**Why role-specific values vary:**
+
+- **CRITICAL nodes** (hilltops/towers): Use the highest delays and airtime factors because they see the most traffic and hear from many nodes. Higher rxdelay (15) gives them more time to receive the best copy of each packet from their many neighbors before forwarding.
+- **LINK nodes** (mid-elevation): Use moderate values (rxdelay 8) as they bridge between critical infrastructure and local coverage. They balance responsiveness with collision avoidance.
+- **STANDARD nodes** (suburban): Use lower values (rxdelay 4) for reasonable responsiveness while still respecting network timing. Suitable for typical residential deployments.
+- **LOCAL nodes** (ground-level): Use minimal delays (rxdelay 0) for maximum responsiveness since they serve a small immediate area, see less traffic, and typically only hear a few neighbors.
 
