@@ -6,7 +6,7 @@ title: New South Wales Meshcore Network & Repeater Configuration Guide
 
 ## Configuration Details
 
-Base Preset - Australia - SF11 **(Modified from Preset!)**|
+Base Preset - Australia - SF11 **(Modified from Preset!)**
 For all nodes connecting to the sydney mesh they must be using the Australia preset, and change the SF value (Spreading factor) from SF10 to SF11.
 
 | Setting | Value |
