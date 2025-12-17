@@ -27,7 +27,7 @@ title: New South Wales Meshcore Network & Repeater Configuration Guide
 | Type | Naming | Example |
 |------|-------------|---------|
 | Fixed repeaters | Name by location (suburb, hill, building) | `⚡️- Mount Colah`, `🌱 - Camperdown`, `Davo - Centrepoint Tower` |
-| Mobile repeaters | Include "mobile repeater" in name | `Johns Mobile Repeater` |
+| Mobile repeaters | Include "mobile" in name | `Johns Mobile` |
 
 ### Setting Up Your Repeater
 
@@ -204,9 +204,10 @@ Implements Listen-Before-Talk (LBT) to avoid transmitting when the channel is bu
 
 | Value | Behavior |
 |-------|----------|
-| Higher (14) | More tolerant of background noise, transmits more readily |
-| Lower | More conservative, waits longer for a clear channel |
-| 0 | Disabled — transmits without checking channel (not recommended) |
+| 14 | Waits until the noise has dropped in order to transmit in clear airspace |
+| Higher | Less conservative, Does not delay transmition for low rf noise (including other repeaters) |
+| Lower | More conservative, waits longer for a clear channel, the lower the threshold the wait for clear air |
+| **0** | **Disabled — MeshCore default** (transmits without checking channel) |
 
 **Recommended:** 14 for most deployments. Lower values may cause excessive transmission delays in noisy RF environments.
 
@@ -224,8 +225,8 @@ The Automatic Gain Control (AGC) in LoRa radios adjusts receiver sensitivity aut
 
 | Value | Behavior |
 |-------|----------|
-| 500 | Reset every ~8 minutes (recommended for all repeaters) |
-| 0 | Disabled — not recommended, especially for busy repeaters or those in noisy RF environments |
+| 500 | Reset every ~8 minutes (recommended especially for noisy RF environments) |
+| **0** | **Disabled — MeshCore default** (AGC can lockup but is not too common) |
 
 ---
 
@@ -247,10 +248,10 @@ Controls whether redundant ACKs are sent for direct (point-to-point) messages.
 
 Repeaters periodically announce themselves so other nodes can discover them. There are two types:
 
-| Setting | Type | Scope | Value Unit | Purpose |
-|---------|------|-------|------------|---------|
-| `advert.interval` | Local (zero-hop) | Immediate neighbors only | Minutes | Neighbor discovery, NOT forwarded |
-| `flood.advert.interval` | Network-wide | Entire mesh | Hours | Network-wide discovery, IS forwarded |
+| Setting | Type | Scope | Value Unit | MeshCore Default | Purpose |
+|---------|------|-------|------------|------------------|---------|
+| `advert.interval` | Local (zero-hop) | Immediate neighbors only | Minutes | 2 min | Neighbor discovery, NOT forwarded |
+| `flood.advert.interval` | Network-wide | Entire mesh | Hours | 12 hrs | Network-wide discovery, IS forwarded |
 
 **How they interact:** The local advert timer automatically adjusts when a flood advert is sent to prevent overlap.
 
@@ -266,12 +267,12 @@ Sets all LoRa radio parameters in a single command.
 
 **Format:** `frequency,bandwidth,spreading_factor,coding_rate`
 
-| Parameter | Sydney Value | What it means |
-|-----------|--------------|---------------|
-| **Frequency** | 915.8 MHz | Operating frequency within Australian ISM band (915-928 MHz) |
-| **Bandwidth** | 250 kHz | Channel width. Wider = faster data rate but shorter range |
-| **Spreading Factor** | 11 | Chirp spread. Higher = longer range, slower speed, better noise immunity |
-| **Coding Rate** | 5 | Forward error correction (4/5). Higher = more redundancy, slower |
+| Parameter | Sydney Value | MeshCore Default | What it means |
+|-----------|--------------|------------------|---------------|
+| **Frequency** | 915.8 MHz | 915.0 MHz | Operating frequency within Australian ISM band (915-928 MHz) |
+| **Bandwidth** | 250 kHz | 250 kHz | Channel width. Wider = faster data rate but shorter range |
+| **Spreading Factor** | 11 | 10 | Chirp spread. Higher = longer range, slower speed, better noise immunity |
+| **Coding Rate** | 5 | 5 | Forward error correction (4/5). Higher = more redundancy, slower |
 
 **Important:** All nodes on the Sydney mesh MUST use these exact parameters to communicate. The SF11 is a deliberate modification from the standard Australia preset (SF10) for improved range.
 
@@ -329,6 +330,7 @@ When a packet floods the mesh, multiple repeaters receive it almost simultaneous
 |---------|--------------|----------------|-------------------|
 | **High (2.0)** | Wide | ✅ Lower | Slower |
 | **Medium (0.8)** | Moderate | Moderate | Moderate |
+| **0.5 (default)** | Moderate-Narrow | Moderate | Moderate-Fast |
 | **Low (0.3)** | Narrow | ⚠️ Higher | Faster |
 
 #### Why CRITICAL Nodes Use Higher Values
@@ -349,10 +351,10 @@ This improves overall network reliability:
 
 #### txdelay vs direct.txdelay
 
-| Setting | Applies to | Why different values? |
-|---------|------------|----------------------|
-| `txdelay` | **Flooded packets** (broadcast to all) | Many nodes retransmit, high collision risk |
-| `direct.txdelay` | **Direct packets** (routed point-to-point) | Follows predetermined path, fewer nodes involved, lower collision risk |
+| Setting | MeshCore Default | Applies to | Why different values? |
+|---------|------------------|------------|----------------------|
+| `txdelay` | 0.5 | **Flooded packets** (broadcast to all) | Many nodes retransmit, high collision risk |
+| `direct.txdelay` | 0.2 | **Direct packets** (routed point-to-point) | Follows predetermined path, fewer nodes involved, lower collision risk |
 
 Direct packets typically use **lower** delays because only nodes along the specific route retransmit, not the entire mesh.
 
@@ -396,7 +398,7 @@ After transmitting a packet, the repeater:
 
 | af Value | Effective Duty Cycle | Best for |
 |----------|---------------------|----------|
-| **1** | 50% (transmit:listen = 1:1) | Local/endpoint nodes with few neighbors |
+| **1.0 (default)** | 50% (transmit:listen = 1:1) | Local/endpoint nodes with few neighbors |
 | **1.5** | 40% (1:1.5) | Standard suburban repeaters |
 | **2** | 33% (1:2) | Link nodes bridging regions |
 | **3** | 25% (1:3) | Critical infrastructure seeing heavy traffic |
@@ -455,4 +457,4 @@ Critical infrastructure nodes (hilltops/towers) hear **many** neighbors. When a 
 - Some copies have excellent signal, others are weak
 - Higher rxdelay (15) gives them more time to receive the **best copy** before committing to forward it
 
-Local nodes use rxdelay 0 because they typically only hear one or two sources — no need to wait for a "better" copy that won't arrive.
+Local nodes use rxdelay 0 (the **MeshCore default**) because they typically only hear one or two sources — no need to wait for a "better" copy that won't arrive.
