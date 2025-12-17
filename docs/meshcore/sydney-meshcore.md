@@ -3,7 +3,7 @@ title: New South Wales Meshcore Network & Repeater Configuration Guide
 ---
 
 ### Getting started with MeshCore
-📺 [How to get started with MeshCore off grid text messaging](https://www.youtube.com/watch?v=t1qne8uJBAc&t=372s)
+📺 Helpful guide explaining MeshCore. How it works and how to use/set it up. [How to get started with MeshCore off grid text messaging](https://www.youtube.com/watch?v=t1qne8uJBAc&t=372s)
 
 ### Setting Up Your Companion
 
@@ -17,11 +17,12 @@ Now connect to your companion using the method you chose and configure the Name,
 
 - The name and radio settings are set in the settings page (found under the `⚙️` at the top right of the app). Make sure to tap the `✔️` at the top right to save the settings.W ait for green success notification.
 
-- The channels are added from the channel page at the top right `⋮` → `+ Add Channel` → `Join a Hashtag Channel` Then entering the name of the channel (shown below such as `test`) and press join channel.
+- The channels are added from the channel page at the top right `⋮` → `+ Add Channel` → `Join a Hashtag Channel` Then enter the name of the channel (shown below such as `test`) and press join channel.
 
 
 > **Important:** All nodes connecting to the Sydney mesh must use the **Australia preset** with SF11 (modified from the default SF10).
 **Why SF11?** The NSW Mesh uses SF11 instead of the standard SF10 to provide improved range across Sydney's unique geography and wide user spacing. This means we are **not directly interoperable** with standard ANZ meshes running SF10.
+
 ### Radio Settings
 
 | Setting | Value |
@@ -49,7 +50,7 @@ Now connect to your companion using the method you chose and configure the Name,
 
 **3. Join the mesh**
 
-send a greeting to the public channel or a `test` to the **#test** channel. Next to the message will say heard `x` repeats. If this is 0 then a repeater was unable to be reached, or the radio settings are wrong. Double check the radio settings and then check the [map](https://nswmesh.github.io/NSW-Sydney-Meshcore-Map/) to see if there are repeaters near you. Double click or long press on your location to check if there is expected coverage at your location
+Send a greeting to the public channel or a `test` to the **#test** channel. Next to the message will say heard `2` repeats representing the number of repeaters that you heard retransmitting your sent message. If this is 0 then a repeater was unable to be reached, or the radio settings are wrong. Double check the radio settings and then check the [map](https://nswmesh.github.io/NSW-Sydney-Meshcore-Map/) to see if there are repeaters near you. Double click or long press on your location to check if there is expected coverage at your location.
 
 ---
 
