@@ -141,7 +141,7 @@ Choose the profile below that matches your repeater's role and position in the m
 
 > **Role:** Highest elevation, most neighbors, backbone of the mesh
 
-**When to use:** Your repeater is on a hilltop, tower, or tall building with clear line-of-sight to many other nodes. You can see 10+ neighbors well and your repeater is a key link in the network backbone.
+**When to use:** Your repeater is on a tall hilltop, tower, or tall building with clear line-of-sight to many other nodes. It can see most of the mesh and is an important hop for many routes. You can see 10+ neighbors well and your repeater is a key link in the network backbone.
 
 ```
 set txdelay 2
@@ -161,7 +161,7 @@ set af 3
 
 > **Role:** Connects critical nodes to local coverage, moderate neighbor count
 
-**When to use:** Your repeater bridges between hilltop infrastructure and suburban coverage. You can see some critical nodes and some local nodes (5-10 neighbors typical).
+**When to use:** Your repeater bridges between tall infrastructure and suburban coverage. You can see some critical nodes and some local nodes (5-10 neighbors typical).
 
 ```
 set txdelay 1.5
@@ -181,7 +181,7 @@ set af 2
 
 > **Role:** Average positioning, serves local area, moderate neighbors
 
-**When to use:** Typical deployment. Your repeater is in an elevated position, serving your local neighborhood. You see 3-8 neighbors.
+**When to use:** Typical deployment. Your repeater is in an elevated position, serving a more localised area. You see 3-8 neighbors.
 
 ```
 set txdelay 0.8
@@ -201,7 +201,7 @@ set af 1.5
 
 > **Role:** Low elevation, few neighbors, serves immediate area
 
-**When to use:** Indoor repeater, rooftop repeater, ground-level installation, or endpoint coverage. You only see 1-3 neighbors and primarily serve your immediate area.
+**When to use:** Indoor repeater, rooftop repeater, ground-level installation, or low node without clear line of sight to many other repeaters. You only see 1-3 neighbors and primarily serve your immediate area.
 
 ```
 set txdelay 0.3
