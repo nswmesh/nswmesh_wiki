@@ -203,7 +203,7 @@ set guest.password guest
 | `int.thresh` | 14 | 0 (disabled) | Interference threshold (dB above noise floor) for Listen-Before-Talk |
 | `agc.reset.interval` | 500 | 0 (disabled) | AGC reset every 500 seconds (~8 min) to prevent sensitivity drift |
 | `multi.acks` | 1 | 1 | Send redundant ACKs for better delivery reliability |
-| `advert.interval` | 240 | 2 | Local advert every 240 minutes (neighbors only) |
+| `advert.interval` | 240 | 0 | Local advert every 240 minutes (neighbors only) |
 | `flood.advert.interval` | 12 | 12 | Network-wide advert every 12 hours |
 | `guest.password` | guest | (none) | Standard guest access password |
 | `radio` | 915.8,250,11,5 | 915.0,250,10,5 | Sydney mesh radio parameters (freq, bw, sf, cr) |
@@ -223,10 +223,10 @@ Implements Listen-Before-Talk (LBT) to avoid transmitting when the channel is bu
 
 | Value | Behavior |
 |-------|----------|
-| 14 | Waits until the noise has dropped in order to transmit in clear airspace |
-| Higher | Less conservative, Does not delay transmition for low rf noise (including other repeaters) |
-| Lower | More conservative, waits longer for a clear channel, the lower the threshold the wait for clear air |
-| **0** | **Disabled — MeshCore default** (transmits without checking channel) |
+| 14 | Waits until most of the noise has dropped, balances waiting for the airspace to clear, vs delaying transmission forever |
+| Higher | Less conservative, delays transmission for louder rf signals only (including other repeaters) |
+| Lower | More conservative, waits longer for a clear channel, potentially waiting endlessly for a constant signal |
+| **0** | **Disabled — MeshCore default** Transmits without checking channel. Can cause repeqters to step on each other |
 
 **Recommended:** 14 for most deployments. Lower values may cause excessive transmission delays in noisy RF environments.
 
@@ -269,7 +269,7 @@ Repeaters periodically announce themselves so other nodes can discover them. The
 
 | Setting | Type | Scope | Value Unit | MeshCore Default | Purpose |
 |---------|------|-------|------------|------------------|---------|
-| `advert.interval` | Local (zero-hop) | Immediate neighbors only | Minutes | 240 min | Neighbor discovery, NOT forwarded |
+| `advert.interval` | Local (zero-hop) | Immediate neighbors only | Minutes | 0 (disabled) | Neighbor discovery, NOT forwarded |
 | `flood.advert.interval` | Network-wide | Entire mesh | Hours | 12 hrs | Network-wide discovery, IS forwarded |
 
 Having all the repeaters adverting too fast will cause mesh congestion, so longer intervals are necessary to prevent too much traffic.
