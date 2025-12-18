@@ -224,7 +224,6 @@ Apply these settings to **all repeaters** regardless of role:
 > **📝 Note:** Most of these differ from MeshCore defaults. See the Quick Reference table below for default comparisons.
 
 ```
-set int.thresh 14
 set agc.reset.interval 500
 set multi.acks 1
 set advert.interval 240
@@ -236,7 +235,6 @@ set guest.password guest
 
 | Setting | Value | MeshCore Default | What it does |
 |---------|-------|------------------|--------------|
-| `int.thresh` | 14 | 0 (disabled) | Interference threshold (dB above noise floor) for Listen-Before-Talk |
 | `agc.reset.interval` | 500 | 0 (disabled) | AGC reset every 500 seconds (~8 min) to prevent sensitivity drift |
 | `multi.acks` | 1 | 1 | Send redundant ACKs for better delivery reliability |
 | `advert.interval` | 240 | 0 | Local advert every 240 minutes (neighbors only) |
@@ -247,26 +245,6 @@ set guest.password guest
 ---
 
 ## Understanding the Settings {#understanding-the-settings}
-
-### Interference Threshold (`int.thresh`) {#interference-threshold-intthresh}
-
-Implements Listen-Before-Talk (LBT) to avoid transmitting when the channel is busy.
-
-**How it works:**
-1. The radio periodically samples the channel to establish a baseline noise floor (typically around -120dBm)
-2. Before transmitting, it checks: Is current RSSI > noise_floor + threshold?
-3. If yes, the channel is considered busy and transmission is delayed
-
-| Value | Behavior |
-|-------|----------|
-| 14 | Waits until most of the noise has dropped, balances waiting for the airspace to clear, vs delaying transmission forever |
-| Higher | Less conservative, delays transmission for louder rf signals only (including other repeaters) |
-| Lower | More conservative, waits longer for a clear channel, potentially waiting endlessly for a constant signal |
-| **0** | **Disabled — MeshCore default** Transmits without checking channel. Can cause repeqters to step on each other |
-
-**Recommended:** 14 for most deployments. Lower values may cause excessive transmission delays in noisy RF environments.
-
----
 
 ### AGC Reset Interval (`agc.reset.interval`) {#agc-reset-interval-agcresetinterval}
 
