@@ -105,15 +105,11 @@ Repeaters send a local advert (an advert that can be heard if you are directly c
 
 ### Setting Up Your Repeater {#setting-up-your-repeater}
 
-**1. Flash and setup**
+**1. Flash and Config Repeater**
 
-Flash and setup the repeater using [Meshcore firmware flasher](https://flasher.meshcore.co.uk/) including Naming using the convention. Setting a position we encourage all repeaters to have a location for mesh planning purposes. It doesn't need to be exact, but accurate positions help other users with signal and line-of-sight tools. Set your guest password to `guest` to allow other mesh users to query your repeater's status and neighbors (without admin access). **Do not reboot node yet**
+Flashrepeater using [Meshcore firmware flasher](https://flasher.meshcore.co.uk/). When flashed the node will have a random public key. the first two characters of this key is the prefix. This is used to show routing paths for messages. If multiple nodes have the same prefix it can cause confusion for the route of the messages. In order to fix this Go to [NSW key generator and configurator](https://nswmesh.au/docs/meshcore/key_generator) And generate an unused prefix. Once the key is generated it can be sent to the device from the `Send To Device` button. Now you can go to [Meshcore USB Config](https://config.meshcore.dev/) And set the radio settings, name and location. We encourage all repeaters to have a location for mesh planning purposes. It doesn't need to be exact, but accurate positions help other users with signal and line-of-sight tools. Also set your guest password to `guest` to allow other mesh users to query your repeater's status and neighbors (without admin access).
 
-**2. Prefix Setting**
-
-Go to [NSW key generator and configurator](https://nswmesh.au/docs/meshcore/key_generator) And generate a key either with the prefix you are already using, or an unused prefix. This is important as routes are based off the first two characters of the public key, and duplicates cause confusion. Once the key is generated it can be sent to the device from the page. Now you can reboot node.
-
-**3. Sync the Clock and configure repeater**
+**2. Sync the Clock**
 
 Repeaters default to a clock time of 15 May 2024 on every reboot unless connected to a computer or GPS. This causes:
 - Adverts not being heard
@@ -124,6 +120,8 @@ Repeaters default to a clock time of 15 May 2024 on every reboot unless connecte
 2. Go to **Settings** tab → Scroll to **Sync Clock** → Tap it
 3. Wait for green success notification
 
+**3. Configure repeater CLI settings**
+
 Once logged in and the clock is synced go to the `>_` - **`Command Line`** tab and enter the commands from the profiles below with your chosen repeater profile and common settings. Copy and paste each line and send. Wait up to 30 seconds to see an `OK` response - if no response then resend command.
 
 
@@ -133,7 +131,7 @@ Once logged in and the clock is synced go to the `>_` - **`Command Line`** tab a
 
 ## Repeater Configuration Profiles {#repeater-configuration-profiles}
 
-Choose the profile that matches your repeater's role and position in the mesh network. These settings work together to optimize packet flow and minimize collisions based on your repeater's location and how many neighbors it can hear.
+Choose the profile below that matches your repeater's role and position in the mesh network. These settings work together to optimize packet flow and minimize collisions based on your repeater's location and how many neighbors it can hear.
 
 > **📝 MeshCore Defaults:** `txdelay=0.5`, `direct.txdelay=0.2`, `rxdelay=0`, `af=1.0`. All profiles below modify these to optimize for the Sydney mesh.
 
@@ -194,7 +192,7 @@ set af 1.5
 
 **Why these values:**
 - **Lower txdelay (0.8):** More responsive for local coverage. Fewer neighbors means lower collision risk.
-- **Lower rxdelay (4):** Less need to wait for better copies since you hear fewer sources.
+- **Lower rxdelay (0.4):** Less need to wait for better copies since you hear fewer sources.
 - **Lower af (1.5):** 40% duty cycle. Reasonable responsiveness while still being a good mesh citizen.
 
 ---
