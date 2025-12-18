@@ -2,10 +2,15 @@
 title: New South Wales Meshcore Network & Repeater Configuration Guide
 ---
 
-### Getting started with MeshCore
+<details open>
+<summary><h3 style="display:inline">Getting started with MeshCore</h3></summary>
+
 📺 Helpful video explaining MeshCore. How it works and how to use/set it up. [How to get started with MeshCore off grid text messaging](https://www.youtube.com/watch?v=t1qne8uJBAc&t=372s)
 
-### Setting Up Your Companion
+</details>
+
+<details>
+<summary><h3 style="display:inline">Setting Up Your Companion</h3></summary>
 
 **1. Flash and setup**
 
@@ -21,7 +26,7 @@ Now connect to your companion using the method you chose and configure the Name,
 
 **3. Join the mesh**
 
-Send an advert by hitting the `advert` → `Send Flood Advert` to send your node name to the mesh. Direct reachable repeaters can be discovered by `🔧` → `Discover Nearby Nodes` → `Discover Repeaters`. After a short while repeaters within range should reply with their info. you can hit the `+` to add them into your contacts.
+Send an advert by hitting the `📡` (next to `⚙️`) → `Send Flood Advert` to send your node name to the mesh. Direct reachable repeaters can be discovered by `🔧` → `Discover Nearby Nodes` → `Discover Repeaters`. After a short while repeaters within range should reply with their info. you can hit the `+` to add them into your contacts.
 
 Send a greeting to the public channel or a `test` to the **#test** channel. The **Public** channel is used for general chat, and if someone sees your greeting they will likely reply. The **test** channel is primarily used for sending test messages to check your connection to the mesh. There are bots on the test channel that will reply to `test`, `ping` or `path` and will respond accordingly with a reply. When a message is sent next to the message will say `heard X repeats` x representing the number of repeaters that you heard retransmitting your sent message. If this is 0 then a repeater was unable to be reached, or the radio settings are wrong. Double check the radio settings and then check the [NSW Meshcore Map](https://nswmesh.github.io/NSW-Sydney-Meshcore-Map/) to see if there are repeaters near you. Double click or long press on your location to check if there is expected coverage at your location. In order to be able to reach a repeater you must have direct line of sight to it due to the low transmission powers. If none are reachable try standing outside with the antenna pointing upwards, or find some height to clear buildings.
 
@@ -31,7 +36,10 @@ Repeaters send a local advert (an advert that can be heard if you are directly c
 > **Important:** All nodes connecting to the Sydney mesh must use the **Australia preset** with SF11 (modified from the default SF10).
 **Why SF11?** The NSW Mesh uses SF11 instead of the standard SF10 to provide improved range across Sydney's unique geography and wide user spacing. This means we are **not directly interoperable** with standard ANZ meshes running SF10.
 
-### Radio Settings
+</details>
+
+<details>
+<summary><h3 style="display:inline">Radio Settings</h3></summary>
 
 | Setting | Value |
 |---------|-------|
@@ -40,8 +48,10 @@ Repeaters send a local advert (an advert that can be heard if you are directly c
 | Spreading Factor (SF) | **11** ⚠️ |
 | Coding Rate (CR) | 5 |
 
+</details>
 
-### Channels
+<details>
+<summary><h3 style="display:inline">Channels</h3></summary>
 
 | Channel | Key |
 |---------|-----|
@@ -56,9 +66,12 @@ Repeaters send a local advert (an advert that can be heard if you are directly c
 | Discord Bridge AI bot | `#jeff` (auto-generated) |
 | RoloJnr | `#rolojnr` (auto-generated) |
 
+</details>
+
 ---
 
-## Repeater Naming & Setup
+<details>
+<summary><h2 style="display:inline">Repeater Naming & Setup</h2></summary>
 
 ### Naming Convention
 
@@ -93,9 +106,12 @@ Once logged in and the clock is synced go to the `>_` - **`Command Line`** tab a
 
 📺 [Watch: More about repeaters (video, 11:18)](https://youtu.be/t1qne8uJBAc?t=678)
 
+</details>
+
 ---
 
-## Repeater Configuration Profiles
+<details>
+<summary><h2 style="display:inline">Repeater Configuration Profiles</h2></summary>
 
 Choose the profile that matches your repeater's role and position in the mesh network. These settings work together to optimize packet flow and minimize collisions based on your repeater's location and how many neighbors it can hear.
 
@@ -179,16 +195,18 @@ set af 1
 - **Zero rxdelay (0):** No need to wait for better signal copies when you only hear one or two sources.
 - **Low af (1):** 50% duty cycle. You're not creating congestion with your limited coverage.
 
+</details>
+
 ---
 
-## Common Settings (All Repeaters)
+<details>
+<summary><h2 style="display:inline">Common Settings (All Repeaters)</h2></summary>
 
 Apply these settings to **all repeaters** regardless of role:
 
 > **📝 Note:** Most of these differ from MeshCore defaults. See the Quick Reference table below for default comparisons.
 
 ```
-set int.thresh 14
 set agc.reset.interval 500
 set multi.acks 1
 set advert.interval 240
@@ -200,7 +218,6 @@ set guest.password guest
 
 | Setting | Value | MeshCore Default | What it does |
 |---------|-------|------------------|--------------|
-| `int.thresh` | 14 | 0 (disabled) | Interference threshold (dB above noise floor) for Listen-Before-Talk |
 | `agc.reset.interval` | 500 | 0 (disabled) | AGC reset every 500 seconds (~8 min) to prevent sensitivity drift |
 | `multi.acks` | 1 | 1 | Send redundant ACKs for better delivery reliability |
 | `advert.interval` | 240 | 0 | Local advert every 240 minutes (neighbors only) |
@@ -208,29 +225,12 @@ set guest.password guest
 | `guest.password` | guest | (none) | Standard guest access password |
 | `radio` | 915.8,250,11,5 | 915.0,250,10,5 | Sydney mesh radio parameters (freq, bw, sf, cr) |
 
----
-
-## Understanding the Settings
-
-### Interference Threshold (`int.thresh`)
-
-Implements Listen-Before-Talk (LBT) to avoid transmitting when the channel is busy.
-
-**How it works:**
-1. The radio periodically samples the channel to establish a baseline noise floor (typically around -120dBm)
-2. Before transmitting, it checks: Is current RSSI > noise_floor + threshold?
-3. If yes, the channel is considered busy and transmission is delayed
-
-| Value | Behavior |
-|-------|----------|
-| 14 | Waits until most of the noise has dropped, balances waiting for the airspace to clear, vs delaying transmission forever |
-| Higher | Less conservative, delays transmission for louder rf signals only (including other repeaters) |
-| Lower | More conservative, waits longer for a clear channel, potentially waiting endlessly for a constant signal |
-| **0** | **Disabled — MeshCore default** Transmits without checking channel. Can cause repeqters to step on each other |
-
-**Recommended:** 14 for most deployments. Lower values may cause excessive transmission delays in noisy RF environments.
+</details>
 
 ---
+
+<details>
+<summary><h2 style="display:inline">Understanding the Settings</h2></summary>
 
 ### AGC Reset Interval (`agc.reset.interval`)
 
@@ -479,3 +479,5 @@ Critical infrastructure nodes (hilltops/towers) hear **many** neighbors. When a 
 - Higher rxdelay (15) gives them more time to receive the **best copy** before committing to forward it
 
 Local nodes use rxdelay 0 (the **MeshCore default**) because they typically only hear one or two sources — no need to wait for a "better" copy that won't arrive.
+
+</details>
