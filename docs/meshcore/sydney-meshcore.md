@@ -3,14 +3,11 @@ title: New South Wales Meshcore Network & Repeater Configuration Guide
 ---
 
 <details open>
-<summary><h3 style="display:inline">Getting started with MeshCore</h3></summary>
+<summary><h2>📱 Getting Started with MeshCore</h2></summary>
 
 📺 Helpful video explaining MeshCore. How it works and how to use/set it up. [How to get started with MeshCore off grid text messaging](https://www.youtube.com/watch?v=t1qne8uJBAc&t=372s)
 
-</details>
-
-<details>
-<summary><h3 style="display:inline">Setting Up Your Companion</h3></summary>
+### Setting Up Your Companion
 
 **1. Flash and setup**
 
@@ -32,14 +29,10 @@ Send a greeting to the public channel or a `test` to the **#test** channel. The 
 
 Repeaters send a local advert (an advert that can be heard if you are directly connected to that repeater only) every 240 minutes. And a flood advert every 12 hours. This means that the node list can take a while to populate. Companions also only advert when manually triggered. This means that a connection to the mesh can be present but there is not an advert being sent at that moment (This is good as it means that the mesh is not congested)
 
-
 > **Important:** All nodes connecting to the Sydney mesh must use the **Australia preset** with SF11 (modified from the default SF10).
 **Why SF11?** The NSW Mesh uses SF11 instead of the standard SF10 to provide improved range across Sydney's unique geography and wide user spacing. This means we are **not directly interoperable** with standard ANZ meshes running SF10.
 
-</details>
-
-<details>
-<summary><h3 style="display:inline">Radio Settings</h3></summary>
+### Radio Settings
 
 | Setting | Value |
 |---------|-------|
@@ -48,10 +41,7 @@ Repeaters send a local advert (an advert that can be heard if you are directly c
 | Spreading Factor (SF) | **11** ⚠️ |
 | Coding Rate (CR) | 5 |
 
-</details>
-
-<details>
-<summary><h3 style="display:inline">Channels</h3></summary>
+### Channels
 
 | Channel | Key |
 |---------|-----|
@@ -71,7 +61,7 @@ Repeaters send a local advert (an advert that can be heard if you are directly c
 ---
 
 <details>
-<summary><h2 style="display:inline">Repeater Naming & Setup</h2></summary>
+<summary><h2>📡 Repeater Naming & Setup</h2></summary>
 
 ### Naming Convention
 
@@ -111,13 +101,14 @@ Once logged in and the clock is synced go to the `>_` - **`Command Line`** tab a
 ---
 
 <details>
-<summary><h2 style="display:inline">Repeater Configuration Profiles</h2></summary>
+<summary><h2>⚙️ Repeater Configuration Profiles</h2></summary>
 
 Choose the profile that matches your repeater's role and position in the mesh network. These settings work together to optimize packet flow and minimize collisions based on your repeater's location and how many neighbors it can hear.
 
 > **📝 MeshCore Defaults:** `txdelay=0.5`, `direct.txdelay=0.2`, `rxdelay=0`, `af=1.0`. All profiles below modify these to optimize for the Sydney mesh.
 
-### 🔴 CRITICAL — Hilltop/Tower Infrastructure
+<details>
+<summary><h3>🔴 CRITICAL — Hilltop/Tower Infrastructure</h3></summary>
 
 > **Role:** Highest elevation, most neighbors, backbone of the mesh
 
@@ -135,9 +126,10 @@ set af 3
 - **High rxdelay (15):** With many neighbors, you'll receive the same packet from multiple sources. Higher rxdelay gives more time to receive the best (strongest signal) copy before processing.
 - **High af (3):** Enforces 25% duty cycle. Critical nodes see heavy traffic; this prevents channel hogging and gives other nodes a chance to transmit.
 
----
+</details>
 
-### 🟠 LINK — Mid-elevation Bridge
+<details>
+<summary><h3>🟠 LINK — Mid-elevation Bridge</h3></summary>
 
 > **Role:** Connects critical nodes to local coverage, moderate neighbor count
 
@@ -155,9 +147,10 @@ set af 2
 - **Moderate rxdelay (8):** You hear multiple sources but not as many as critical nodes. Moderate delay balances signal selection with responsiveness.
 - **Moderate af (2):** 33% duty cycle balances your bridging role with fair channel access.
 
----
+</details>
 
-### 🟡 STANDARD — Suburban Coverage
+<details>
+<summary><h3>🟡 STANDARD — Suburban Coverage</h3></summary>
 
 > **Role:** Average positioning, serves local area, moderate neighbors
 
@@ -175,9 +168,10 @@ set af 1.5
 - **Lower rxdelay (4):** Less need to wait for better copies since you hear fewer sources.
 - **Lower af (1.5):** 40% duty cycle. Reasonable responsiveness while still being a good mesh citizen.
 
----
+</details>
 
-### 🟢 LOCAL — Ground-level/Indoor
+<details>
+<summary><h3>🟢 LOCAL — Ground-level/Indoor</h3></summary>
 
 > **Role:** Low elevation, few neighbors, serves immediate area
 
@@ -197,16 +191,19 @@ set af 1
 
 </details>
 
+</details>
+
 ---
 
 <details>
-<summary><h2 style="display:inline">Common Settings (All Repeaters)</h2></summary>
+<summary><h2>🔧 Common Settings (All Repeaters)</h2></summary>
 
 Apply these settings to **all repeaters** regardless of role:
 
 > **📝 Note:** Most of these differ from MeshCore defaults. See the Quick Reference table below for default comparisons.
 
 ```
+set int.thresh 14
 set agc.reset.interval 500
 set multi.acks 1
 set advert.interval 240
@@ -218,6 +215,7 @@ set guest.password guest
 
 | Setting | Value | MeshCore Default | What it does |
 |---------|-------|------------------|--------------|
+| `int.thresh` | 14 | 0 (disabled) | Interference threshold (dB above noise floor) for Listen-Before-Talk |
 | `agc.reset.interval` | 500 | 0 (disabled) | AGC reset every 500 seconds (~8 min) to prevent sensitivity drift |
 | `multi.acks` | 1 | 1 | Send redundant ACKs for better delivery reliability |
 | `advert.interval` | 240 | 0 | Local advert every 240 minutes (neighbors only) |
@@ -230,9 +228,31 @@ set guest.password guest
 ---
 
 <details>
-<summary><h2 style="display:inline">Understanding the Settings</h2></summary>
+<summary><h2>📖 Understanding the Settings</h2></summary>
 
-### AGC Reset Interval (`agc.reset.interval`)
+<details>
+<summary><h3>Interference Threshold (<code>int.thresh</code>)</h3></summary>
+
+Implements Listen-Before-Talk (LBT) to avoid transmitting when the channel is busy.
+
+**How it works:**
+1. The radio periodically samples the channel to establish a baseline noise floor (typically around -120dBm)
+2. Before transmitting, it checks: Is current RSSI > noise_floor + threshold?
+3. If yes, the channel is considered busy and transmission is delayed
+
+| Value | Behavior |
+|-------|----------|
+| 14 | Waits until most of the noise has dropped, balances waiting for the airspace to clear, vs delaying transmission forever |
+| Higher | Less conservative, delays transmission for louder rf signals only (including other repeaters) |
+| Lower | More conservative, waits longer for a clear channel, potentially waiting endlessly for a constant signal |
+| **0** | **Disabled — MeshCore default** Transmits without checking channel. Can cause repeqters to step on each other |
+
+**Recommended:** 14 for most deployments. Lower values may cause excessive transmission delays in noisy RF environments.
+
+</details>
+
+<details>
+<summary><h3>AGC Reset Interval (<code>agc.reset.interval</code>)</h3></summary>
 
 The Automatic Gain Control (AGC) in LoRa radios adjusts receiver sensitivity automatically. However, AGC can drift in busy environments, reducing sensitivity over time.
 
@@ -247,9 +267,10 @@ The Automatic Gain Control (AGC) in LoRa radios adjusts receiver sensitivity aut
 | 500 | Reset every ~8 minutes (recommended especially for noisy RF environments) |
 | **0** | **Disabled — MeshCore default** (AGC can lockup but is not too common) |
 
----
+</details>
 
-### Multiple Acknowledgments (`multi.acks`)
+<details>
+<summary><h3>Multiple Acknowledgments (<code>multi.acks</code>)</h3></summary>
 
 Controls whether redundant ACKs are sent for direct (point-to-point) messages.
 
@@ -261,9 +282,10 @@ Controls whether redundant ACKs are sent for direct (point-to-point) messages.
 
 **Recommended:** 1 (enabled) for all repeaters.
 
----
+</details>
 
-### Advertisement Intervals
+<details>
+<summary><h3>Advertisement Intervals</h3></summary>
 
 Repeaters periodically announce themselves so other nodes can discover them. There are two types:
 
@@ -280,9 +302,10 @@ Having all the repeaters adverting too fast will cause mesh congestion, so longe
 - `advert.interval`: 240 minutes (4 hours) — frequent enough for neighbor discovery without excessive traffic
 - `flood.advert.interval`: 12 hours — announces your repeater across the mesh twice daily
 
----
+</details>
 
-### Radio Parameters (`radio`)
+<details>
+<summary><h3>Radio Parameters (<code>radio</code>)</h3></summary>
 
 Sets all LoRa radio parameters in a single command.
 
@@ -297,9 +320,14 @@ Sets all LoRa radio parameters in a single command.
 
 **Important:** All nodes on the Sydney mesh MUST use these exact parameters to communicate. The SF11 is a deliberate modification from the standard Australia preset (SF10) for improved range.
 
+</details>
+
+</details>
+
 ---
 
-## Role-Specific Settings Explained
+<details>
+<summary><h2>🎛️ Role-Specific Settings Explained</h2></summary>
 
 These four settings work together to optimize mesh performance based on your repeater's position and traffic load.
 
@@ -312,9 +340,8 @@ These four settings work together to optimize mesh performance based on your rep
 | `rxdelay` | 0 (disabled) | Signal-based processing priority | Higher = waits for strongest signal copy |
 | `af` | 1.0 (50% duty) | Radio silence after transmitting | Higher = more listening, less transmitting |
 
----
-
-### Transmission Delay (`txdelay` / `direct.txdelay`)
+<details>
+<summary><h3>Transmission Delay (<code>txdelay</code> / <code>direct.txdelay</code>)</h3></summary>
 
 Controls how long a repeater waits before retransmitting a packet it needs to forward.
 
@@ -379,9 +406,10 @@ This improves overall network reliability:
 
 Direct packets typically use **lower** delays because only nodes along the specific route retransmit, not the entire mesh.
 
----
+</details>
 
-### Airtime Factor (`af`)
+<details>
+<summary><h3>Airtime Factor (<code>af</code>)</h3></summary>
 
 Enforces a "radio silence" period after each transmission, implementing a duty cycle limit.
 
@@ -426,9 +454,10 @@ After transmitting a packet, the repeater:
 
 **Rule of thumb:** Higher af = more conservative = more listening, less transmitting
 
----
+</details>
 
-### Receive Delay (`rxdelay`) — Signal-Based Processing
+<details>
+<summary><h3>Receive Delay (<code>rxdelay</code>) — Signal-Based Processing</h3></summary>
 
 The `rxdelay` setting is more sophisticated than a simple timer. It uses **signal strength** to determine which copy of a packet to process first.
 
@@ -479,5 +508,7 @@ Critical infrastructure nodes (hilltops/towers) hear **many** neighbors. When a 
 - Higher rxdelay (15) gives them more time to receive the **best copy** before committing to forward it
 
 Local nodes use rxdelay 0 (the **MeshCore default**) because they typically only hear one or two sources — no need to wait for a "better" copy that won't arrive.
+
+</details>
 
 </details>
