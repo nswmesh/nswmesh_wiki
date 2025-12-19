@@ -18,7 +18,6 @@ title: New South Wales Meshcore Network & Repeater Configuration Guide
   - [🟢 LOCAL — Ground-level/Indoor](#-local--ground-levelindoor)
 - [Common Settings (All Repeaters)](#common-settings-all-repeaters)
 - [Understanding the Settings](#understanding-the-settings)
-  - [Interference Threshold](#interference-threshold-intthresh)
   - [AGC Reset Interval](#agc-reset-interval-agcresetinterval)
   - [Multiple Acknowledgments](#multiple-acknowledgments-multiacks)
   - [Advertisement Intervals](#advertisement-intervals)
@@ -146,7 +145,7 @@ Choose the profile below that matches your repeater's role and position in the m
 ```
 set txdelay 2
 set direct.txdelay 2
-set rxdelay 15
+set rxdelay 4
 set af 3
 ```
 
@@ -166,7 +165,7 @@ set af 3
 ```
 set txdelay 1.5
 set direct.txdelay 1
-set rxdelay 8
+set rxdelay 3
 set af 2
 ```
 
@@ -186,7 +185,7 @@ set af 2
 ```
 set txdelay 0.8
 set direct.txdelay 0.4
-set rxdelay 4
+set rxdelay 1
 set af 1.5
 ```
 
@@ -453,7 +452,7 @@ delay = (rxdelay^(0.85 - score) - 1.0) × airtime
 ```
 
 Where:
-- **rxdelay** = configured base value (e.g., 10, 15)
+- **rxdelay** = configured base value (e.g., 2, 4)
 - **score** = signal quality metric (0.0 to 1.0) calculated from SNR relative to the spreading factor threshold
 - **airtime** = transmission time of the packet
 
