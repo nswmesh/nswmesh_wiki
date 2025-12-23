@@ -2,6 +2,52 @@
 title: New South Wales Meshcore Network & Repeater Configuration Guide
 ---
 
+<style>
+.command-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1e1e1e;
+  padding: 4px 8px;
+  margin: 2px 0;
+  border-radius: 4px;
+  font-family: monospace;
+}
+.command-line code {
+  color: #d4d4d4;
+  flex-grow: 1;
+}
+.copy-btn {
+  background: #0d6efd;
+  color: white;
+  border: none;
+  padding: 2px 8px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+  margin-left: 10px;
+}
+.copy-btn:hover {
+  background: #0b5ed7;
+}
+.copy-btn.copied {
+  background: #198754;
+}
+</style>
+
+<script>
+function copyCommand(btn, text) {
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = 'Copy';
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+}
+</script>
+
 ## Table of Contents
 
 - [Getting Started with MeshCore](#getting-started-with-meshcore)
@@ -12,20 +58,20 @@ title: New South Wales Meshcore Network & Repeater Configuration Guide
   - [Naming Convention](#naming-convention)
   - [Setting Up Your Repeater](#setting-up-your-repeater)
 - [Repeater Configuration Profiles](#repeater-configuration-profiles)
-  - [🔴 CRITICAL — Hilltop/Tower Infrastructure](#-critical--hilltoptower-infrastructure)
-  - [🟠 LINK — Mid-elevation Bridge](#-link--mid-elevation-bridge)
-  - [🟡 STANDARD — Suburban Coverage](#-standard--suburban-coverage)
-  - [🟢 LOCAL — Ground-level/Indoor](#-local--ground-levelindoor)
+  - [🔴 CRITICAL — Hilltop/Tower Infrastructure](#critical--hilltoptower-infrastructure)
+  - [🟠 LINK — Mid-elevation Bridge](#link--mid-elevation-bridge)
+  - [🟡 STANDARD — Suburban Coverage](#standard--suburban-coverage)
+  - [🟢 LOCAL — Ground-level/Indoor](#local--ground-levelindoor)
 - [Common Settings (All Repeaters)](#common-settings-all-repeaters)
 - [Understanding the Settings](#understanding-the-settings)
-  - [AGC Reset Interval](#agc-reset-interval-agcresetinterval)
-  - [Multiple Acknowledgments](#multiple-acknowledgments-multiacks)
+  - [AGC Reset Interval](#agc-reset-interval)
+  - [Multiple Acknowledgments](#multiple-acknowledgments)
   - [Advertisement Intervals](#advertisement-intervals)
-  - [Radio Parameters](#radio-parameters-radio)
+  - [Radio Parameters](#radio-parameters)
 - [Role-Specific Settings Explained](#role-specific-settings-explained)
-  - [Transmission Delay](#transmission-delay-txdelay--directtxdelay)
-  - [Airtime Factor](#airtime-factor-af)
-  - [Receive Delay](#receive-delay-rxdelay--signal-based-processing)
+  - [Transmission Delay](#transmission-delay)
+  - [Airtime Factor](#airtime-factor)
+  - [Receive Delay](#receive-delay)
 
 ---
 
@@ -136,18 +182,16 @@ Choose the profile below that matches your repeater's role and position in the m
 
 ---
 
-### 🔴 CRITICAL — Hilltop/Tower Infrastructure {#-critical--hilltoptower-infrastructure}
+### 🔴 CRITICAL — Hilltop/Tower Infrastructure {#critical--hilltoptower-infrastructure}
 
 > **Role:** Highest elevation, most neighbors, backbone of the mesh
 
 **When to use:** Your repeater is on a tall hilltop, tower, or tall building with clear line-of-sight to many other nodes. It can see most of the mesh and is an important hop for many routes. You can see 20+ neighbors well and your repeater is a key link in the network backbone.
 
-```
-set txdelay 2
-set direct.txdelay 2
-set rxdelay 4
-set af 3
-```
+<div class="command-line"><code>set txdelay 2</code><button class="copy-btn" onclick="copyCommand(this, 'set txdelay 2')">Copy</button></div>
+<div class="command-line"><code>set direct.txdelay 2</code><button class="copy-btn" onclick="copyCommand(this, 'set direct.txdelay 2')">Copy</button></div>
+<div class="command-line"><code>set rxdelay 4</code><button class="copy-btn" onclick="copyCommand(this, 'set rxdelay 4')">Copy</button></div>
+<div class="command-line"><code>set af 3</code><button class="copy-btn" onclick="copyCommand(this, 'set af 3')">Copy</button></div>
 
 **Why these values:**
 - **High txdelay (2.0):** Waits longer before retransmitting, letting smaller nodes serve their local areas first. Reduces collisions in your wide coverage area.
@@ -156,18 +200,16 @@ set af 3
 
 ---
 
-### 🟠 LINK — Mid-elevation Bridge {#-link--mid-elevation-bridge}
+### 🟠 LINK — Mid-elevation Bridge {#link--mid-elevation-bridge}
 
 > **Role:** Connects critical nodes to local coverage, moderate neighbor count
 
 **When to use:** Your repeater bridges between tall infrastructure and suburban coverage. You can see some critical nodes and some local nodes (15-20 neighbors typical).
 
-```
-set txdelay 1.5
-set direct.txdelay 1
-set rxdelay 3
-set af 2
-```
+<div class="command-line"><code>set txdelay 1.5</code><button class="copy-btn" onclick="copyCommand(this, 'set txdelay 1.5')">Copy</button></div>
+<div class="command-line"><code>set direct.txdelay 1</code><button class="copy-btn" onclick="copyCommand(this, 'set direct.txdelay 1')">Copy</button></div>
+<div class="command-line"><code>set rxdelay 3</code><button class="copy-btn" onclick="copyCommand(this, 'set rxdelay 3')">Copy</button></div>
+<div class="command-line"><code>set af 2</code><button class="copy-btn" onclick="copyCommand(this, 'set af 2')">Copy</button></div>
 
 **Why these values:**
 - **Moderate txdelay (1.5):** Balances responsiveness with collision avoidance. You're important for connectivity but not the primary backbone.
@@ -176,18 +218,16 @@ set af 2
 
 ---
 
-### 🟡 STANDARD — Suburban Coverage {#-standard--suburban-coverage}
+### 🟡 STANDARD — Suburban Coverage {#standard--suburban-coverage}
 
 > **Role:** Average positioning, serves local area, moderate neighbors
 
 **When to use:** Typical deployment. Your repeater is in an elevated position, serving a more localised area. You see 5-10 neighbors.
 
-```
-set txdelay 0.8
-set direct.txdelay 0.4
-set rxdelay 1
-set af 1.5
-```
+<div class="command-line"><code>set txdelay 0.8</code><button class="copy-btn" onclick="copyCommand(this, 'set txdelay 0.8')">Copy</button></div>
+<div class="command-line"><code>set direct.txdelay 0.4</code><button class="copy-btn" onclick="copyCommand(this, 'set direct.txdelay 0.4')">Copy</button></div>
+<div class="command-line"><code>set rxdelay 1</code><button class="copy-btn" onclick="copyCommand(this, 'set rxdelay 1')">Copy</button></div>
+<div class="command-line"><code>set af 1.5</code><button class="copy-btn" onclick="copyCommand(this, 'set af 1.5')">Copy</button></div>
 
 **Why these values:**
 - **Lower txdelay (0.8):** More responsive for local coverage. Fewer neighbors means lower collision risk.
@@ -196,18 +236,16 @@ set af 1.5
 
 ---
 
-### 🟢 LOCAL — Ground-level/Indoor {#-local--ground-levelindoor}
+### 🟢 LOCAL — Ground-level/Indoor {#local--ground-levelindoor}
 
 > **Role:** Low elevation, few neighbors, serves immediate area
 
 **When to use:** Indoor repeater, rooftop repeater, ground-level installation, or low node without clear line of sight to many other repeaters. You only see 1-3 neighbors and primarily serve your immediate area.
 
-```
-set txdelay 0.3
-set direct.txdelay 0.1
-set rxdelay 0
-set af 1
-```
+<div class="command-line"><code>set txdelay 0.3</code><button class="copy-btn" onclick="copyCommand(this, 'set txdelay 0.3')">Copy</button></div>
+<div class="command-line"><code>set direct.txdelay 0.1</code><button class="copy-btn" onclick="copyCommand(this, 'set direct.txdelay 0.1')">Copy</button></div>
+<div class="command-line"><code>set rxdelay 0</code><button class="copy-btn" onclick="copyCommand(this, 'set rxdelay 0')">Copy</button></div>
+<div class="command-line"><code>set af 1</code><button class="copy-btn" onclick="copyCommand(this, 'set af 1')">Copy</button></div>
 
 **Why these values:**
 - **Minimal txdelay (0.3):** Maximum responsiveness. With few neighbors, collision risk is low.
@@ -222,13 +260,11 @@ Apply these settings to **all repeaters** regardless of role:
 
 > **📝 Note:** Most of these differ from MeshCore defaults. See the Quick Reference table below for default comparisons.
 
-```
-set agc.reset.interval 500
-set multi.acks 1
-set advert.interval 240
-set flood.advert.interval 12
-set guest.password guest
-```
+<div class="command-line"><code>set agc.reset.interval 500</code><button class="copy-btn" onclick="copyCommand(this, 'set agc.reset.interval 500')">Copy</button></div>
+<div class="command-line"><code>set multi.acks 1</code><button class="copy-btn" onclick="copyCommand(this, 'set multi.acks 1')">Copy</button></div>
+<div class="command-line"><code>set advert.interval 240</code><button class="copy-btn" onclick="copyCommand(this, 'set advert.interval 240')">Copy</button></div>
+<div class="command-line"><code>set flood.advert.interval 12</code><button class="copy-btn" onclick="copyCommand(this, 'set flood.advert.interval 12')">Copy</button></div>
+<div class="command-line"><code>set guest.password guest</code><button class="copy-btn" onclick="copyCommand(this, 'set guest.password guest')">Copy</button></div>
 
 ### Quick Reference
 
@@ -245,7 +281,7 @@ set guest.password guest
 
 ## Understanding the Settings {#understanding-the-settings}
 
-### AGC Reset Interval (`agc.reset.interval`) {#agc-reset-interval-agcresetinterval}
+### AGC Reset Interval (`agc.reset.interval`) {#agc-reset-interval}
 
 The Automatic Gain Control (AGC) in LoRa radios adjusts receiver sensitivity automatically. However, AGC can drift in busy environments, reducing sensitivity over time.
 
@@ -262,7 +298,7 @@ The Automatic Gain Control (AGC) in LoRa radios adjusts receiver sensitivity aut
 
 ---
 
-### Multiple Acknowledgments (`multi.acks`) {#multiple-acknowledgments-multiacks}
+### Multiple Acknowledgments (`multi.acks`) {#multiple-acknowledgments}
 
 Controls whether redundant ACKs are sent for direct (point-to-point) messages.
 
@@ -295,7 +331,7 @@ Having all the repeaters adverting too fast will cause mesh congestion, so longe
 
 ---
 
-### Radio Parameters (`radio`) {#radio-parameters-radio}
+### Radio Parameters (`radio`) {#radio-parameters}
 
 Sets all LoRa radio parameters in a single command.
 
@@ -309,6 +345,154 @@ Sets all LoRa radio parameters in a single command.
 | **Coding Rate** | 5 | 5 | Forward error correction (4/5). Higher = more redundancy, slower |
 
 **Important:** All nodes on the Sydney mesh MUST use these exact parameters to communicate. The SF11 is a deliberate modification from the standard Australia preset (SF10) for improved range.
+
+#### Frequency (915.800 MHz)
+
+The operating frequency determines which part of the radio spectrum your node transmits and receives on. All nodes must use the **exact same frequency** to communicate.
+
+| Aspect | Details |
+|--------|---------|
+| **Australian ISM Band** | 915-928 MHz (license-free for low-power devices) |
+| **Why 915.8 MHz?** | Slightly offset from default to reduce interference with other LoRa networks |
+| **Regulatory** | Must comply with ACMA regulations for power and duty cycle |
+
+> **Important:** Using a different frequency means you cannot communicate with the mesh at all.
+
+---
+
+#### Bandwidth (BW) — 250 kHz
+
+Bandwidth determines the width of the frequency channel used for transmission. Think of it like the "width of the road" your signal travels on.
+
+| Bandwidth | Data Rate | Range | Noise Immunity | Best For |
+|-----------|-----------|-------|----------------|----------|
+| **500 kHz** | Fastest | Shortest | Lower | High-throughput, short range |
+| **250 kHz** ✅ | Moderate | Moderate | Moderate | Balanced performance (Sydney mesh) |
+| **125 kHz** | Slower | Longer | Higher | Maximum range, low throughput |
+| **62.5 kHz** | Slowest | Longest | Highest | Extreme range, minimal data |
+
+**Trade-offs:**
+- **Wider bandwidth (500 kHz):** Faster data transfer, but signal is more susceptible to noise and has shorter range
+- **Narrower bandwidth (125 kHz):** Longer range and better noise immunity, but slower data transfer and higher airtime per packet
+
+**Why 250 kHz for Sydney?** Provides a good balance between range and speed. Wide enough for reasonable message throughput, narrow enough for decent range across Sydney's urban and suburban areas.
+
+---
+
+#### Spreading Factor (SF) — 11
+
+Spreading Factor is one of the most important LoRa parameters. It determines how the signal is "spread" across the bandwidth using chirp modulation.
+
+| SF | Chirps per Symbol | Time on Air | Range | Sensitivity | Data Rate |
+|----|-------------------|-------------|-------|-------------|-----------|
+| **SF7** | 128 | Shortest | Shortest | -123 dBm | ~5.5 kbps |
+| **SF8** | 256 | Short | Short | -126 dBm | ~3.1 kbps |
+| **SF9** | 512 | Moderate | Moderate | -129 dBm | ~1.8 kbps |
+| **SF10** | 1024 | Long | Long | -132 dBm | ~1.0 kbps |
+| **SF11** ✅ | 2048 | Longer | Longer | -134.5 dBm | ~0.5 kbps |
+| **SF12** | 4096 | Longest | Longest | -137 dBm | ~0.3 kbps |
+
+**How it works:**
+- Each increase in SF **doubles** the number of chirps per symbol
+- This means each SF increase roughly **doubles the time on air**
+- But also improves receiver sensitivity by ~2.5 dB (can hear weaker signals)
+
+**Trade-offs:**
+
+| Higher SF (e.g., SF11-12) | Lower SF (e.g., SF7-8) |
+|---------------------------|------------------------|
+| ✅ Longer range | ✅ Faster transmission |
+| ✅ Better sensitivity | ✅ Lower airtime/power usage |
+| ✅ Better penetration through obstacles | ✅ Higher throughput |
+| ❌ Slower data rate | ❌ Shorter range |
+| ❌ Higher airtime (battery drain) | ❌ More susceptible to interference |
+| ❌ More susceptible to collisions | ❌ Requires stronger signal |
+
+**Why SF11 for Sydney?**
+- Sydney's mesh covers a large geographic area with users spread far apart
+- SF11 provides ~3 dB better sensitivity than the standard Australia preset (SF10)
+- This translates to roughly **40% more range** in ideal conditions
+- The slower data rate is acceptable given the text-based nature of mesh messages
+
+> ⚠️ **Compatibility Note:** SF11 nodes **cannot communicate** with SF10 nodes. All Sydney mesh participants must use SF11.
+
+---
+
+#### Coding Rate (CR) — 5
+
+Coding Rate (also written as 4/5, 4/6, 4/7, or 4/8) determines the amount of Forward Error Correction (FEC) applied to transmissions.
+
+| CR Setting | Ratio | Overhead | Error Correction | Airtime Impact |
+|------------|-------|----------|------------------|----------------|
+| **CR5** ✅ | 4/5 | 25% | Basic | Fastest |
+| **CR6** | 4/6 | 50% | Moderate | +20% slower |
+| **CR7** | 4/7 | 75% | Good | +40% slower |
+| **CR8** | 4/8 | 100% | Maximum | +60% slower |
+
+**How it works:**
+- For every 4 bits of data, additional redundant bits are added
+- CR 4/5 means 4 data bits + 1 redundancy bit = 5 total bits (25% overhead)
+- CR 4/8 means 4 data bits + 4 redundancy bits = 8 total bits (100% overhead)
+
+**Trade-offs:**
+
+| Higher CR (4/7, 4/8) | Lower CR (4/5) |
+|----------------------|----------------|
+| ✅ Better error recovery | ✅ Faster transmission |
+| ✅ More reliable in noisy environments | ✅ Lower airtime |
+| ❌ Slower data rate | ❌ Less error tolerance |
+| ❌ Higher airtime | ❌ May need retransmissions |
+
+**Why CR 4/5 for Sydney?** The combination of SF11 already provides excellent noise immunity. CR 4/5 keeps airtime reasonable while still providing basic error correction. Higher CR would significantly increase already-long transmission times at SF11.
+
+---
+
+#### TX Power (Transmission Power)
+
+While not explicitly set in the radio string, TX power determines how strong your transmitted signal is.
+
+| Power Level | Typical Range | Battery Impact | Use Case |
+|-------------|---------------|----------------|----------|
+| **Low (10-14 dBm)** | Short (1-3 km) | Minimal | Indoor, close nodes |
+| **Medium (17-20 dBm)** | Moderate (3-8 km) | Moderate | Suburban use |
+| **High (22 dBm / 158 mW)** | Long (8-15+ km) | Higher | Hilltop repeaters, max range |
+
+**Regulatory limits (Australia):**
+- Maximum EIRP: 1 Watt (30 dBm) in the 915-928 MHz band
+- Most devices max out at 22 dBm (~158 mW) from the radio chip
+- Antenna gain adds to effective power (must stay under 1W EIRP total)
+
+**Trade-offs:**
+
+| Higher TX Power | Lower TX Power |
+|-----------------|----------------|
+| ✅ Longer range | ✅ Longer battery life |
+| ✅ Better building penetration | ✅ Less interference to others |
+| ❌ Faster battery drain | ❌ Shorter range |
+| ❌ More interference potential | ❌ May not reach distant repeaters |
+
+**Recommendations:**
+- **Companions (mobile nodes):** Use maximum power (22 dBm) for best chance of reaching repeaters
+- **Repeaters:** Use maximum power to provide widest coverage
+- **Indoor/close range:** Can reduce power to save battery if needed
+
+---
+
+#### Combined Effect Summary
+
+The Sydney mesh settings (915.8 MHz, 250 kHz BW, SF11, CR 4/5) are optimized for:
+
+| Goal | How Settings Achieve It |
+|------|------------------------|
+| **Maximum range** | SF11 provides excellent sensitivity (-134.5 dBm) |
+| **Reasonable speed** | 250 kHz BW and CR 4/5 keep airtime manageable |
+| **Network compatibility** | All nodes use identical settings |
+| **Regulatory compliance** | Within Australian ISM band limits |
+
+**Approximate performance at these settings:**
+- **Effective bitrate:** ~490 bps (after coding overhead)
+- **Typical message airtime:** 1-3 seconds depending on length
+- **Theoretical max range:** 15-20+ km line-of-sight (real-world varies significantly)
 
 ---
 
@@ -327,7 +511,7 @@ These four settings work together to optimize mesh performance based on your rep
 
 ---
 
-### Transmission Delay (`txdelay` / `direct.txdelay`) {#transmission-delay-txdelay--directtxdelay}
+### Transmission Delay (`txdelay` / `direct.txdelay`) {#transmission-delay}
 
 Controls how long a repeater waits before retransmitting a packet it needs to forward.
 
@@ -394,7 +578,7 @@ Direct packets typically use **lower** delays because only nodes along the speci
 
 ---
 
-### Airtime Factor (`af`) {#airtime-factor-af}
+### Airtime Factor (`af`) {#airtime-factor}
 
 Enforces a "radio silence" period after each transmission, implementing a duty cycle limit.
 
@@ -441,7 +625,7 @@ After transmitting a packet, the repeater:
 
 ---
 
-### Receive Delay (`rxdelay`) — Signal-Based Processing {#receive-delay-rxdelay--signal-based-processing}
+### Receive Delay (`rxdelay`) — Signal-Based Processing {#receive-delay}
 
 The `rxdelay` setting is more sophisticated than a simple timer. It uses **signal strength** to determine which copy of a packet to process first.
 
