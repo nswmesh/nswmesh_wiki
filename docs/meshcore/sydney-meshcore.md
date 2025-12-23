@@ -156,14 +156,12 @@ Choose the profile below that matches your repeater's role and position in the m
 
 **When to use:** Your repeater is on a tall hilltop, tower, or tall building with clear line-of-sight to many other nodes. It can see most of the mesh and is an important hop for many routes. You can see 20+ neighbors well and your repeater is a key link in the network backbone.
 
-```
-set txdelay 2
-set direct.txdelay 2
-set rxdelay 4
-set af 3
-```
-
-<small><a href="#" onclick="copyCmd('set txdelay 2', this); return false;">📋 copy</a></small> `set txdelay 2` · <small><a href="#" onclick="copyCmd('set direct.txdelay 2', this); return false;">📋 copy</a></small> `set direct.txdelay 2` · <small><a href="#" onclick="copyCmd('set rxdelay 4', this); return false;">📋 copy</a></small> `set rxdelay 4` · <small><a href="#" onclick="copyCmd('set af 3', this); return false;">📋 copy</a></small> `set af 3`
+| Command | | |
+|---------|---|---|
+| `set txdelay 2` | <a href="#" onclick="copyCmd('set txdelay 2', this); return false;">📋</a> |
+| `set direct.txdelay 2` | <a href="#" onclick="copyCmd('set direct.txdelay 2', this); return false;">📋</a> |
+| `set rxdelay 4` | <a href="#" onclick="copyCmd('set rxdelay 4', this); return false;">📋</a> |
+| `set af 3` | <a href="#" onclick="copyCmd('set af 3', this); return false;">📋</a> |
 
 **Why these values:**
 - **High txdelay (2.0):** Waits longer before retransmitting, letting smaller nodes serve their local areas first. Reduces collisions in your wide coverage area.
@@ -178,14 +176,12 @@ set af 3
 
 **When to use:** Your repeater bridges between tall infrastructure and suburban coverage. You can see some critical nodes and some local nodes (15-20 neighbors typical).
 
-```
-set txdelay 1.5
-set direct.txdelay 1
-set rxdelay 3
-set af 2
-```
-
-<small><a href="#" onclick="copyCmd('set txdelay 1.5', this); return false;">📋 copy</a></small> `set txdelay 1.5` · <small><a href="#" onclick="copyCmd('set direct.txdelay 1', this); return false;">📋 copy</a></small> `set direct.txdelay 1` · <small><a href="#" onclick="copyCmd('set rxdelay 3', this); return false;">📋 copy</a></small> `set rxdelay 3` · <small><a href="#" onclick="copyCmd('set af 2', this); return false;">📋 copy</a></small> `set af 2`
+| Command | | |
+|---------|---|---|
+| `set txdelay 1.5` | <a href="#" onclick="copyCmd('set txdelay 1.5', this); return false;">📋</a> |
+| `set direct.txdelay 1` | <a href="#" onclick="copyCmd('set direct.txdelay 1', this); return false;">📋</a> |
+| `set rxdelay 3` | <a href="#" onclick="copyCmd('set rxdelay 3', this); return false;">📋</a> |
+| `set af 2` | <a href="#" onclick="copyCmd('set af 2', this); return false;">📋</a> |
 
 **Why these values:**
 - **Moderate txdelay (1.5):** Balances responsiveness with collision avoidance. You're important for connectivity but not the primary backbone.
@@ -200,14 +196,12 @@ set af 2
 
 **When to use:** Typical deployment. Your repeater is in an elevated position, serving a more localised area. You see 5-10 neighbors.
 
-```
-set txdelay 0.8
-set direct.txdelay 0.4
-set rxdelay 1
-set af 1.5
-```
-
-<small><a href="#" onclick="copyCmd('set txdelay 0.8', this); return false;">📋 copy</a></small> `set txdelay 0.8` · <small><a href="#" onclick="copyCmd('set direct.txdelay 0.4', this); return false;">📋 copy</a></small> `set direct.txdelay 0.4` · <small><a href="#" onclick="copyCmd('set rxdelay 1', this); return false;">📋 copy</a></small> `set rxdelay 1` · <small><a href="#" onclick="copyCmd('set af 1.5', this); return false;">📋 copy</a></small> `set af 1.5`
+| Command | | |
+|---------|---|---|
+| `set txdelay 0.8` | <a href="#" onclick="copyCmd('set txdelay 0.8', this); return false;">📋</a> |
+| `set direct.txdelay 0.4` | <a href="#" onclick="copyCmd('set direct.txdelay 0.4', this); return false;">📋</a> |
+| `set rxdelay 1` | <a href="#" onclick="copyCmd('set rxdelay 1', this); return false;">📋</a> |
+| `set af 1.5` | <a href="#" onclick="copyCmd('set af 1.5', this); return false;">📋</a> |
 
 **Why these values:**
 - **Lower txdelay (0.8):** More responsive for local coverage. Fewer neighbors means lower collision risk.
@@ -222,14 +216,12 @@ set af 1.5
 
 **When to use:** Indoor repeater, rooftop repeater, ground-level installation, or low node without clear line of sight to many other repeaters. You only see 1-3 neighbors and primarily serve your immediate area.
 
-```
-set txdelay 0.3
-set direct.txdelay 0.1
-set rxdelay 0
-set af 1
-```
-
-<small><a href="#" onclick="copyCmd('set txdelay 0.3', this); return false;">📋 copy</a></small> `set txdelay 0.3` · <small><a href="#" onclick="copyCmd('set direct.txdelay 0.1', this); return false;">📋 copy</a></small> `set direct.txdelay 0.1` · <small><a href="#" onclick="copyCmd('set rxdelay 0', this); return false;">📋 copy</a></small> `set rxdelay 0` · <small><a href="#" onclick="copyCmd('set af 1', this); return false;">📋 copy</a></small> `set af 1`
+| Command | | |
+|---------|---|---|
+| `set txdelay 0.3` | <a href="#" onclick="copyCmd('set txdelay 0.3', this); return false;">📋</a> |
+| `set direct.txdelay 0.1` | <a href="#" onclick="copyCmd('set direct.txdelay 0.1', this); return false;">📋</a> |
+| `set rxdelay 0` | <a href="#" onclick="copyCmd('set rxdelay 0', this); return false;">📋</a> |
+| `set af 1` | <a href="#" onclick="copyCmd('set af 1', this); return false;">📋</a> |
 
 **Why these values:**
 - **Minimal txdelay (0.3):** Maximum responsiveness. With few neighbors, collision risk is low.
@@ -244,15 +236,13 @@ Apply these settings to **all repeaters** regardless of role:
 
 > **📝 Note:** Most of these differ from MeshCore defaults. See the Quick Reference table below for default comparisons.
 
-```
-set agc.reset.interval 500
-set multi.acks 1
-set advert.interval 240
-set flood.advert.interval 12
-set guest.password guest
-```
-
-<small><a href="#" onclick="copyCmd('set agc.reset.interval 500', this); return false;">📋 copy</a></small> `set agc.reset.interval 500` · <small><a href="#" onclick="copyCmd('set multi.acks 1', this); return false;">📋 copy</a></small> `set multi.acks 1` · <small><a href="#" onclick="copyCmd('set advert.interval 240', this); return false;">📋 copy</a></small> `set advert.interval 240` · <small><a href="#" onclick="copyCmd('set flood.advert.interval 12', this); return false;">📋 copy</a></small> `set flood.advert.interval 12` · <small><a href="#" onclick="copyCmd('set guest.password guest', this); return false;">📋 copy</a></small> `set guest.password guest`
+| Command | | |
+|---------|---|---|
+| `set agc.reset.interval 500` | <a href="#" onclick="copyCmd('set agc.reset.interval 500', this); return false;">📋</a> |
+| `set multi.acks 1` | <a href="#" onclick="copyCmd('set multi.acks 1', this); return false;">📋</a> |
+| `set advert.interval 240` | <a href="#" onclick="copyCmd('set advert.interval 240', this); return false;">📋</a> |
+| `set flood.advert.interval 12` | <a href="#" onclick="copyCmd('set flood.advert.interval 12', this); return false;">📋</a> |
+| `set guest.password guest` | <a href="#" onclick="copyCmd('set guest.password guest', this); return false;">📋</a> |
 
 ### Quick Reference
 
