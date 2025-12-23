@@ -3,42 +3,77 @@ title: New South Wales Meshcore Network & Repeater Configuration Guide
 ---
 
 <style>
+.command-container {
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  margin: 16px 0;
+  overflow: hidden;
+}
 .command-line {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #1e1e1e;
-  padding: 4px 8px;
-  margin: 2px 0;
-  border-radius: 4px;
-  font-family: monospace;
+  padding: 8px 12px;
+  border-bottom: 1px solid #d0d7de;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 14px;
+}
+.command-line:last-child {
+  border-bottom: none;
 }
 .command-line code {
-  color: #d4d4d4;
+  background: none;
+  padding: 0;
+  color: #1f2328;
   flex-grow: 1;
 }
 .copy-btn {
-  background: #0d6efd;
-  color: white;
-  border: none;
-  padding: 2px 8px;
-  border-radius: 3px;
+  background: #f6f8fa;
+  color: #1f2328;
+  border: 1px solid #d0d7de;
+  padding: 4px 12px;
+  border-radius: 6px;
   cursor: pointer;
   font-size: 12px;
-  margin-left: 10px;
+  margin-left: 12px;
+  transition: background 0.2s;
+  white-space: nowrap;
 }
 .copy-btn:hover {
-  background: #0b5ed7;
+  background: #e8ebef;
 }
 .copy-btn.copied {
-  background: #198754;
+  background: #2da44e;
+  color: white;
+  border-color: #2da44e;
+}
+@media (prefers-color-scheme: dark) {
+  .command-container {
+    background: #161b22;
+    border-color: #30363d;
+  }
+  .command-line {
+    border-color: #30363d;
+  }
+  .command-line code {
+    color: #e6edf3;
+  }
+  .copy-btn {
+    background: #21262d;
+    color: #e6edf3;
+    border-color: #30363d;
+  }
+  .copy-btn:hover {
+    background: #30363d;
+  }
 }
 </style>
 
 <script>
 function copyCommand(btn, text) {
   navigator.clipboard.writeText(text).then(() => {
-    btn.textContent = 'Copied!';
+    btn.textContent = '✓ Copied';
     btn.classList.add('copied');
     setTimeout(() => {
       btn.textContent = 'Copy';
@@ -188,10 +223,12 @@ Choose the profile below that matches your repeater's role and position in the m
 
 **When to use:** Your repeater is on a tall hilltop, tower, or tall building with clear line-of-sight to many other nodes. It can see most of the mesh and is an important hop for many routes. You can see 20+ neighbors well and your repeater is a key link in the network backbone.
 
+<div class="command-container">
 <div class="command-line"><code>set txdelay 2</code><button class="copy-btn" onclick="copyCommand(this, 'set txdelay 2')">Copy</button></div>
 <div class="command-line"><code>set direct.txdelay 2</code><button class="copy-btn" onclick="copyCommand(this, 'set direct.txdelay 2')">Copy</button></div>
 <div class="command-line"><code>set rxdelay 4</code><button class="copy-btn" onclick="copyCommand(this, 'set rxdelay 4')">Copy</button></div>
 <div class="command-line"><code>set af 3</code><button class="copy-btn" onclick="copyCommand(this, 'set af 3')">Copy</button></div>
+</div>
 
 **Why these values:**
 - **High txdelay (2.0):** Waits longer before retransmitting, letting smaller nodes serve their local areas first. Reduces collisions in your wide coverage area.
@@ -206,10 +243,12 @@ Choose the profile below that matches your repeater's role and position in the m
 
 **When to use:** Your repeater bridges between tall infrastructure and suburban coverage. You can see some critical nodes and some local nodes (15-20 neighbors typical).
 
+<div class="command-container">
 <div class="command-line"><code>set txdelay 1.5</code><button class="copy-btn" onclick="copyCommand(this, 'set txdelay 1.5')">Copy</button></div>
 <div class="command-line"><code>set direct.txdelay 1</code><button class="copy-btn" onclick="copyCommand(this, 'set direct.txdelay 1')">Copy</button></div>
 <div class="command-line"><code>set rxdelay 3</code><button class="copy-btn" onclick="copyCommand(this, 'set rxdelay 3')">Copy</button></div>
 <div class="command-line"><code>set af 2</code><button class="copy-btn" onclick="copyCommand(this, 'set af 2')">Copy</button></div>
+</div>
 
 **Why these values:**
 - **Moderate txdelay (1.5):** Balances responsiveness with collision avoidance. You're important for connectivity but not the primary backbone.
@@ -224,10 +263,12 @@ Choose the profile below that matches your repeater's role and position in the m
 
 **When to use:** Typical deployment. Your repeater is in an elevated position, serving a more localised area. You see 5-10 neighbors.
 
+<div class="command-container">
 <div class="command-line"><code>set txdelay 0.8</code><button class="copy-btn" onclick="copyCommand(this, 'set txdelay 0.8')">Copy</button></div>
 <div class="command-line"><code>set direct.txdelay 0.4</code><button class="copy-btn" onclick="copyCommand(this, 'set direct.txdelay 0.4')">Copy</button></div>
 <div class="command-line"><code>set rxdelay 1</code><button class="copy-btn" onclick="copyCommand(this, 'set rxdelay 1')">Copy</button></div>
 <div class="command-line"><code>set af 1.5</code><button class="copy-btn" onclick="copyCommand(this, 'set af 1.5')">Copy</button></div>
+</div>
 
 **Why these values:**
 - **Lower txdelay (0.8):** More responsive for local coverage. Fewer neighbors means lower collision risk.
@@ -242,10 +283,12 @@ Choose the profile below that matches your repeater's role and position in the m
 
 **When to use:** Indoor repeater, rooftop repeater, ground-level installation, or low node without clear line of sight to many other repeaters. You only see 1-3 neighbors and primarily serve your immediate area.
 
+<div class="command-container">
 <div class="command-line"><code>set txdelay 0.3</code><button class="copy-btn" onclick="copyCommand(this, 'set txdelay 0.3')">Copy</button></div>
 <div class="command-line"><code>set direct.txdelay 0.1</code><button class="copy-btn" onclick="copyCommand(this, 'set direct.txdelay 0.1')">Copy</button></div>
 <div class="command-line"><code>set rxdelay 0</code><button class="copy-btn" onclick="copyCommand(this, 'set rxdelay 0')">Copy</button></div>
 <div class="command-line"><code>set af 1</code><button class="copy-btn" onclick="copyCommand(this, 'set af 1')">Copy</button></div>
+</div>
 
 **Why these values:**
 - **Minimal txdelay (0.3):** Maximum responsiveness. With few neighbors, collision risk is low.
@@ -260,11 +303,13 @@ Apply these settings to **all repeaters** regardless of role:
 
 > **📝 Note:** Most of these differ from MeshCore defaults. See the Quick Reference table below for default comparisons.
 
+<div class="command-container">
 <div class="command-line"><code>set agc.reset.interval 500</code><button class="copy-btn" onclick="copyCommand(this, 'set agc.reset.interval 500')">Copy</button></div>
 <div class="command-line"><code>set multi.acks 1</code><button class="copy-btn" onclick="copyCommand(this, 'set multi.acks 1')">Copy</button></div>
 <div class="command-line"><code>set advert.interval 240</code><button class="copy-btn" onclick="copyCommand(this, 'set advert.interval 240')">Copy</button></div>
 <div class="command-line"><code>set flood.advert.interval 12</code><button class="copy-btn" onclick="copyCommand(this, 'set flood.advert.interval 12')">Copy</button></div>
 <div class="command-line"><code>set guest.password guest</code><button class="copy-btn" onclick="copyCommand(this, 'set guest.password guest')">Copy</button></div>
+</div>
 
 ### Quick Reference
 
