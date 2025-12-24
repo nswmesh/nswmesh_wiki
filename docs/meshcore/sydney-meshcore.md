@@ -173,7 +173,7 @@ Repeaters default to a clock time of 15 May 2024 on every reboot unless connecte
 
 **3. Configure repeater CLI settings**
 
-Once logged in and the clock is synced go to the `>_` - **`Command Line`** tab and enter the commands from the profiles below with your chosen repeater profile and common settings. Copy and paste each line and send. Wait up to 30 seconds to see an `OK` response - if no response then resend command.
+Once logged in and the clock is synced go to the `>_` - **`Command Line`** tab and enter the commands from the profiles, and common settings below with your chosen repeater profile and common settings. Copy and paste each line and send. Wait up to 30 seconds to see an `OK` response - if no response then resend command.
 
 
 📺 [Watch: More about repeaters (video, 11:18)](https://youtu.be/t1qne8uJBAc?t=678)
