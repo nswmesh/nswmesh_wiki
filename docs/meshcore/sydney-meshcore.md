@@ -197,13 +197,13 @@ Choose the profile below that matches your repeater's role and position in the m
 <div class="cmd-block">
 <div class="cmd-row"><code>set txdelay 2</code><button onclick="copyCmd('set txdelay 2', this)">Copy</button></div>
 <div class="cmd-row"><code>set direct.txdelay 2</code><button onclick="copyCmd('set direct.txdelay 2', this)">Copy</button></div>
-<div class="cmd-row"><code>set rxdelay 4</code><button onclick="copyCmd('set rxdelay 4', this)">Copy</button></div>
+<div class="cmd-row"><code>set rxdelay 4</code><button onclick="copyCmd('set rxdelay 43, this)">Copy</button></div>
 <div class="cmd-row"><code>set af 3</code><button onclick="copyCmd('set af 3', this)">Copy</button></div>
 </div>
 
 **Why these values:**
 - **High txdelay (2.0):** Waits longer before retransmitting, letting smaller nodes serve their local areas first. Reduces collisions in your wide coverage area.
-- **High rxdelay (15):** With many neighbors, you'll receive the same packet from multiple sources. Higher rxdelay gives more time to receive the best (strongest signal) copy before processing.
+- **High rxdelay (3):** With many neighbors, you'll receive the same packet from multiple sources. Higher rxdelay gives more time to receive the best (strongest signal) copy before processing.
 - **High af (3):** Enforces 25% duty cycle. Critical nodes see heavy traffic; this prevents channel hogging and gives other nodes a chance to transmit.
 
 ---
@@ -223,7 +223,7 @@ Choose the profile below that matches your repeater's role and position in the m
 
 **Why these values:**
 - **Moderate txdelay (1.5):** Balances responsiveness with collision avoidance. You're important for connectivity but not the primary backbone.
-- **Moderate rxdelay (8):** You hear multiple sources but not as many as critical nodes. Moderate delay balances signal selection with responsiveness.
+- **Moderate rxdelay (3):** You hear multiple sources but not as many as critical nodes. Moderate delay balances signal selection with responsiveness.
 - **Moderate af (2):** 33% duty cycle balances your bridging role with fair channel access.
 
 ---
@@ -237,13 +237,13 @@ Choose the profile below that matches your repeater's role and position in the m
 <div class="cmd-block">
 <div class="cmd-row"><code>set txdelay 0.8</code><button onclick="copyCmd('set txdelay 0.8', this)">Copy</button></div>
 <div class="cmd-row"><code>set direct.txdelay 0.4</code><button onclick="copyCmd('set direct.txdelay 0.4', this)">Copy</button></div>
-<div class="cmd-row"><code>set rxdelay 1</code><button onclick="copyCmd('set rxdelay 1', this)">Copy</button></div>
+<div class="cmd-row"><code>set rxdelay 3</code><button onclick="copyCmd('set rxdelay 1', this)">Copy</button></div>
 <div class="cmd-row"><code>set af 1.5</code><button onclick="copyCmd('set af 1.5', this)">Copy</button></div>
 </div>
 
 **Why these values:**
 - **Lower txdelay (0.8):** More responsive for local coverage. Fewer neighbors means lower collision risk.
-- **Lower rxdelay (0.4):** Less need to wait for better copies since you hear fewer sources.
+- **Lower rxdelay (3):** Less need to wait for better copies since you hear fewer sources.
 - **Lower af (1.5):** 40% duty cycle. Reasonable responsiveness while still being a good mesh citizen.
 
 ---
@@ -257,13 +257,13 @@ Choose the profile below that matches your repeater's role and position in the m
 <div class="cmd-block">
 <div class="cmd-row"><code>set txdelay 0.3</code><button onclick="copyCmd('set txdelay 0.3', this)">Copy</button></div>
 <div class="cmd-row"><code>set direct.txdelay 0.1</code><button onclick="copyCmd('set direct.txdelay 0.1', this)">Copy</button></div>
-<div class="cmd-row"><code>set rxdelay 0</code><button onclick="copyCmd('set rxdelay 0', this)">Copy</button></div>
+<div class="cmd-row"><code>set rxdelay 3</code><button onclick="copyCmd('set rxdelay 0', this)">Copy</button></div>
 <div class="cmd-row"><code>set af 1</code><button onclick="copyCmd('set af 1', this)">Copy</button></div>
 </div>
 
 **Why these values:**
 - **Minimal txdelay (0.3):** Maximum responsiveness. With few neighbors, collision risk is low.
-- **Zero rxdelay (0):** No need to wait for better signal copies when you only hear one or two sources.
+- **Zero rxdelay (3):** No need to wait for better signal copies when you only hear one or two sources.
 - **Low af (1):** 50% duty cycle. You're not creating congestion with your limited coverage.
 
 ---
