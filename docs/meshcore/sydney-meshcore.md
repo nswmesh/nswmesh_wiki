@@ -132,6 +132,7 @@ Repeaters send a local advert (an advert that can be heard if you are directly c
 |---------|-----|
 | Public | Public Channel |
 | Test (with test bot) | `#test` (auto-generated) |
+| Emergency  | `#emergency` (auto-generated) |
 | Sydney | `#sydney` (auto-generated) |
 | NSW Wide | `#nsw` (auto-generated) |
 | Macarthur | `#macarthur` (auto-generated) |
@@ -197,13 +198,13 @@ Choose the profile below that matches your repeater's role and position in the m
 <div class="cmd-block">
 <div class="cmd-row"><code>set txdelay 2</code><button onclick="copyCmd('set txdelay 2', this)">Copy</button></div>
 <div class="cmd-row"><code>set direct.txdelay 2</code><button onclick="copyCmd('set direct.txdelay 2', this)">Copy</button></div>
-<div class="cmd-row"><code>set rxdelay 4</code><button onclick="copyCmd('set rxdelay 43, this)">Copy</button></div>
+<div class="cmd-row"><code>set rxdelay 3</code><button onclick="copyCmd('set rxdelay 3', this)">Copy</button></div>
 <div class="cmd-row"><code>set af 3</code><button onclick="copyCmd('set af 3', this)">Copy</button></div>
 </div>
 
 **Why these values:**
 - **High txdelay (2.0):** Waits longer before retransmitting, letting smaller nodes serve their local areas first. Reduces collisions in your wide coverage area.
-- **High rxdelay (3):** With many neighbors, you'll receive the same packet from multiple sources. Higher rxdelay gives more time to receive the best (strongest signal) copy before processing.
+- **rxdelay (3):** Standard rxdelay for all Sydney mesh repeaters. Provides optimal signal-based packet selection timing.
 - **High af (3):** Enforces 25% duty cycle. Critical nodes see heavy traffic; this prevents channel hogging and gives other nodes a chance to transmit.
 
 ---
@@ -223,7 +224,7 @@ Choose the profile below that matches your repeater's role and position in the m
 
 **Why these values:**
 - **Moderate txdelay (1.5):** Balances responsiveness with collision avoidance. You're important for connectivity but not the primary backbone.
-- **Moderate rxdelay (3):** You hear multiple sources but not as many as critical nodes. Moderate delay balances signal selection with responsiveness.
+- **rxdelay (3):** Standard rxdelay for all Sydney mesh repeaters. Provides optimal signal-based packet selection timing.
 - **Moderate af (2):** 33% duty cycle balances your bridging role with fair channel access.
 
 ---
@@ -237,13 +238,13 @@ Choose the profile below that matches your repeater's role and position in the m
 <div class="cmd-block">
 <div class="cmd-row"><code>set txdelay 0.8</code><button onclick="copyCmd('set txdelay 0.8', this)">Copy</button></div>
 <div class="cmd-row"><code>set direct.txdelay 0.4</code><button onclick="copyCmd('set direct.txdelay 0.4', this)">Copy</button></div>
-<div class="cmd-row"><code>set rxdelay 3</code><button onclick="copyCmd('set rxdelay 1', this)">Copy</button></div>
+<div class="cmd-row"><code>set rxdelay 3</code><button onclick="copyCmd('set rxdelay 3', this)">Copy</button></div>
 <div class="cmd-row"><code>set af 1.5</code><button onclick="copyCmd('set af 1.5', this)">Copy</button></div>
 </div>
 
 **Why these values:**
 - **Lower txdelay (0.8):** More responsive for local coverage. Fewer neighbors means lower collision risk.
-- **Lower rxdelay (3):** Less need to wait for better copies since you hear fewer sources.
+- **rxdelay (3):** Standard rxdelay for all Sydney mesh repeaters. Provides optimal signal-based packet selection timing.
 - **Lower af (1.5):** 40% duty cycle. Reasonable responsiveness while still being a good mesh citizen.
 
 ---
@@ -257,13 +258,13 @@ Choose the profile below that matches your repeater's role and position in the m
 <div class="cmd-block">
 <div class="cmd-row"><code>set txdelay 0.3</code><button onclick="copyCmd('set txdelay 0.3', this)">Copy</button></div>
 <div class="cmd-row"><code>set direct.txdelay 0.1</code><button onclick="copyCmd('set direct.txdelay 0.1', this)">Copy</button></div>
-<div class="cmd-row"><code>set rxdelay 3</code><button onclick="copyCmd('set rxdelay 0', this)">Copy</button></div>
+<div class="cmd-row"><code>set rxdelay 3</code><button onclick="copyCmd('set rxdelay 3', this)">Copy</button></div>
 <div class="cmd-row"><code>set af 1</code><button onclick="copyCmd('set af 1', this)">Copy</button></div>
 </div>
 
 **Why these values:**
 - **Minimal txdelay (0.3):** Maximum responsiveness. With few neighbors, collision risk is low.
-- **Zero rxdelay (3):** No need to wait for better signal copies when you only hear one or two sources.
+- **rxdelay (3):** Standard rxdelay for all Sydney mesh repeaters. Provides optimal signal-based packet selection timing.
 - **Low af (1):** 50% duty cycle. You're not creating congestion with your limited coverage.
 
 ---
@@ -684,11 +685,12 @@ A hilltop repeater receives the same packet from two sources:
 | **Node A** (nearby) | Strong | 0.8 | ~50ms | Processed first, packet forwarded |
 | **Node B** (distant) | Weak | 0.3 | ~800ms | By the time delay expires, packet already marked "seen" — discarded |
 
-#### Why CRITICAL Nodes Use Higher rxdelay
+#### Why All Sydney Mesh Repeaters Use rxdelay 3
 
-Critical infrastructure nodes (hilltops/towers) hear **many** neighbors. When a packet floods:
-- They receive it from potentially dozens of sources
-- Some copies have excellent signal, others are weak
-- Higher rxdelay (15) gives them more time to receive the **best copy** before committing to forward it
+The Sydney mesh uses a standardized rxdelay of 3 for all repeater profiles. This provides:
+- Consistent behavior across all repeaters in the network
+- Sufficient time for signal-based packet selection without excessive delays
+- A good balance between processing speed and selecting optimal signal paths
+- Simplified configuration and troubleshooting
 
-Local nodes use rxdelay 0 (the **MeshCore default**) because they typically only hear one or two sources — no need to wait for a "better" copy that won't arrive.
+The MeshCore default is rxdelay 0 (disabled), but rxdelay 3 has been found to provide better overall mesh performance for the Sydney network.
