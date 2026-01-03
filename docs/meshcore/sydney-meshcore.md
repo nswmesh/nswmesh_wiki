@@ -169,15 +169,14 @@ Repeaters send a local advert (an advert that can be heard if you are directly c
 
 Messages, locations, and other data sent to the mesh should be considered **public information**. Be aware that:
 
-- **Internet-accessible tools exist** — There are maps and other services that display packet and location data from the mesh publicly on the internet.
+- **Internet-accessible tools exist**  There are maps and other services that display packet and location data from the mesh publicly on the internet.
 - **No guaranteed privacy** — Your messages are only as private as the trust you place in **every single person** who receives them. This means privacy is only guaranteed in `Direct Messages` and `Private Channels` to the degree that you trust the privacy of the key, and the users with the keys.
 - **Data persistence** — Once data is transmitted, you have no control over how it is stored, shared, or used by recipients.
 - **Location precision** — Locations set on your device and repeaters are transmitted with high precision. You can use this to your advantage by setting a location that is approximate rather than exact — close enough to be useful for planning and coverage assessment, but offset enough to provide a buffer against nefarious use. Consider setting your location to a nearby intersection, park, or general area rather than your exact address.
 
-**Take care** if you are not 100% certain who will receive your data. Avoid sharing sensitive personal information, precise home locations, or anything you would not want publicly accessible.
+**Take care** — if you are not 100% certain who will receive your data. Avoid sharing sensitive personal information, precise home locations, or anything you would not want publicly accessible.
 
-**Encryption**
-MeshCore uses **AES-256-CTR** encryption for securing communications. This means that for `Channels` and `Direct Messages` with secured keys and trustworthy recipients, your data is more than safe.
+**Encryption** — MeshCore uses **AES-256-CTR** encryption for securing communications. This means that for `Channels` and `Direct Messages` with secured keys and trustworthy recipients, your data is more than safe.
 
 ---
 
