@@ -3,6 +3,24 @@ title: New South Wales Meshcore Network & Repeater Configuration Guide
 ---
 
 <style>
+/* Responsive table wrapper */
+table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media screen and (max-width: 768px) {
+  table {
+    font-size: 14px;
+  }
+  table td, table th {
+    padding: 6px 8px;
+    word-break: break-word;
+  }
+}
+
 .cmd-block {
   background: #eef;
   border: 1px solid #e8e8e8;
