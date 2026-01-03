@@ -147,7 +147,7 @@ Repeaters send a local advert (an advert that can be heard if you are directly c
 
 ### Privacy Considerations {#privacy-considerations}
 
-> ⚠️ **Important:** Anything sent on public channels, including `#` channels that are publicly known is subject to whatever the receiver chooses to do with the data.
+> ⚠️ **Important:** Anything sent via adverts or on public channels, including `#` channels that are publicly known is subject to whatever the receiver chooses to do with the data.
 
 Messages, locations, and other data sent to the mesh should be considered **public information**. Be aware that:
 
