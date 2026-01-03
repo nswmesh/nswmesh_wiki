@@ -110,21 +110,21 @@ function copyCmd(text, btn) {
 
 **1. Flash and setup**
 
-Flash using [Meshcore firmware flasher](https://flasher.meshcore.co.uk/). It is important you decide now what mode of connection to the node you are using as the firmware supports one connection type at a time (BLE,USB,Wifi). Make sure to erase before flashing meshcore for the first time.
+Flash using [Meshcore firmware flasher](https://flasher.meshcore.co.uk/). It is important you decide now what mode of connection to the node you are using, as the firmware supports one connection type at a time (BLE, USB, WiFi). Make sure to erase before flashing MeshCore for the first time.
 
 **2. Connect and setup**
 
-Now connect to your companion using the method you chose and configure the Name, radio settings and channels.
+Now connect to your companion using the method you chose and configure the name, radio settings, and channels.
 
 - The name and radio settings are set in the settings page (found under the `⚙️` at the top right of the app). Make sure to tap the `✔️` at the top right to save the settings. Wait for the green success notification.
 
-- The channels are added from the channel page at the top right `⋮` → `+ Add Channel` → `Join a Hashtag Channel` Then enter the name of the channel (shown below such as `test`) and press join channel.
+- The channels are added from the channel page at the top right `⋮` → `+ Add Channel` → `Join a Hashtag Channel`. Then enter the name of the channel (shown below, such as `test`) and press join channel.
 
 **3. Join the mesh**
 
 Send an advert by hitting the `Advert` (button next to `⚙️`) → `Send Flood Advert` to send your node name to the mesh. Directly reachable repeaters can be discovered by `🔧` → `Discover Nearby Nodes` → `Discover Repeaters`. After a short while, repeaters within range should reply with their info. You can hit the `+` to add them to your contacts.
 
-Send a greeting to the public channel or a `test` to the **#test** channel. The **Public** channel is used for general chat, and if someone sees your greeting they will likely reply. The **test** channel is primarily used for sending test messages to check your connection to the mesh. There are bots on the test channel that will reply to `test`, `ping` or `path` and will respond accordingly with a reply. When a message is sent, next to the message it will say `heard X repeats`, with X representing the number of repeaters that you heard retransmitting your sent message. If this is 0, then a repeater was unable to be reached, or the radio settings are wrong. Double check the radio settings and then check the [NSW Meshcore Map](https://nswmesh.github.io/NSW-Sydney-Meshcore-Map/) to see if there are repeaters near you. Double click or long press on your location to check if there is expected coverage at your location. In order to be able to reach a repeater you must have direct line of sight to it due to the low transmission powers. If none are reachable try standing outside with the antenna pointing upwards, or find some height to clear buildings.
+Send a greeting to the public channel or a `test` to the **#test** channel. The **Public** channel is used for general chat, and if someone sees your greeting they will likely reply. The **test** channel is primarily used for sending test messages to check your connection to the mesh. There are bots on the test channel that will reply to `test`, `ping` or `path` and will respond accordingly with a reply. When a message is sent, next to the message it will say `heard X repeats`, with X representing the number of repeaters that you heard retransmitting your sent message. If this is 0, then a repeater was unable to be reached, or the radio settings are wrong. Double check the radio settings and then check the [NSW Meshcore Map](https://nswmesh.github.io/NSW-Sydney-Meshcore-Map/) to see if there are repeaters near you. Double click or long press on your location to check if there is expected coverage at your location. In order to be able to reach a repeater, you must have direct line of sight to it due to the low transmission powers. If none are reachable, try standing outside with the antenna pointing upwards, or find some height to clear buildings.
 
 Repeaters send a local advert (an advert that can be heard if you are directly connected to that repeater only) every 240 minutes and a flood advert every 12 hours. This means that the node list can take a while to populate. Companions also only advert when manually triggered. This means that a connection to the mesh can be present, but there is not an advert being sent at that moment. (This is good as it means that the mesh is not congested.)
 
@@ -169,14 +169,14 @@ Repeaters send a local advert (an advert that can be heard if you are directly c
 
 Messages, locations, and other data sent to the mesh should be considered **public information**. Be aware that:
 
-- **Internet-accessible tools exist**  There are maps and other services that display packet and location data from the mesh publicly on the internet.
+- **Internet-accessible tools exist** — There are maps and other services that display packet and location data from the mesh publicly on the internet.
 - **No guaranteed privacy** — Your messages are only as private as the trust you place in **every single person** who receives them. This means privacy is only guaranteed in `Direct Messages` and `Private Channels` to the degree that you trust the privacy of the key, and the users with the keys.
 - **Data persistence** — Once data is transmitted, you have no control over how it is stored, shared, or used by recipients.
 - **Location precision** — Locations set on your device and repeaters are transmitted with high precision. You can use this to your advantage by setting a location that is approximate rather than exact — close enough to be useful for planning and coverage assessment, but offset enough to provide a buffer against nefarious use. Consider setting your location to a nearby intersection, park, or general area rather than your exact address.
 
-**Take care** — if you are not 100% certain who will receive your data. Avoid sharing sensitive personal information, precise home locations, or anything you would not want publicly accessible.
+**Take care** if you are not 100% certain who will receive your data. Avoid sharing sensitive personal information, precise home locations, or anything you would not want publicly accessible.
 
-**Encryption** — MeshCore uses **AES-256-CTR** encryption for securing communications. This means that for `Channels` and `Direct Messages` with secured keys and trustworthy recipients, your data is more than safe.
+**Encryption:** MeshCore uses **AES-256-CTR** encryption for securing communications. This means that for `Channels` and `Direct Messages` with secured keys and trustworthy recipients, your data is more than safe.
 
 ---
 
@@ -210,7 +210,7 @@ Repeaters default to a clock time of 15 May 2024 on every reboot unless connecte
 
 **3. Configure repeater CLI settings**
 
-Once logged in and the clock is synced go to the `>_` - **`Command Line`** tab and enter the commands from the profiles, and common settings below with your chosen repeater profile and common settings. Copy and paste each line and send. Wait up to 30 seconds to see an `OK` response - if no response then resend command.
+Once logged in and the clock is synced, go to the `>_` - **`Command Line`** tab and enter the commands from the profiles and common settings below with your chosen repeater profile. Copy and paste each line and send. Wait up to 30 seconds to see an `OK` response - if no response then resend command.
 
 
 📺 [Watch: More about repeaters (video, 11:18)](https://youtu.be/t1qne8uJBAc?t=678)
