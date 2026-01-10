@@ -74,24 +74,32 @@ function copyCmd(text, btn) {
 
 ## Table of Contents
 
+### Getting Started
 - [Getting Started with MeshCore](#getting-started-with-meshcore)
   - [Setting Up Your Companion](#setting-up-your-companion)
   - [Radio Settings](#radio-settings)
   - [Channels](#channels)
   - [Privacy Considerations](#privacy-considerations)
+
+### Repeater Setup
 - [Repeater Naming & Setup](#repeater-naming--setup)
   - [Naming Convention](#naming-convention)
   - [Setting Up Your Repeater](#setting-up-your-repeater)
+
+### Configuration Profiles
 - [Repeater Configuration Profiles](#repeater-configuration-profiles)
   - [🔴 CRITICAL — Hilltop/Tower Infrastructure](#critical--hilltoptower-infrastructure)
   - [🟠 LINK — Mid-elevation Bridge](#link--mid-elevation-bridge)
   - [🟡 STANDARD — Suburban Coverage](#standard--suburban-coverage)
   - [🟢 LOCAL — Ground-level/Indoor](#local--ground-levelindoor)
 - [Common Settings (All Repeaters)](#common-settings-all-repeaters)
+
+### Technical Reference
 - [Understanding the Settings](#understanding-the-settings)
   - [AGC Reset Interval](#agc-reset-interval)
   - [Multiple Acknowledgments](#multiple-acknowledgments)
   - [Advertisement Intervals](#advertisement-intervals)
+  - [Power Saving Mode](#power-saving-mode)
   - [Radio Parameters](#radio-parameters)
 - [Role-Specific Settings Explained](#role-specific-settings-explained)
   - [Transmission Delay](#transmission-delay)
@@ -102,35 +110,98 @@ function copyCmd(text, btn) {
 
 ## Getting Started with MeshCore {#getting-started-with-meshcore}
 
-📺 Helpful video explaining MeshCore. How it works and how to use/set it up. [How to get started with MeshCore off grid text messaging](https://www.youtube.com/watch?v=t1qne8uJBAc&t=372s)
+> 📺 **Video Guide:** [How to get started with MeshCore off grid text messaging](https://www.youtube.com/watch?v=t1qne8uJBAc&t=372s) — A helpful walkthrough explaining MeshCore, how it works, and how to set it up.
 
 ---
 
 ### Setting Up Your Companion {#setting-up-your-companion}
 
-**1. Flash and setup**
+#### Step 1: Flash Your Device
 
-Flash using [Meshcore firmware flasher](https://flasher.meshcore.co.uk/). It is important you decide now what mode of connection to the node you are using, as the firmware supports one connection type at a time (BLE, USB, WiFi). Make sure to erase before flashing MeshCore for the first time.
+Flash your device using the [Meshcore firmware flasher](https://flasher.meshcore.co.uk/).
 
-**2. Connect and setup**
+> ⚠️ **Before flashing:** Choose your connection method now — the firmware only supports **one connection type at a time**:
+> - **BLE** (Bluetooth Low Energy)
+> - **USB** (wired connection)
+> - **WiFi** (wireless)
+>
+> 💡 **First time flashing?** Make sure to select "Erase" before flashing MeshCore.
 
-Now connect to your companion using the method you chose and configure the name, radio settings, and channels.
+---
 
-- The name and radio settings are set in the settings page (found under the `⚙️` at the top right of the app). Make sure to tap the `✔️` at the top right to save the settings. Wait for the green success notification.
+#### Step 2: Connect and Configure
 
-- The channels are added from the channel page at the top right `⋮` → `+ Add Channel` → `Join a Hashtag Channel`. Then enter the name of the channel (shown below, such as `test`) and press join channel.
+Connect to your companion using your chosen method, then configure:
 
-**3. Join the mesh**
+**Set Name and Radio Settings:**
+1. Tap the `⚙️` icon (top right of the app)
+2. Configure your name and radio settings
+3. Tap `✔️` (top right) to save
+4. Wait for the green success notification
 
-Send an advert by hitting the `Advert` (button next to `⚙️`) → `Send Flood Advert` to send your node name to the mesh. Directly reachable repeaters can be discovered by `🔧` → `Discover Nearby Nodes` → `Discover Repeaters`. After a short while, repeaters within range should reply with their info. You can hit the `+` to add them to your contacts.
+**Add Channels:**
+1. Tap `⋮` (top right) → `+ Add Channel` → `Join a Hashtag Channel`
+2. Enter the channel name (e.g., `test`)
+3. Press **Join Channel**
 
-Send a greeting to the public channel or a `test` to the **#test** channel. The **Public** channel is used for general chat, and if someone sees your greeting they will likely reply. The **test** channel is primarily used for sending test messages to check your connection to the mesh. There are bots on the test channel that will reply to `test`, `ping` or `path` and will respond accordingly with a reply. When a message is sent, next to the message it will say `heard X repeats`, with X representing the number of repeaters that you heard retransmitting your sent message. If this is 0, then a repeater was unable to be reached, or the radio settings are wrong. Double check the radio settings and then check the [NSW Meshcore Map](https://nswmesh.github.io/NSW-Sydney-Meshcore-Map/) to see if there are repeaters near you. Double click or long press on your location to check if there is expected coverage at your location. In order to be able to reach a repeater, you must have direct line of sight to it due to the low transmission powers. If none are reachable, try standing outside with the antenna pointing upwards, or find some height to clear buildings.
+---
 
-Repeaters send a local advert (an advert that can be heard if you are directly connected to that repeater only) every 240 minutes and a flood advert every 12 hours. This means that the node list can take a while to populate. Companions also only advert when manually triggered. This means that a connection to the mesh can be present, but there is not an advert being sent at that moment. (This is good as it means that the mesh is not congested.)
+#### Step 3: Join the Mesh
 
+**Advertise Your Node:**
+1. Tap `Advert` (button next to `⚙️`) → `Send Flood Advert`
+2. This broadcasts your node name to the mesh
 
-> **Important:** All nodes connecting to the Sydney mesh must use the **Australia preset** with SF11 (modified from the default SF10).
-> **Why SF11?** The NSW Mesh uses SF11 instead of the standard SF10 to provide improved range across Sydney's unique geography and wide user spacing. This means we are **not directly interoperable** with standard ANZ meshes running SF10.
+**Discover Nearby Repeaters:**
+1. Tap `🔧` → `Discover Nearby Nodes` → `Discover Repeaters`
+2. Wait for repeaters within range to respond
+3. Tap `+` to add them to your contacts
+
+---
+
+#### Step 4: Test Your Connection
+
+**Send a Test Message:**
+- Send a greeting to the **Public** channel (general chat), or
+- Send `test`, `ping`, or `path` to the **#test** channel (bots will auto-reply)
+
+**Check Your Results:**
+
+After sending, look for `heard X repeats` next to your message:
+
+| Result | Meaning |
+|--------|--------|
+| `heard 1+ repeats` | ✅ Success! Your message reached repeater(s) |
+| `heard 0 repeats` | ❌ No repeater heard your message |
+
+**If you see 0 repeats:**
+1. Double-check your [radio settings](#radio-settings)
+2. Check the [NSW Meshcore Map](https://nswmesh.github.io/NSW-Sydney-Meshcore-Map/) for nearby repeaters
+3. Long-press your location on the map to check expected coverage
+4. Try standing outside with antenna pointing upward
+5. Find higher ground to clear buildings (line-of-sight is required)
+
+---
+
+#### Understanding Adverts
+
+| Advert Type | Frequency | Scope |
+|-------------|-----------|-------|
+| Local advert | Every 240 minutes | Directly connected repeaters only |
+| Flood advert | Every 12 hours | Entire mesh |
+| Companion advert | Manual only | When you trigger it |
+
+> 💡 **Note:** The node list takes time to populate. A connection may exist even without seeing adverts — this is normal and keeps the mesh uncongested.
+
+---
+
+> ⚠️ **IMPORTANT: Radio Compatibility**
+>
+> All nodes on the Sydney mesh must use the **Australia preset** with **SF11** (modified from default SF10).
+>
+> **Why SF11?** Provides improved range across Sydney's unique geography and wide user spacing.
+>
+> ❌ **Not interoperable** with standard ANZ meshes running SF10.
 
 ---
 
@@ -147,36 +218,88 @@ Repeaters send a local advert (an advert that can be heard if you are directly c
 
 ### Channels {#channels}
 
+#### Core Channels
+
+| Channel | Key | Purpose |
+|---------|-----|---------|
+| **Public** | Public Channel | General chat for all mesh users |
+| **Test** | `#test` | Connection testing (bots auto-reply to `test`, `ping`, `path`) |
+| **Emergency** | `#emergency` | Emergency communications only |
+
+#### Regional Channels
+
 | Channel | Key |
 |---------|-----|
-| Public | Public Channel |
-| Test (with test bot) | `#test` (auto-generated) |
-| Emergency  | `#emergency` (auto-generated) |
-| Sydney | `#sydney` (auto-generated) |
-| NSW Wide | `#nsw` (auto-generated) |
-| Macarthur | `#macarthur` (auto-generated) |
-| Nepean | `#nepean` (auto-generated) |
-| Central Coast | `#centralcoast` (auto-generated) |
-| Illawarra | `#illawarra` (auto-generated) |
-| Discord Bridge AI bot Jeff | `#jeff` (auto-generated) |
-| Discord Bridge AI bot RoloJnr | `#rolojnr` (auto-generated) |
+| Sydney | `#sydney` |
+| NSW Wide | `#nsw` |
+| Macarthur | `#macarthur` |
+| Nepean | `#nepean` |
+| Central Coast | `#centralcoast` |
+| Illawarra | `#illawarra` |
+
+#### Bot Bridges (Discord Integration)
+
+| Channel | Key | Bot |
+|---------|-----|-----|
+| Jeff | `#jeff` | Discord bridge AI bot |
+| RoloJnr | `#rolojnr` | Discord bridge AI bot |
+
+> 💡 **Tip:** All `#` channel keys are auto-generated from the channel name.
 
 ---
 
 ### Privacy Considerations {#privacy-considerations}
 
-> ⚠️ **Important:** Anything sent via adverts or on public channels, including `#` channels that are publicly known, is subject to whatever the receiver chooses to do with the data.
+> ⚠️ **Important:** Anything sent via adverts or on public channels (including publicly known `#` channels) is subject to whatever the receiver chooses to do with the data.
 
-Messages, locations, and other data sent to the mesh should be considered **public information**. Be aware that:
+---
 
-- **Internet-accessible tools exist** — There are maps and other services that display packet and location data from the mesh publicly on the internet.
-- **No guaranteed privacy** — Your messages are only as private as the trust you place in **every single person** who receives them. This means privacy is only guaranteed in `Direct Messages` and `Private Channels` to the degree that you trust the privacy of the key, and the users with the keys.
-- **Data persistence** — Once data is transmitted, you have no control over how it is stored, shared, or used by recipients.
-- **Location precision** — Locations set on your device and repeaters are transmitted with high precision. You can use this to your advantage by setting a location that is approximate rather than exact — close enough to be useful for planning and coverage assessment, but offset enough to provide a buffer against nefarious use. Consider setting your location to a nearby intersection, park, or general area rather than your exact address.
+#### What You Should Know
 
-**Take care** if you are not 100% certain who will receive your data. Avoid sharing sensitive personal information, precise home locations, or anything you would not want publicly accessible.
+Messages, locations, and other data sent to the mesh should be considered **public information**.
 
-**Encryption:** MeshCore uses **AES-256-CTR** encryption for securing communications. This means that for `Channels` and `Direct Messages` with secured keys and trustworthy recipients, your data is more than safe.
+| Concern | Details |
+|---------|--------|
+| 🌐 **Internet-accessible tools** | Maps and services display packet and location data publicly online |
+| 🔓 **No guaranteed privacy** | Messages are only as private as **every person** who receives them |
+| 💾 **Data persistence** | Once transmitted, you have no control over storage, sharing, or use |
+| 📍 **Location precision** | Locations are transmitted with high precision |
+
+---
+
+#### Location Privacy Tip
+
+You can set an **approximate location** instead of your exact address:
+- Close enough for planning and coverage assessment
+- Offset enough to provide a privacy buffer
+- Consider using a nearby intersection, park, or general area
+
+---
+
+#### Best Practices
+
+✅ **Do:**
+- Use `Direct Messages` for private conversations (with trusted keys)
+- Use `Private Channels` for group privacy (with trusted participants)
+- Set approximate locations for your devices
+
+❌ **Don't:**
+- Share sensitive personal information on public channels
+- Broadcast your exact home address
+- Assume any public message is private
+
+---
+
+#### Encryption
+
+| Feature | Encryption | Privacy Level |
+|---------|------------|---------------|
+| Public channels | AES-256-CTR | 🔓 Public (key is shared) |
+| `#` hashtag channels | AES-256-CTR | 🔓 Semi-public (key derived from name) |
+| Private channels | AES-256-CTR | 🔒 Private (if key is secret) |
+| Direct messages | AES-256-CTR | 🔒 Private (unique per conversation) |
+
+> 💡 MeshCore uses **AES-256-CTR** encryption. With secured keys and trustworthy recipients, your data is cryptographically protected.
 
 ---
 
@@ -242,20 +365,37 @@ Repeaters default to a clock time of **15 May 2024** on every reboot unless conn
 
 > 💡 **Note:** You must re-sync the clock after **every power cycle or reboot** unless your repeater has GPS or remains connected to a computer.
 
-**3. Configure repeater CLI settings**
+**3. Configure Repeater CLI Settings**
 
-Once logged in and the clock is synced, go to the `>_` - **`Command Line`** tab and enter the commands from the profiles and common settings below with your chosen repeater profile. Copy and paste each line and send. Wait up to 30 seconds to see an `OK` response - if no response then resend command.
+Once logged in and the clock is synced, configure your repeater via the command line.
 
+**How to enter commands:**
+1. Go to the `>_` — **Command Line** tab
+2. Copy each command from your chosen [profile](#repeater-configuration-profiles) below
+3. Paste and send one command at a time
+4. Wait up to 30 seconds for an `OK` response
+5. If no response, resend the command
 
-📺 [Watch: More about repeaters (video, 11:18)](https://youtu.be/t1qne8uJBAc?t=678)
+> 📺 **Video Guide:** [More about repeaters (11:18)](https://youtu.be/t1qne8uJBAc?t=678)
 
 ---
 
 ## Repeater Configuration Profiles {#repeater-configuration-profiles}
 
-Choose the profile below that matches your repeater's role and position in the mesh network. These settings work together to optimize packet flow and minimize collisions based on your repeater's location and how many neighbors it can hear.
+Choose the profile that matches your repeater's **role** and **position** in the mesh network.
 
-> **📝 MeshCore Defaults:** `txdelay=0.5`, `direct.txdelay=0.2`, `rxdelay=0`, `af=1.0`. All profiles below modify these to optimize for the Sydney mesh.
+### How to Choose Your Profile
+
+| Profile | Elevation | Neighbors | Typical Location |
+|---------|-----------|-----------|------------------|
+| 🔴 **CRITICAL** | Highest | 20+ | Hilltop, tower, tall building |
+| 🟠 **LINK** | Mid | 15-20 | Ridge, elevated position |
+| 🟡 **STANDARD** | Average | 5-10 | Suburban roof, elevated home |
+| 🟢 **LOCAL** | Low | 1-3 | Indoor, ground-level, low roof |
+
+> **📝 MeshCore Defaults:** `txdelay=0.5`, `direct.txdelay=0.2`, `rxdelay=0`, `af=1.0`
+>
+> All profiles below modify these defaults to optimize for the Sydney mesh.
 
 ---
 
@@ -341,9 +481,11 @@ Choose the profile below that matches your repeater's role and position in the m
 
 ## Common Settings (All Repeaters) {#common-settings-all-repeaters}
 
-Apply these settings to **all repeaters** regardless of role:
+Apply these settings to **all repeaters** regardless of role.
 
-> **📝 Note:** Most of these differ from MeshCore defaults. See the Quick Reference table below for default comparisons.
+> 📝 **Note:** Most of these differ from MeshCore defaults. See the Quick Reference table below.
+
+### Commands to Apply
 
 <div class="cmd-block">
 <div class="cmd-row"><code>set agc.reset.interval 500</code><button onclick="copyCmd('set agc.reset.interval 500', this)">Copy</button></div>
@@ -351,6 +493,7 @@ Apply these settings to **all repeaters** regardless of role:
 <div class="cmd-row"><code>set advert.interval 240</code><button onclick="copyCmd('set advert.interval 240', this)">Copy</button></div>
 <div class="cmd-row"><code>set flood.advert.interval 12</code><button onclick="copyCmd('set flood.advert.interval 12', this)">Copy</button></div>
 <div class="cmd-row"><code>set guest.password guest</code><button onclick="copyCmd('set guest.password guest', this)">Copy</button></div>
+<div class="cmd-row"><code>powersaving on</code><button onclick="copyCmd('powersaving on', this)">Copy</button></div>
 </div>
 
 ### Quick Reference
@@ -362,26 +505,71 @@ Apply these settings to **all repeaters** regardless of role:
 | `advert.interval` | 240 | 0 | Local advert every 240 minutes (neighbors only) |
 | `flood.advert.interval` | 12 | 12 | Network-wide advert every 12 hours |
 | `guest.password` | guest | (none) | Standard guest access password |
+| `powersaving` | on | off | Power saving mode (light sleep between activity) |
 | `radio` | 915.8,250,11,5 | 915.0,250,10,5 | Sydney mesh radio parameters (freq, bw, sf, cr) |
 
 ---
 
 ## Understanding the Settings {#understanding-the-settings}
 
+This section explains what each setting does and why it matters for mesh performance.
+
+---
+
 ### AGC Reset Interval (`agc.reset.interval`) {#agc-reset-interval}
 
-The Automatic Gain Control (AGC) in LoRa radios adjusts receiver sensitivity automatically. However, AGC can drift in busy environments, reducing sensitivity over time.
+The **Automatic Gain Control (AGC)** in LoRa radios adjusts receiver sensitivity automatically. However, AGC can drift in busy environments, reducing sensitivity over time.
 
-**Known issue:** Loud RF signals (in or out of band) can lock up the AGC, preventing the repeater from receiving packets until it's reset.
+> ⚠️ **Known Issue:** Loud RF signals (in or out of band) can lock up the AGC, preventing the repeater from receiving packets until it's reset.
+
+---
+
+#### How AGC Drift Happens
+
+```
+Time ──────────────────────────────────────────────────────────▶
+
+                 Loud RF               AGC              Sensitivity
+                 Signal                Lockup           Restored
+                   │                     │                  │
+ Sensitivity  ─────┼─────────────────────┼──────────────────┼─────
+      │            ▼                     ▼                  ▼
+   Optimal ═══════════╗                                 ╔═══════════
+                      ║                                 ║
+                      ╚════════════════════════════════╝
+   Degraded                    ▲
+                               │
+                         Packets Lost!
+                     (can't hear weak signals)
+```
+
+#### With AGC Reset Enabled (500 seconds)
+
+```
+Time ──────────────────────────────────────────────────────────▶
+        0s        500s      1000s     1500s     2000s
+        │          │          │          │          │
+        ▼          ▼          ▼          ▼          ▼
+      ┌───┐      ┌───┐      ┌───┐      ┌───┐      ┌───┐
+      │RST│      │RST│      │RST│      │RST│      │RST│
+      └───┘      └───┘      └───┘      └───┘      └───┘
+        │          │          │          │          │
+ Sensitivity restored every ~8 minutes
+```
+
+---
 
 **How it works:**
-- The radio periodically re-initializes the receiver, resetting AGC to optimal sensitivity
+- The radio periodically re-initializes the receiver
+- This resets AGC to optimal sensitivity
 - Value is in **seconds**
 
-| Value | Behavior |
-|-------|----------|
-| 500 | Reset every ~8 minutes (recommended especially for noisy RF environments) |
-| **0** | **Disabled — MeshCore default** (AGC can lockup but is not too common) |
+**Recommended Values:**
+
+| Value | Behavior | Use Case |
+|-------|----------|----------|
+| **500** ✅ | Reset every ~8 minutes | Recommended for all repeaters (especially noisy RF environments) |
+| **0** | Disabled (MeshCore default) | AGC can lock up, but this is uncommon |
 
 ---
 
@@ -389,19 +577,96 @@ The Automatic Gain Control (AGC) in LoRa radios adjusts receiver sensitivity aut
 
 Controls whether redundant ACKs are sent for direct (point-to-point) messages.
 
+---
+
+#### Single ACK vs Multi-ACK
+
+**Single ACK (multi.acks = 0):**
+```
+  Sender                                    Receiver
+    │                                          │
+    │ ─────────── Message ───────────────────▶ │
+    │                                          │
+    │ ◀─────────── ACK ─────────────────────── │
+    │              │                           │
+    │              ▼                           │
+    │         If lost, sender                  │
+    │         thinks message failed            │
+```
+
+**Multi-ACK (multi.acks = 1) ✅ Recommended:**
+```
+  Sender                                    Receiver
+    │                                          │
+    │ ─────────── Message ───────────────────▶ │
+    │                                          │
+    │ ◀─────────── ACK 1 (multi-ack) ───────── │
+    │ ◀─────────── ACK 2 (standard) ────────── │
+    │              │                           │
+    │              ▼                           │
+    │         Even if one ACK is lost,         │
+    │         the other confirms delivery      │
+```
+
+---
+
 **How it works:**
-- When enabled (1): Sends two ACK packets — first a "multi-ack", then the standard ACK
-- When disabled (0): Sends only a single ACK packet
 
-**Why use it:** ACKs are small packets that can easily be lost. Sending redundant ACKs significantly improves delivery confirmation reliability, especially over longer paths.
+| Value | ACK Behavior |
+|-------|--------------|
+| **1** (enabled) ✅ | Sends two ACK packets: a "multi-ack" first, then the standard ACK |
+| **0** (disabled) | Sends only a single ACK packet |
 
-**Recommended:** 1 (enabled) for all repeaters.
+**Why use it:**
+- ACKs are small packets that can easily be lost
+- Redundant ACKs significantly improve delivery confirmation reliability
+- Especially helpful over longer paths
+
+> 💡 **Recommended:** `1` (enabled) for all repeaters.
 
 ---
 
 ### Advertisement Intervals {#advertisement-intervals}
 
-Repeaters periodically announce themselves so other nodes can discover them. There are two types:
+Repeaters periodically announce themselves so other nodes can discover them.
+
+---
+
+#### Local vs Flood Adverts
+
+**Local Advert (advert.interval = 240 min):**
+```
+                    Your Repeater
+                         │
+          ┌──────────────┼──────────────┐
+          │              │              │
+          ▼              ▼              ▼
+      Neighbor 1    Neighbor 2    Neighbor 3
+          │              │              │
+          X              X              X      ◀── NOT forwarded
+          │              │              │
+      (stops)        (stops)        (stops)
+```
+
+**Flood Advert (flood.advert.interval = 12 hrs):**
+```
+                    Your Repeater
+                         │
+          ┌──────────────┼──────────────┐
+          │              │              │
+          ▼              ▼              ▼
+      Neighbor 1    Neighbor 2    Neighbor 3
+          │              │              │
+          ▼              ▼              ▼         ◀── Forwarded!
+      Far Node 1    Far Node 2    Far Node 3
+          │              │              │
+          ▼              ▼              ▼         ◀── Keeps spreading
+         ...            ...            ...
+```
+
+---
+
+**Two Types of Adverts:**
 
 | Setting | Type | Scope | Value Unit | MeshCore Default | Purpose |
 |---------|------|-------|------------|------------------|---------|
@@ -418,20 +683,87 @@ Having all repeaters advertising too fast will cause mesh congestion, so longer 
 
 ---
 
-### Radio Parameters (`radio`) {#radio-parameters}
+### Power Saving Mode (`powersaving`) {#power-saving-mode}
+
+Power saving mode puts the repeater into **light sleep** between periods of activity to reduce power consumption.
+
+---
+
+#### How It Works
+
+When enabled, the repeater follows this cycle:
+
+1. **Active period** (5 seconds) — Process packets, send adverts, handle requests
+2. **Check for pending work** — Are there packets queued or tasks running?
+3. **If no pending work** → Enter **light sleep** for up to 30 minutes
+4. **Wake triggers:**
+   - ⏰ Timer expires (30 minutes max)
+   - 📡 LoRa packet received (DIO1 interrupt)
+5. **Repeat cycle**
+
+```
+┌─────────────┐     ┌──────────────┐     ┌─────────────┐
+│  Active     │────▶│ Pending work?│────▶│ Light Sleep │
+│  (5 sec)    │     │              │ No  │ (≤30 min)   │
+└─────────────┘     └──────┬───────┘     └──────┬──────┘
+       ▲                   │ Yes                │
+       │                   ▼                    │
+       │           ┌──────────────┐             │
+       └───────────│ Extend active│◀────────────┘
+                   │   (+5 sec)   │   Wake on packet/timer
+                   └──────────────┘
+```
+
+---
+
+#### Power Consumption
+
+| Mode | Behavior | Power Draw |
+|------|----------|------------|
+| **Off** (default) | Always active, always listening | Higher (continuous) |
+| **On** | Cycles between sleep and active | Lower (intermittent) |
+
+> ⚠️ **Trade-off:** Power saving reduces availability. During sleep, the repeater cannot process or forward packets until it wakes.
+
+---
+
+#### When to Use Power Saving
+
+| Scenario | Recommendation |
+|----------|----------------|
+| ⚡ **Mains powered repeater** | `powersaving off` — Always available |
+| 🔋 **Battery/solar repeater** | `powersaving on` — Extend battery life |
+| 🏔️ **Critical infrastructure** | `powersaving off` — Maximum availability |
+| 🏠 **Local/indoor repeater** | Consider `on` if power-constrained |
+
+---
+
+#### Commands
+
+| Command | Effect |
+|---------|--------|
+| `powersaving` | Check current status (returns `on` or `off`) |
+| `powersaving on` | Enable power saving mode (recommended for most repeaters) |
+| `powersaving off` | Disable power saving mode |
+
+> 💡 **Sydney Mesh Recommendation:** `powersaving on` for most repeaters to reduce power consumption and heat generation while maintaining good mesh performance.
 
 Sets all LoRa radio parameters in a single command.
 
-**Format:** `frequency,bandwidth,spreading_factor,coding_rate`
+**Command Format:** `set radio frequency,bandwidth,spreading_factor,coding_rate`
 
-| Parameter | Sydney Value | MeshCore Default | What it means |
-|-----------|--------------|------------------|---------------|
-| **Frequency** | 915.8 MHz | 915.0 MHz | Operating frequency within Australian ISM band (915-928 MHz) |
-| **Bandwidth** | 250 kHz | 250 kHz | Channel width. Wider = faster data rate but shorter range |
-| **Spreading Factor** | 11 | 10 | Chirp spread. Higher = longer range, slower speed, better noise immunity |
-| **Coding Rate** | 5 | 5 | Forward error correction (4/5). Higher = more redundancy, slower |
+**Sydney Mesh Parameters:**
 
-**Important:** All nodes on the Sydney mesh MUST use these exact parameters to communicate. The SF11 is a deliberate modification from the standard Australia preset (SF10) for improved range.
+| Parameter | Sydney Value | Default | Description |
+|-----------|--------------|---------|-------------|
+| **Frequency** | 915.8 MHz | 915.0 MHz | Operating frequency (Australian ISM band) |
+| **Bandwidth** | 250 kHz | 250 kHz | Channel width |
+| **Spreading Factor** | **11** ⚠️ | 10 | Chirp spread (higher = longer range) |
+| **Coding Rate** | 5 | 5 | Forward error correction (4/5) |
+
+> ⚠️ **CRITICAL:** All nodes on the Sydney mesh **MUST** use these exact parameters. SF11 is intentionally different from the standard Australia preset (SF10) for improved range.
+
+---
 
 #### Frequency (915.800 MHz)
 
@@ -451,6 +783,25 @@ The operating frequency determines which part of the radio spectrum your node tr
 
 Bandwidth determines the width of the frequency channel used for transmission. Think of it like the "width of the road" your signal travels on.
 
+```
+Frequency Spectrum
+                         915.8 MHz (center)
+                              │
+  ◀─────────────────────────────────────────────────────▶
+
+  500 kHz BW:    ████████████████████████████████████████
+                 │◀───────────── Wide road ───────────▶│
+                 Faster, but more noise, shorter range
+
+  250 kHz BW:         ████████████████████████
+                      │◀─── Medium road ───▶│
+                      Balanced (Sydney mesh) ✅
+
+  125 kHz BW:              ██████████████
+                           │◀─ Narrow ─▶│
+                           Slower, longer range
+```
+
 | Bandwidth | Data Rate | Range | Noise Immunity | Best For |
 |-----------|-----------|-------|----------------|----------|
 | **500 kHz** | Fastest | Shortest | Lower | High-throughput, short range |
@@ -469,6 +820,25 @@ Bandwidth determines the width of the frequency channel used for transmission. T
 #### Spreading Factor (SF) — 11
 
 Spreading Factor is one of the most important LoRa parameters. It determines how the signal is "spread" across the bandwidth using chirp modulation.
+
+```
+Chirp Modulation Visualization (simplified)
+
+SF7 (128 chirps):     /\/\/\/\        Fast, short range
+                      ────────
+                      
+SF10 (1024 chirps):   /\/\/\/\/\/\/\/\/\/\/\/\/\    Moderate
+                      ──────────────────────────
+
+SF11 (2048 chirps):   /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\  ✅ Sydney
+                      ──────────────────────────────────────────────────
+                      
+SF12 (4096 chirps):   /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+                      ────────────────────────────────────────────────────────────────────────────────────
+                      Slowest, longest range
+
+Higher SF = More chirps = Longer airtime = Better sensitivity = Longer range
+```
 
 | SF | Chirps per Symbol | Time on Air | Range | Sensitivity | Data Rate |
 |----|-------------------|-------------|-------|-------------|-----------|
@@ -585,22 +955,58 @@ The Sydney mesh settings (915.8 MHz, 250 kHz BW, SF11, CR 4/5) are optimized for
 
 ## Role-Specific Settings Explained {#role-specific-settings-explained}
 
-These four settings work together to optimize mesh performance based on your repeater's position and traffic load.
+These four settings work together to optimize mesh performance based on your repeater's **position** and **traffic load**.
 
-### Overview
+---
 
-| Setting | MeshCore Default | What it controls | Key insight |
-|---------|------------------|------------------|-------------|
-| `txdelay` | 0.5 | Wait time before retransmitting floods | Higher = lets other nodes go first |
-| `direct.txdelay` | 0.2 | Wait time before retransmitting direct packets | Usually lower than txdelay |
-| `rxdelay` | 0 (disabled) | Signal-based processing priority | Higher = waits for strongest signal copy |
-| `af` | 1.0 (50% duty) | Radio silence after transmitting | Higher = more listening, less transmitting |
+### Quick Reference
+
+| Setting | Default | What It Controls | Rule of Thumb |
+|---------|---------|------------------|---------------|
+| `txdelay` | 0.5 | Wait before retransmitting floods | Higher = let other nodes go first |
+| `direct.txdelay` | 0.2 | Wait before retransmitting direct packets | Usually lower than txdelay |
+| `rxdelay` | 0 | Signal-based processing priority | Higher = prefer strongest signal |
+| `af` | 1.0 | Radio silence after transmitting | Higher = more listening |
 
 ---
 
 ### Transmission Delay (`txdelay` / `direct.txdelay`) {#transmission-delay}
 
 Controls how long a repeater waits before retransmitting a packet it needs to forward.
+
+---
+
+#### Transmission Delay Visualization
+
+```
+Packet arrives at multiple repeaters simultaneously:
+
+Time ──────────────────────────────────────────────────────────────────────▶
+      │
+      │   Packet          Random delay windows              Retransmit
+      │   Received
+      │      │
+      │      ▼
+      │   ┌──┬─────────────────────────────────────────────────────────────┐
+LOCAL │   │██│▓▓▓▓▓▓▓▓░░░░░░░░░│                                          │
+(0.3) │   │  │    narrow      │◀── Transmits early                        │
+      │   └──┴─────────────────────────────────────────────────────────────┘
+      │   ┌──┬─────────────────────────────────────────────────────────────┐
+STANDARD  │██│▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░│                              │
+(0.8) │   │  │           medium            │◀── Transmits mid-range       │
+      │   └──┴─────────────────────────────────────────────────────────────┘
+      │   ┌──┬─────────────────────────────────────────────────────────────┐
+CRITICAL  │██│▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░│
+(2.0) │   │  │                           wide                            │
+      │   └──┴─────────────────────────────────────────────────────────────┘
+                                                              ▲
+                                                              │
+                                              Transmits last (lets others go first)
+
+██ = Packet received    ▓▓ = Delay window (random point chosen)    ░░ = Available window
+```
+
+---
 
 #### The Formula
 
@@ -642,125 +1048,225 @@ When a packet floods the mesh, multiple repeaters receive it almost simultaneous
 
 Hilltop/tower repeaters typically hear many other repeaters. When they receive a flooded packet, dozens of other nodes may have also received it.
 
-If a critical node retransmits quickly (low txdelay), it might:
-- Collide with transmissions from nodes that received the packet slightly later
-- "Step on" retransmissions from lower-elevation nodes
-- Cause the packet to fail reaching nodes that could only hear the critical repeater
+**Problems with quick retransmission:**
+- 💥 Collides with transmissions from nodes that received the packet slightly later
+- 🛑 "Steps on" retransmissions from lower-elevation nodes
+- ❌ Prevents packets from reaching nodes that could only hear the critical repeater
 
-**By using higher txdelay, critical nodes essentially say: "I'll wait and let the smaller nodes go first."**
+> 💡 **Key insight:** By using higher txdelay, critical nodes essentially say: *"I'll wait and let the smaller nodes go first."*
 
-This improves overall network reliability:
-- Local nodes serve their immediate area quickly
-- Critical nodes fill in gaps after the initial wave
-- Fewer collisions occur in the critical node's wide coverage area
+**Benefits:**
+- ✅ Local nodes serve their immediate area quickly
+- ✅ Critical nodes fill in gaps after the initial wave
+- ✅ Fewer collisions in the critical node's wide coverage area
+
+---
 
 #### txdelay vs direct.txdelay
 
-| Setting | MeshCore Default | Applies to | Why different values? |
-|---------|------------------|------------|----------------------|
-| `txdelay` | 0.5 | **Flooded packets** (broadcast to all) | Many nodes retransmit, high collision risk |
-| `direct.txdelay` | 0.2 | **Direct packets** (routed point-to-point) | Follows predetermined path, fewer nodes involved, lower collision risk |
+| Setting | Default | Applies To | Collision Risk |
+|---------|---------|------------|-----------------|
+| `txdelay` | 0.5 | **Flooded packets** (broadcast to all) | ⚠️ High (many nodes retransmit) |
+| `direct.txdelay` | 0.2 | **Direct packets** (routed point-to-point) | ✅ Lower (specific route only) |
 
-Direct packets typically use **lower** delays because only nodes along the specific route retransmit, not the entire mesh.
+> 💡 Direct packets use **lower** delays because only nodes along the specific route retransmit, not the entire mesh.
 
 ---
 
 ### Airtime Factor (`af`) {#airtime-factor}
 
-Enforces a "radio silence" period after each transmission, implementing a duty cycle limit.
+Enforces a "radio silence" period after each transmission, implementing a **duty cycle limit**.
 
-#### The Formula
+---
 
+#### Airtime Factor Visualization
+
+```
+Time ──────────────────────────────────────────────────────────────────────▶
+
+af = 1 (50% duty cycle):
+┌───────────┐           ┌───────────┐           ┌───────────┐
+│    TX     │  silence  │    TX     │  silence  │    TX     │
+│  200ms    │   200ms   │  200ms    │   200ms   │  200ms    │
+└───────────┴───────────┴───────────┴───────────┴───────────┘
+            │◀──────────▶│
+               1:1 ratio
+
+af = 2 (33% duty cycle):
+┌───────────┐                       ┌───────────┐
+│    TX     │       silence         │    TX     │       silence
+│  200ms    │        400ms          │  200ms    │        400ms
+└───────────┴───────────────────────┴───────────┴─────────────────
+            │◀──────────────────────▶│
+                    1:2 ratio
+
+af = 3 (25% duty cycle):
+┌───────────┐                                   ┌───────────┐
+│    TX     │            silence                │    TX     │
+│  200ms    │             600ms                 │  200ms    │
+└───────────┴───────────────────────────────────┴───────────┴───────
+            │◀──────────────────────────────────▶│
+                         1:3 ratio
+
+Higher af = More listening time = Better for high-traffic nodes
+```
+
+---
+
+#### How It Works
+
+**The Formula:**
 ```
 silence_period = transmission_time × airtime_factor
 ```
 
-#### How It Works
+**After transmitting a packet:**
+1. Calculate how long the transmission took (in milliseconds)
+2. Multiply by the airtime factor
+3. Wait that long before transmitting again
+4. During silence → **listen only**
 
-After transmitting a packet, the repeater:
-1. Calculates how long the transmission took (in milliseconds)
-2. Multiplies by the airtime factor
-3. Waits that long before transmitting again
-4. During this silence period, the repeater can only **listen**
+---
 
 #### Example
 
-| Transmission | af | Silence Period | Can transmit again after |
-|--------------|----|--------------|-----------------------|
-| 200ms packet | 1 | 200ms | 200ms |
-| 200ms packet | 2 | 400ms | 400ms |
-| 200ms packet | 3 | 600ms | 600ms |
+| Transmission | af | Silence Period |
+|--------------|-----|----------------|
+| 200ms packet | 1 | 200ms |
+| 200ms packet | 2 | 400ms |
+| 200ms packet | 3 | 600ms |
+
+---
 
 #### Why This Matters
 
 | Benefit | Explanation |
-|---------|-------------|
-| **Prevents channel hogging** | High-traffic nodes (hilltop repeaters) would otherwise dominate the airwaves |
-| **Improves fairness** | Gives other nodes a chance to transmit |
-| **Reduces collisions** | More listening time = better awareness of channel activity |
+|---------|------------|
+| 🚫 **Prevents channel hogging** | High-traffic nodes won't dominate the airwaves |
+| ⚖️ **Improves fairness** | Gives other nodes a chance to transmit |
+| 📻 **Reduces collisions** | More listening = better channel awareness |
+
+---
 
 #### Recommended Values by Role
 
-| af Value | Effective Duty Cycle | Best for |
-|----------|---------------------|----------|
-| **1.0 (default)** | 50% (transmit:listen = 1:1) | Local/endpoint nodes with few neighbors |
-| **1.5** | 40% (1:1.5) | Standard suburban repeaters |
-| **2** | 33% (1:2) | Link nodes bridging regions |
-| **3** | 25% (1:3) | Critical infrastructure seeing heavy traffic |
+| af | Duty Cycle | Best For |
+|----|------------|---------|
+| **1.0** | 50% (1:1) | 🟢 Local nodes with few neighbors |
+| **1.5** | 40% (1:1.5) | 🟡 Standard suburban repeaters |
+| **2** | 33% (1:2) | 🟠 Link nodes bridging regions |
+| **3** | 25% (1:3) | 🔴 Critical infrastructure (heavy traffic) |
 
-**Rule of thumb:** Higher af = more conservative = more listening, less transmitting
+> 💡 **Rule of thumb:** Higher af = more conservative = more listening, less transmitting
 
 ---
 
 ### Receive Delay (`rxdelay`) — Signal-Based Processing {#receive-delay}
 
-The `rxdelay` setting is more sophisticated than a simple timer. It uses **signal strength** to determine which copy of a packet to process first.
+The `rxdelay` setting uses **signal strength** to determine which copy of a packet to process first.
 
-#### The Formula
+---
 
+#### Signal-Based Packet Selection Visualization
+
+```
+Same packet arrives from multiple sources with different signal strengths:
+
+                         Hilltop Repeater
+                              │
+    ┌─────────────────────────┼─────────────────────────┐
+    │                         │                         │
+    │   Strong signal         │        Weak signal      │
+    │   (nearby node)         │        (distant node)   │
+    │                         │                         │
+    ▼                         │                         ▼
+┌───────┐                     │                     ┌───────┐
+│Node A │                     │                     │Node B │
+│-85dBm │                     │                     │-125dBm│
+└───┬───┘                     │                     └───┬───┘
+    │                         │                         │
+    │ Score: 0.8              │                         │ Score: 0.3
+    │ Delay: ~50ms            │                         │ Delay: ~800ms
+    │                         │                         │
+    ▼                         ▼                         ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                         Processing Queue                         │
+│                                                                  │
+│  Time: 0ms        50ms                    800ms                  │
+│    │               │                        │                    │
+│    │               ▼                        ▼                    │
+│    │          ┌────────┐              ┌────────┐                 │
+│    │          │ Node A │              │ Node B │                 │
+│    │          │ PROCESS│              │DISCARD │ (already seen)  │
+│    │          └────────┘              └────────┘                 │
+│                   ▲                        │                     │
+│                   │                        ▼                     │
+│              Packet marked           Duplicate!                  │
+│              as "seen"               Thrown away                 │
+└─────────────────────────────────────────────────────────────────┘
+
+Result: Packet forwarded via STRONGEST path (Node A)
+```
+
+---
+
+#### How It Works
+
+**The Formula:**
 ```
 delay = (rxdelay^(0.85 - score) - 1.0) × airtime
 ```
 
-Where:
-- **rxdelay** = configured base value (e.g., 2, 4)
-- **score** = signal quality metric (0.0 to 1.0) calculated from SNR relative to the spreading factor threshold
-- **airtime** = transmission time of the packet
+| Variable | Description |
+|----------|------------|
+| `rxdelay` | Configured base value (e.g., 2, 3, 4) |
+| `score` | Signal quality (0.0–1.0) from SNR vs. spreading factor threshold |
+| `airtime` | Transmission time of the packet |
 
-#### What This Means in Practice
+---
 
-| Signal Strength | Score | Calculated Delay | Result |
-|-----------------|-------|------------------|--------|
-| **Strong** (nearby node) | ~0.8 | Short (~50ms) | Processed first |
-| **Medium** | ~0.5 | Moderate (~300ms) | Processed after stronger signals |
-| **Weak** (distant node) | ~0.3 | Long (~800ms) | Processed last, often discarded |
+#### What This Means
+
+| Signal Strength | Score | Delay | Result |
+|-----------------|-------|-------|--------|
+| **Strong** (nearby) | ~0.8 | ~50ms | ✅ Processed first |
+| **Medium** | ~0.5 | ~300ms | Processed after stronger signals |
+| **Weak** (distant) | ~0.3 | ~800ms | ❌ Often discarded as duplicate |
+
+---
 
 #### Why This Matters
 
-In a mesh, the same flooded packet often arrives from **multiple sources** at different times and signal strengths. The rxdelay system creates intelligent packet selection:
+In a mesh, the same packet often arrives from **multiple sources**. The rxdelay system creates **intelligent packet selection**:
 
-1. **Strong signal copy arrives** → Short delay calculated → Processed quickly
-2. **Weak signal copy arrives** → Long delay calculated → Sits in queue
-3. **Strong copy finishes processing** → Packet marked as "seen"
-4. **Weak copy's delay expires** → Already marked "seen" → **Discarded as duplicate**
+1. 📡 **Strong signal arrives** → Short delay → Processed quickly
+2. 📡 **Weak signal arrives** → Long delay → Sits in queue
+3. ✅ **Strong copy processed** → Packet marked as "seen"
+4. ❌ **Weak copy expires** → Already "seen" → Discarded
 
-**Result:** The mesh naturally prefers relaying packets received via the **strongest/most reliable path**.
+> **Result:** The mesh naturally prefers relaying packets via the **strongest/most reliable path**.
+
+---
 
 #### Practical Example
 
 A hilltop repeater receives the same packet from two sources:
 
-| Source | Signal | Score | Delay | What happens |
-|--------|--------|-------|-------|--------------|
-| **Node A** (nearby) | Strong | 0.8 | ~50ms | Processed first, packet forwarded |
-| **Node B** (distant) | Weak | 0.3 | ~800ms | By the time delay expires, packet already marked "seen" — discarded |
+| Source | Signal | Score | Delay | Outcome |
+|--------|--------|-------|-------|---------|
+| **Node A** (nearby) | Strong | 0.8 | ~50ms | ✅ Processed first, forwarded |
+| **Node B** (distant) | Weak | 0.3 | ~800ms | ❌ Discarded (already "seen") |
 
-#### Why All Sydney Mesh Repeaters Use rxdelay 3
+---
 
-The Sydney mesh uses a standardized rxdelay of 3 for all repeater profiles. This provides:
-- Consistent behavior across all repeaters in the network
-- Sufficient time for signal-based packet selection without excessive delays
-- A good balance between processing speed and selecting optimal signal paths
-- Simplified configuration and troubleshooting
+#### Why Sydney Mesh Uses rxdelay 3
 
-The MeshCore default is rxdelay 0 (disabled), but rxdelay 3 has been found to provide better overall mesh performance for the Sydney network.
+All Sydney mesh repeaters use `rxdelay 3` for:
+
+| Benefit | Description |
+|---------|------------|
+| 🔄 **Consistency** | Same behavior across all repeaters |
+| ⚡ **Balance** | Fast enough processing, smart path selection |
+| 🔧 **Simplicity** | Easier configuration and troubleshooting |
+
+> 📝 **Note:** MeshCore default is `rxdelay 0` (disabled), but `rxdelay 3` provides better performance for the Sydney network.
