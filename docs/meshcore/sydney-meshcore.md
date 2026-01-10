@@ -527,34 +527,23 @@ The **Automatic Gain Control (AGC)** in LoRa radios adjusts receiver sensitivity
 #### How AGC Drift Happens
 
 ```
-Time ──────────────────────────────────────────────────────────▶
+Sensitivity over time:
 
-                 Loud RF               AGC              Sensitivity
-                 Signal                Lockup           Restored
-                   │                     │                  │
- Sensitivity  ─────┼─────────────────────┼──────────────────┼─────
-      │            ▼                     ▼                  ▼
-   Optimal ═══════════╗                                 ╔═══════════
-                      ║                                 ║
-                      ╚════════════════════════════════╝
-   Degraded                    ▲
-                               │
-                         Packets Lost!
-                     (can't hear weak signals)
+  Optimal ────╮         ╭────
+              │  Lockup │
+  Degraded    ╰─────────╯
+                  ↑
+            Packets lost!
 ```
 
-#### With AGC Reset Enabled (500 seconds)
+#### With AGC Reset (500s)
 
 ```
-Time ──────────────────────────────────────────────────────────▶
-        0s        500s      1000s     1500s     2000s
-        │          │          │          │          │
-        ▼          ▼          ▼          ▼          ▼
-      ┌───┐      ┌───┐      ┌───┐      ┌───┐      ┌───┐
-      │RST│      │RST│      │RST│      │RST│      │RST│
-      └───┘      └───┘      └───┘      └───┘      └───┘
-        │          │          │          │          │
- Sensitivity restored every ~8 minutes
+ 0s    500s   1000s  1500s
+  │      │      │      │
+ [RST] [RST]  [RST]  [RST]
+  │      │      │      │
+  ↓ Sensitivity restored
 ```
 
 ---
@@ -583,29 +572,21 @@ Controls whether redundant ACKs are sent for direct (point-to-point) messages.
 
 **Single ACK (multi.acks = 0):**
 ```
-  Sender                                    Receiver
-    │                                          │
-    │ ─────────── Message ───────────────────▶ │
-    │                                          │
-    │ ◀─────────── ACK ─────────────────────── │
-    │              │                           │
-    │              ▼                           │
-    │         If lost, sender                  │
-    │         thinks message failed            │
+Sender      Receiver
+  │───Msg────▶│
+  │◀──ACK────│
+       ↓
+  If lost → fail
 ```
 
-**Multi-ACK (multi.acks = 1) ✅ Recommended:**
+**Multi-ACK (multi.acks = 1) ✅:**
 ```
-  Sender                                    Receiver
-    │                                          │
-    │ ─────────── Message ───────────────────▶ │
-    │                                          │
-    │ ◀─────────── ACK 1 (multi-ack) ───────── │
-    │ ◀─────────── ACK 2 (standard) ────────── │
-    │              │                           │
-    │              ▼                           │
-    │         Even if one ACK is lost,         │
-    │         the other confirms delivery      │
+Sender      Receiver
+  │───Msg────▶│
+  │◀──ACK 1──│
+  │◀──ACK 2──│
+       ↓
+  Redundancy!
 ```
 
 ---
@@ -634,34 +615,22 @@ Repeaters periodically announce themselves so other nodes can discover them.
 
 #### Local vs Flood Adverts
 
-**Local Advert (advert.interval = 240 min):**
+**Local Advert (240 min):**
 ```
-                    Your Repeater
-                         │
-          ┌──────────────┼──────────────┐
-          │              │              │
-          ▼              ▼              ▼
-      Neighbor 1    Neighbor 2    Neighbor 3
-          │              │              │
-          X              X              X      ◀── NOT forwarded
-          │              │              │
-      (stops)        (stops)        (stops)
+    [You]
+   /  |  \
+  N1  N2  N3
+  X   X   X  ← stops
 ```
 
-**Flood Advert (flood.advert.interval = 12 hrs):**
+**Flood Advert (12 hrs):**
 ```
-                    Your Repeater
-                         │
-          ┌──────────────┼──────────────┐
-          │              │              │
-          ▼              ▼              ▼
-      Neighbor 1    Neighbor 2    Neighbor 3
-          │              │              │
-          ▼              ▼              ▼         ◀── Forwarded!
-      Far Node 1    Far Node 2    Far Node 3
-          │              │              │
-          ▼              ▼              ▼         ◀── Keeps spreading
-         ...            ...            ...
+    [You]
+   /  |  \
+  N1  N2  N3
+  |   |   |  ← forwards
+  ↓   ↓   ↓
+ ...spreads...
 ```
 
 ---
@@ -702,16 +671,16 @@ When enabled, the repeater follows this cycle:
 5. **Repeat cycle**
 
 ```
-┌─────────────┐     ┌──────────────┐     ┌─────────────┐
-│  Active     │────▶│ Pending work?│────▶│ Light Sleep │
-│  (5 sec)    │     │              │ No  │ (≤30 min)   │
-└─────────────┘     └──────┬───────┘     └──────┬──────┘
-       ▲                   │ Yes                │
-       │                   ▼                    │
-       │           ┌──────────────┐             │
-       └───────────│ Extend active│◀────────────┘
-                   │   (+5 sec)   │   Wake on packet/timer
-                   └──────────────┘
+┌────────┐    ┌────────┐    ┌────────┐
+│ Active │───▶│Pending?│───▶│ Sleep  │
+│ (5s)   │    │        │ No │(≤30min)│
+└────────┘    └───┬────┘    └───┬────┘
+     ▲            │Yes          │
+     │            ▼             │
+     │       ┌────────┐         │
+     └───────│Extend  │◀────────┘
+             │ +5 sec │  wake
+             └────────┘
 ```
 
 ---
@@ -784,22 +753,11 @@ The operating frequency determines which part of the radio spectrum your node tr
 Bandwidth determines the width of the frequency channel used for transmission. Think of it like the "width of the road" your signal travels on.
 
 ```
-Frequency Spectrum
-                         915.8 MHz (center)
-                              │
-  ◀─────────────────────────────────────────────────────▶
+Bandwidth comparison:
 
-  500 kHz BW:    ████████████████████████████████████████
-                 │◀───────────── Wide road ───────────▶│
-                 Faster, but more noise, shorter range
-
-  250 kHz BW:         ████████████████████████
-                      │◀─── Medium road ───▶│
-                      Balanced (Sydney mesh) ✅
-
-  125 kHz BW:              ██████████████
-                           │◀─ Narrow ─▶│
-                           Slower, longer range
+500kHz: ████████████  Wide
+250kHz:    ██████    ✅ Sydney
+125kHz:      ████      Narrow
 ```
 
 | Bandwidth | Data Rate | Range | Noise Immunity | Best For |
@@ -822,22 +780,14 @@ Frequency Spectrum
 Spreading Factor is one of the most important LoRa parameters. It determines how the signal is "spread" across the bandwidth using chirp modulation.
 
 ```
-Chirp Modulation Visualization (simplified)
+Chirps per symbol:
 
-SF7 (128 chirps):     /\/\/\/\        Fast, short range
-                      ────────
-                      
-SF10 (1024 chirps):   /\/\/\/\/\/\/\/\/\/\/\/\/\    Moderate
-                      ──────────────────────────
+SF7:  /\/\      128  (fast)
+SF10: /\/\/\/\  1024 (moderate)
+SF11: /\/\/\/\/\ 2048 ✅ Sydney
+SF12: /\/\/\/\/\/\ 4096 (slow)
 
-SF11 (2048 chirps):   /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\  ✅ Sydney
-                      ──────────────────────────────────────────────────
-                      
-SF12 (4096 chirps):   /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-                      ────────────────────────────────────────────────────────────────────────────────────
-                      Slowest, longest range
-
-Higher SF = More chirps = Longer airtime = Better sensitivity = Longer range
+Higher SF = longer range
 ```
 
 | SF | Chirps per Symbol | Time on Air | Range | Sensitivity | Data Rate |
@@ -979,31 +929,16 @@ Controls how long a repeater waits before retransmitting a packet it needs to fo
 #### Transmission Delay Visualization
 
 ```
-Packet arrives at multiple repeaters simultaneously:
+Delay windows by role:
 
-Time ──────────────────────────────────────────────────────────────────────▶
-      │
-      │   Packet          Random delay windows              Retransmit
-      │   Received
-      │      │
-      │      ▼
-      │   ┌──┬─────────────────────────────────────────────────────────────┐
-LOCAL │   │██│▓▓▓▓▓▓▓▓░░░░░░░░░│                                          │
-(0.3) │   │  │    narrow      │◀── Transmits early                        │
-      │   └──┴─────────────────────────────────────────────────────────────┘
-      │   ┌──┬─────────────────────────────────────────────────────────────┐
-STANDARD  │██│▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░│                              │
-(0.8) │   │  │           medium            │◀── Transmits mid-range       │
-      │   └──┴─────────────────────────────────────────────────────────────┘
-      │   ┌──┬─────────────────────────────────────────────────────────────┐
-CRITICAL  │██│▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░│
-(2.0) │   │  │                           wide                            │
-      │   └──┴─────────────────────────────────────────────────────────────┘
-                                                              ▲
-                                                              │
-                                              Transmits last (lets others go first)
+        ├─Delay Window─┤
+LOCAL   │██│▓▓▓░░│      │ (0.3) early
+STD     │██│▓▓▓▓▓▓▓░│   │ (0.8) mid
+CRIT    │██│▓▓▓▓▓▓▓▓▓▓▓▓│ (2.0) late
 
-██ = Packet received    ▓▓ = Delay window (random point chosen)    ░░ = Available window
+██ = RX   ▓▓ = Delay   ░░ = Available
+
+Higher txdelay = Waits longer
 ```
 
 ---
@@ -1082,33 +1017,15 @@ Enforces a "radio silence" period after each transmission, implementing a **duty
 #### Airtime Factor Visualization
 
 ```
-Time ──────────────────────────────────────────────────────────────────────▶
+TX/Silence duty cycles:
 
-af = 1 (50% duty cycle):
-┌───────────┐           ┌───────────┐           ┌───────────┐
-│    TX     │  silence  │    TX     │  silence  │    TX     │
-│  200ms    │   200ms   │  200ms    │   200ms   │  200ms    │
-└───────────┴───────────┴───────────┴───────────┴───────────┘
-            │◀──────────▶│
-               1:1 ratio
+af=1: │TX│░░│TX│░░│TX│  50% (1:1)
+af=2: │TX│░░░░│TX│░░░░│  33% (1:2)
+af=3: │TX│░░░░░░│TX│   25% (1:3)
 
-af = 2 (33% duty cycle):
-┌───────────┐                       ┌───────────┐
-│    TX     │       silence         │    TX     │       silence
-│  200ms    │        400ms          │  200ms    │        400ms
-└───────────┴───────────────────────┴───────────┴─────────────────
-            │◀──────────────────────▶│
-                    1:2 ratio
+TX = Transmit    ░░ = Silence
 
-af = 3 (25% duty cycle):
-┌───────────┐                                   ┌───────────┐
-│    TX     │            silence                │    TX     │
-│  200ms    │             600ms                 │  200ms    │
-└───────────┴───────────────────────────────────┴───────────┴───────
-            │◀──────────────────────────────────▶│
-                         1:3 ratio
-
-Higher af = More listening time = Better for high-traffic nodes
+Higher af = More listening time
 ```
 
 ---
@@ -1170,42 +1087,21 @@ The `rxdelay` setting uses **signal strength** to determine which copy of a pack
 #### Signal-Based Packet Selection Visualization
 
 ```
-Same packet arrives from multiple sources with different signal strengths:
+Same packet from different sources:
 
-                         Hilltop Repeater
-                              │
-    ┌─────────────────────────┼─────────────────────────┐
-    │                         │                         │
-    │   Strong signal         │        Weak signal      │
-    │   (nearby node)         │        (distant node)   │
-    │                         │                         │
-    ▼                         │                         ▼
-┌───────┐                     │                     ┌───────┐
-│Node A │                     │                     │Node B │
-│-85dBm │                     │                     │-125dBm│
-└───┬───┘                     │                     └───┬───┘
-    │                         │                         │
-    │ Score: 0.8              │                         │ Score: 0.3
-    │ Delay: ~50ms            │                         │ Delay: ~800ms
-    │                         │                         │
-    ▼                         ▼                         ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                         Processing Queue                         │
-│                                                                  │
-│  Time: 0ms        50ms                    800ms                  │
-│    │               │                        │                    │
-│    │               ▼                        ▼                    │
-│    │          ┌────────┐              ┌────────┐                 │
-│    │          │ Node A │              │ Node B │                 │
-│    │          │ PROCESS│              │DISCARD │ (already seen)  │
-│    │          └────────┘              └────────┘                 │
-│                   ▲                        │                     │
-│                   │                        ▼                     │
-│              Packet marked           Duplicate!                  │
-│              as "seen"               Thrown away                 │
-└─────────────────────────────────────────────────────────────────┘
+Node A: -85dBm  (strong) → 50ms delay
+Node B: -125dBm (weak)   → 800ms delay
 
-Result: Packet forwarded via STRONGEST path (Node A)
+Processing order:
+0ms──────50ms────────────800ms───▶
+          │                │
+     ┌────┴────┐     ┌─────┴────┐
+     │ A: PROC │     │B: DISCARD│
+     └─────────┘     └──────────┘
+         ▲              (dup!)
+    Seen first
+
+Result: Best path (A) wins
 ```
 
 ---
