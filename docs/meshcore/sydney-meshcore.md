@@ -195,7 +195,30 @@ Messages, locations, and other data sent to the mesh should be considered **publ
 
 **1. Flash and Config Repeater**
 
-Flash the repeater using [Meshcore firmware flasher](https://flasher.meshcore.co.uk/). When flashed, the node will have a random public key. The first two characters of this key are the prefix. This is used to show routing paths for messages. If multiple nodes have the same prefix, it can cause confusion for the route of the messages. In order to fix this, go to the [NSW key generator and configurator](https://nswmesh.au/docs/meshcore/key_generator) and tick `Avoid NSW Repeaters`. This will avoid prefixes already in the mesh. Then press `Generate Key` and wait for it to finish. Once the key is generated, it can be sent to the device from the `Send To Device` button. This may fail if the COM port is still open. To fix that, unplug and plug the node back in. Now you can go to [Meshcore USB Config](https://config.meshcore.dev/) and set the radio settings, name, and location. We encourage all repeaters to have a location for mesh planning purposes. It doesn't need to be exact, but accurate positions help other users with signal and line-of-sight tools. Also set your guest password to `guest` to allow other mesh users to query your repeater's status and neighbors (without admin access).
+**Step 1: Flash the Firmware**
+
+Flash the repeater using [Meshcore firmware flasher](https://flasher.meshcore.co.uk/). 
+
+**Step 2: Generate a Unique Key Prefix**
+
+When flashed, the node will have a random public key. The first two characters of this key are the **prefix**, which is used to show routing paths for messages. If multiple nodes have the same prefix, it can cause confusion for message routes.
+
+To generate a unique prefix:
+1. Go to the [NSW key generator and configurator](https://nswmesh.au/docs/meshcore/key_generator)
+2. Tick `Avoid NSW Repeaters` — this avoids prefixes already in use on the mesh
+3. Press `Generate Key` and wait for it to finish
+4. Click `Send To Device` to upload the key to your repeater
+   - **Note:** If this fails, the COM port may still be open. Unplug and plug the node back in, then retry.
+
+**Step 3: Configure Radio Settings, Name, and Location**
+
+Go to [Meshcore USB Config](https://config.meshcore.dev/) and configure:
+
+- **Radio Settings:** Set the correct frequency, bandwidth, spreading factor, and coding rate (see [Radio Settings](#radio-settings))
+- **Name:** Give your repeater a meaningful name following the [Naming Convention](#naming-convention)
+- **Location:** Set your repeater's location for mesh planning purposes
+  - Doesn't need to be exact, but accurate positions help other users with signal and line-of-sight tools
+- **Guest Password:** Set to `guest` to allow other mesh users to query your repeater's status and neighbors (without admin access)
 
 **2. ⏰ Sync the Clock — REQUIRED STEP**
 
