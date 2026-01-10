@@ -385,6 +385,9 @@ Go to [Meshcore USB Config](https://config.meshcore.dev/) and configure:
 - **Location:** Set your repeater's location for mesh planning purposes
   - Doesn't need to be exact, but accurate positions help other users with signal and line-of-sight tools
 - **Guest Password:** Set to `guest` to allow other mesh users to query your repeater's status and neighbors (without admin access)
+- **Send Advert:** After configuring your settings, click the `Send Advert` button in the USB Config tool to broadcast your repeater to the mesh
+  - This announces your repeater's presence and allows other nodes to discover it and for it to appear in your node list for login
+  - The USB Config tool will automatically sync the clock before sending the advert
 
 **2. ⏰ Sync the Clock — REQUIRED STEP**
 
