@@ -267,7 +267,7 @@ Advertisements are how nodes announce their presence on the mesh. Each advert pa
 
 | Setting | Value |
 |---------|-------|
-| Frequency | 915.575 MHz |
+| Frequency | 916.575 MHz |
 | Bandwidth | 62.5 kHz |
 | Spreading Factor (SF) | **7** |
 | Coding Rate (CR) | **8** |
@@ -567,7 +567,7 @@ Apply these settings to **all repeaters** regardless of role.
 | `flood.advert.interval` | 24 | 12 | Network-wide advert every 24 hours |
 | `guest.password` | guest | (none) | Standard guest access password |
 | `powersaving` | on | off | Power saving mode (light sleep between activity) |
-| `radio` | 915.575,62.5,7,8 | 915.0,250,10,5 | NSW mesh radio parameters (freq, bw, sf, cr) |
+| `radio` | 916.575,62.5,7,8 | 915.0,250,10,5 | NSW mesh radio parameters (freq, bw, sf, cr) |
 
 ---
 
@@ -788,7 +788,7 @@ Sets all LoRa radio parameters in a single command.
 
 | Parameter | NSW Value | Default | Description |
 |-----------|-----------|---------|-------------|
-| **Frequency** | 915.575 MHz | 915.0 MHz | Operating frequency (Australian ISM band) |
+| **Frequency** | 916.575 MHz | 915.0 MHz | Operating frequency (Australian ISM band) |
 | **Bandwidth** | 62.5 kHz | 250 kHz | Channel width (narrow = better sensitivity) |
 | **Spreading Factor** | **7** | 10 | Chirp spread (lower = faster transmission) |
 | **Coding Rate** | **8** | 5 | Forward error correction (4/8 = maximum) |
@@ -797,14 +797,14 @@ Sets all LoRa radio parameters in a single command.
 
 ---
 
-#### Frequency (915.575 MHz)
+#### Frequency (916.575 MHz)
 
 The operating frequency determines which part of the radio spectrum your node transmits and receives on. All nodes must use the **exact same frequency** to communicate.
 
 | Aspect | Details |
 |--------|---------|
 | **Australian ISM Band** | 915-928 MHz (license-free for low-power devices) |
-| **Why 915.575 MHz?** | Part of the Australia: Victoria preset, provides separation from other LoRa networks |
+| **Why 916.575 MHz?** | Part of the Australia: Victoria preset, provides separation from other LoRa networks |
 | **Regulatory** | Must comply with ACMA regulations for power and duty cycle |
 
 > **Important:** Using a different frequency means you cannot communicate with the mesh at all.
@@ -964,7 +964,7 @@ While not explicitly set in the radio string, TX power determines how strong you
 
 #### Combined Effect Summary
 
-The NSW mesh settings (915.575 MHz, 62.5 kHz BW, SF7, CR 4/8) — the **Australia: Victoria** preset — are optimized for:
+The NSW mesh settings (916.575 MHz, 62.5 kHz BW, SF7, CR 4/8) — the **Australia: Victoria** preset — are optimized for:
 
 | Goal | How Settings Achieve It |
 |------|------------------------|
