@@ -178,7 +178,7 @@ Connect to your companion using your chosen method, then configure:
 
 **Set Name and Radio Settings:**
 1. Tap the `⚙️` icon (top right of the app)
-2. Configure your name and radio settings
+2. Configure your name and radio settings - Preset `Australia: Victoria`
 3. Tap `✔️` (top right) to save
 4. Wait for the green success notification
 
@@ -228,11 +228,22 @@ After sending, look for `heard X repeats` next to your message:
 
 #### Understanding Adverts
 
-| Advert Type | Frequency | Scope |
-|-------------|-----------|-------|
-| Local advert | Every 240 minutes | Directly connected repeaters only |
-| Flood advert | Every 12 hours | Entire mesh |
-| Companion advert | Manual only | When you trigger it |
+Advertisements are how nodes announce their presence on the mesh. Each advert packet contains:
+- **Public Key** — Your node's unique cryptographic identity (32 bytes)
+- **Timestamp** — When the advert was generated (used for routing and deduplication)
+- **Digital Signature** — Cryptographic proof the advert is authentic (64 bytes)
+- **Node Type** — Whether you're a companion, repeater, room server, or sensor
+- **Name** — Your node's display name
+- **Location** — Latitude/longitude (if sharing is enabled)
+
+| Advert Type | Frequency | Scope | Effect |
+|-------------|-----------|-------|--------|
+| **Local advert** | Every 240 minutes | Directly connected repeaters only | Zero-hop broadcast — announces to immediate neighbors without flooding the network. Helps nearby nodes discover you quickly. |
+| **Flood advert** | Every 24 hours | Entire mesh | Network-wide broadcast — every repeater that receives it will rebroadcast, spreading across the entire mesh. Use sparingly as it consumes significant airtime. |
+| **Direct advert** | On login/manual | Specific path only | Point-to-point — sent along a known path to a specific node. Used when you need to refresh your presence with a distant node without flooding. Most efficient for targeted updates. |
+| **Companion advert** | Manual only | When you trigger it | User-initiated flood advert from your companion node. |
+
+> ⚠️ **Why 24 hours for flood adverts?** Each flood advert is rebroadcast by every repeater on the mesh. With many nodes, frequent flood adverts create substantial traffic that can congest the network and delay actual messages. A 24-hour interval balances network discovery with airtime conservation.
 
 > 💡 **Note:** The node list takes time to populate. A connection may exist even without seeing adverts — this is normal and keeps the mesh uncongested.
 
@@ -240,11 +251,15 @@ After sending, look for `heard X repeats` next to your message:
 
 > ⚠️ **IMPORTANT: Radio Compatibility**
 >
-> All nodes on the Sydney mesh must use the **Australia preset** with **SF11** (modified from default SF10).
+> All nodes on the NSW mesh use the **Australia: Victoria** preset. This uses a very narrow 62.5 kHz bandwidth with SF7 and CR8 for optimal performance.
 >
-> **Why SF11?** Provides improved range across Sydney's unique geography and wide user spacing.
+> **Why Australia: Victoria?**
+> - **Narrow bandwidth (62.5 kHz)** provides better receiver sensitivity and noise rejection, allowing signals to be decoded at much lower power levels
+> - **Lower spreading factor (SF7)** means faster transmission times, reducing airtime and collision risk
+> - **Higher coding rate (CR8)** adds maximum forward error correction to compensate for the faster SF, improving reliability
+> - The combination provides excellent range while keeping messages short and the channel responsive
 >
-> ❌ **Not interoperable** with standard ANZ meshes running SF10.
+> ❌ **Not interoperable** with standard ANZ meshes using different settings.
 
 ---
 
@@ -252,10 +267,10 @@ After sending, look for `heard X repeats` next to your message:
 
 | Setting | Value |
 |---------|-------|
-| Frequency | 915.800 MHz |
-| Bandwidth | 250.0 kHz |
-| Spreading Factor (SF) | **11** ⚠️ |
-| Coding Rate (CR) | 5 |
+| Frequency | 915.575 MHz |
+| Bandwidth | 62.5 kHz |
+| Spreading Factor (SF) | **7** |
+| Coding Rate (CR) | **8** |
 
 ---
 
@@ -537,7 +552,7 @@ Apply these settings to **all repeaters** regardless of role.
 <div class="cmd-row"><code>set agc.reset.interval 500</code><button onclick="copyCmd('set agc.reset.interval 500', this)">Copy</button></div>
 <div class="cmd-row"><code>set multi.acks 1</code><button onclick="copyCmd('set multi.acks 1', this)">Copy</button></div>
 <div class="cmd-row"><code>set advert.interval 240</code><button onclick="copyCmd('set advert.interval 240', this)">Copy</button></div>
-<div class="cmd-row"><code>set flood.advert.interval 12</code><button onclick="copyCmd('set flood.advert.interval 12', this)">Copy</button></div>
+<div class="cmd-row"><code>set flood.advert.interval 24</code><button onclick="copyCmd('set flood.advert.interval 24', this)">Copy</button></div>
 <div class="cmd-row"><code>set guest.password guest</code><button onclick="copyCmd('set guest.password guest', this)">Copy</button></div>
 <div class="cmd-row"><code>powersaving on</code><button onclick="copyCmd('powersaving on', this)">Copy</button></div>
 </div>
@@ -549,10 +564,10 @@ Apply these settings to **all repeaters** regardless of role.
 | `agc.reset.interval` | 500 | 0 (disabled) | AGC reset every 500 seconds (~8 min) to prevent sensitivity drift |
 | `multi.acks` | 1 | 1 | Send redundant ACKs for better delivery reliability |
 | `advert.interval` | 240 | 0 | Local advert every 240 minutes (neighbors only) |
-| `flood.advert.interval` | 12 | 12 | Network-wide advert every 12 hours |
+| `flood.advert.interval` | 24 | 12 | Network-wide advert every 24 hours |
 | `guest.password` | guest | (none) | Standard guest access password |
 | `powersaving` | on | off | Power saving mode (light sleep between activity) |
-| `radio` | 915.8,250,11,5 | 915.0,250,10,5 | Sydney mesh radio parameters (freq, bw, sf, cr) |
+| `radio` | 915.575,62.5,7,8 | 915.0,250,10,5 | NSW mesh radio parameters (freq, bw, sf, cr) |
 
 ---
 
@@ -575,20 +590,20 @@ The **Automatic Gain Control (AGC)** in LoRa radios adjusts receiver sensitivity
 ```
 Sensitivity over time:
 
-  Optimal ────╮         ╭────
-              │  Lockup │
-  Degraded    ╰─────────╯
-                  ↑
-            Packets lost!
+  Optimal  ────╮           ╭────
+               │  Lockup  │
+  Degraded     ╰─────────╯
+                    ↑
+              Packets lost!
 ```
 
 #### With AGC Reset (500s)
 
 ```
- 0s    500s   1000s  1500s
-  │      │      │      │
- [RST] [RST]  [RST]  [RST]
-  │      │      │      │
+ 0s     500s    1000s   1500s
+  │       │       │       │
+[RST]   [RST]   [RST]   [RST]
+  │       │       │       │
   ↓ Sensitivity restored
 ```
 
@@ -618,21 +633,21 @@ Controls whether redundant ACKs are sent for direct (point-to-point) messages.
 
 **Single ACK (multi.acks = 0):**
 ```
-Sender      Receiver
-  │───Msg────▶│
-  │◀──ACK────│
-       ↓
-  If lost → fail
+Sender        Receiver
+   │───Msg────>│
+   │<──ACK────│
+        ↓
+   If lost --> fail
 ```
 
 **Multi-ACK (multi.acks = 1) ✅:**
 ```
-Sender      Receiver
-  │───Msg────▶│
-  │◀──ACK 1──│
-  │◀──ACK 2──│
-       ↓
-  Redundancy!
+Sender        Receiver
+   │───Msg────>│
+   │<──ACK 1──│
+   │<──ACK 2──│
+        ↓
+   Redundancy!
 ```
 
 ---
@@ -663,20 +678,20 @@ Repeaters periodically announce themselves so other nodes can discover them.
 
 **Local Advert (240 min):**
 ```
-    [You]
-   /  |  \
-  N1  N2  N3
-  X   X   X  ← stops
+     [You]
+    /  |  \
+   N1  N2  N3
+   X   X   X   <-- stops here
 ```
 
-**Flood Advert (12 hrs):**
+**Flood Advert (24 hrs):**
 ```
-    [You]
-   /  |  \
-  N1  N2  N3
-  |   |   |  ← forwards
-  ↓   ↓   ↓
- ...spreads...
+     [You]
+    /  |  \
+   N1  N2  N3
+   |   |   |   <-- forwards
+   v   v   v
+  ...spreads...
 ```
 
 ---
@@ -688,13 +703,15 @@ Repeaters periodically announce themselves so other nodes can discover them.
 | `advert.interval` | Local (zero-hop) | Immediate neighbors only | Minutes | 0 (disabled) | Neighbor discovery, NOT forwarded |
 | `flood.advert.interval` | Network-wide | Entire mesh | Hours | 12 hrs | Network-wide discovery, IS forwarded |
 
-Having all repeaters advertising too fast will cause mesh congestion, so longer intervals are necessary to prevent too much traffic.
+> ⚠️ **Flood Advert Interval Range:** MeshCore enforces a speed of **48 hours** for the flood advert interval to prevent network congestion.
+
+Having all repeaters advertising too fast will cause mesh congestion, so longer intervals are necessary to prevent too much traffic. Each flood advert is rebroadcast by every repeater on the mesh, so the total airtime consumed scales with the number of nodes.
 
 **How they interact:** The local advert timer automatically adjusts when a flood advert is sent to prevent overlap.
 
 **Recommended values:**
 - `advert.interval`: 240 minutes (4 hours) — frequent enough for neighbor discovery without excessive traffic
-- `flood.advert.interval`: 12 hours — announces your repeater across the mesh twice daily
+- `flood.advert.interval`: 24 hours — announces your repeater across the mesh once daily, minimizing network-wide traffic while maintaining presence
 
 ---
 
@@ -717,16 +734,16 @@ When enabled, the repeater follows this cycle:
 5. **Repeat cycle**
 
 ```
-┌────────┐    ┌────────┐    ┌────────┐
-│ Active │───▶│Pending?│───▶│ Sleep  │
-│ (5s)   │    │        │ No │(≤30min)│
-└────────┘    └───┬────┘    └───┬────┘
-     ▲            │Yes          │
-     │            ▼             │
-     │       ┌────────┐         │
-     └───────│Extend  │◀────────┘
-             │ +5 sec │  wake
-             └────────┘
+┌──────────┐     ┌──────────┐     ┌──────────┐
+│  Active  │────>│ Pending? │────>│  Sleep   │
+│   (5s)   │     │          │ No  │ (≤30min) │
+└──────────┘     └────┬─────┘     └────┬─────┘
+      ▲               │Yes             │
+      │               v                │
+      │          ┌──────────┐          │
+      └──────────│  Extend  │<─────────┘
+                 │  +5 sec  │   wake
+                 └──────────┘
 ```
 
 ---
@@ -767,82 +784,89 @@ Sets all LoRa radio parameters in a single command.
 
 **Command Format:** `set radio frequency,bandwidth,spreading_factor,coding_rate`
 
-**Sydney Mesh Parameters:**
+**NSW Mesh Parameters (Australia: Victoria Preset):**
 
-| Parameter | Sydney Value | Default | Description |
-|-----------|--------------|---------|-------------|
-| **Frequency** | 915.8 MHz | 915.0 MHz | Operating frequency (Australian ISM band) |
-| **Bandwidth** | 250 kHz | 250 kHz | Channel width |
-| **Spreading Factor** | **11** ⚠️ | 10 | Chirp spread (higher = longer range) |
-| **Coding Rate** | 5 | 5 | Forward error correction (4/5) |
+| Parameter | NSW Value | Default | Description |
+|-----------|-----------|---------|-------------|
+| **Frequency** | 915.575 MHz | 915.0 MHz | Operating frequency (Australian ISM band) |
+| **Bandwidth** | 62.5 kHz | 250 kHz | Channel width (narrow = better sensitivity) |
+| **Spreading Factor** | **7** | 10 | Chirp spread (lower = faster transmission) |
+| **Coding Rate** | **8** | 5 | Forward error correction (4/8 = maximum) |
 
-> ⚠️ **CRITICAL:** All nodes on the Sydney mesh **MUST** use these exact parameters. SF11 is intentionally different from the standard Australia preset (SF10) for improved range.
+> ⚠️ **CRITICAL:** All nodes on the NSW mesh **MUST** use these exact parameters. The Australia: Victoria preset provides optimal performance through the combination of narrow bandwidth (sensitivity), low SF (speed), and high CR (reliability).
 
 ---
 
-#### Frequency (915.800 MHz)
+#### Frequency (915.575 MHz)
 
 The operating frequency determines which part of the radio spectrum your node transmits and receives on. All nodes must use the **exact same frequency** to communicate.
 
 | Aspect | Details |
 |--------|---------|
 | **Australian ISM Band** | 915-928 MHz (license-free for low-power devices) |
-| **Why 915.8 MHz?** | Slightly offset from default to reduce interference with other LoRa networks |
+| **Why 915.575 MHz?** | Part of the Australia: Victoria preset, provides separation from other LoRa networks |
 | **Regulatory** | Must comply with ACMA regulations for power and duty cycle |
 
 > **Important:** Using a different frequency means you cannot communicate with the mesh at all.
 
 ---
 
-#### Bandwidth (BW) — 250 kHz
+#### Bandwidth (BW) — 62.5 kHz
 
 Bandwidth determines the width of the frequency channel used for transmission. Think of it like the "width of the road" your signal travels on.
 
 ```
 Bandwidth comparison:
 
-500kHz: ████████████  Wide
-250kHz:    ██████    ✅ Sydney
-125kHz:      ████      Narrow
+500kHz:  ████████████  Wide (fast, short range)
+250kHz:  ██████        Moderate
+125kHz:  ████          Narrow
+62.5kHz: ██            ✅ NSW (narrowest, best sensitivity)
 ```
 
 | Bandwidth | Data Rate | Range | Noise Immunity | Best For |
 |-----------|-----------|-------|----------------|----------|
 | **500 kHz** | Fastest | Shortest | Lower | High-throughput, short range |
-| **250 kHz** ✅ | Moderate | Moderate | Moderate | Balanced performance (Sydney mesh) |
+| **250 kHz** | Moderate | Moderate | Moderate | Balanced performance |
 | **125 kHz** | Slower | Longer | Higher | Maximum range, low throughput |
-| **62.5 kHz** | Slowest | Longest | Highest | Extreme range, minimal data |
+| **62.5 kHz** ✅ | Slowest | Longest | **Highest** | Best sensitivity, minimal data |
 
 **Trade-offs:**
 - **Wider bandwidth (500 kHz):** Faster data transfer, but signal is more susceptible to noise and has shorter range
-- **Narrower bandwidth (125 kHz):** Longer range and better noise immunity, but slower data transfer and higher airtime per packet
+- **Narrower bandwidth (62.5 kHz):** Best receiver sensitivity and noise immunity, but slower data transfer per packet
 
-**Why 250 kHz for Sydney?** Provides a good balance between range and speed. Wide enough for reasonable message throughput, narrow enough for decent range across Sydney's urban and suburban areas.
+**Why 62.5 kHz for NSW?**
+- **Maximum receiver sensitivity** — The narrow bandwidth allows the radio to detect much weaker signals (down to ~-137 dBm)
+- **Superior noise rejection** — Narrow bandwidth filters out more interference from other radio sources
+- **Extended range** — Combined with proper SF, achieves excellent range even with lower spreading factors
+- **Compensated by SF7** — The faster transmission time of SF7 offsets the slower bandwidth, keeping messages short
+
+> 💡 **Key insight:** The 62.5 kHz bandwidth provides approximately 6 dB better sensitivity than 250 kHz, which translates to roughly **double the range** for the same signal strength.
 
 ---
 
-#### Spreading Factor (SF) — 11
+#### Spreading Factor (SF) — 7
 
 Spreading Factor is one of the most important LoRa parameters. It determines how the signal is "spread" across the bandwidth using chirp modulation.
 
 ```
 Chirps per symbol:
 
-SF7:  /\/\      128  (fast)
-SF10: /\/\/\/\  1024 (moderate)
-SF11: /\/\/\/\/\ 2048 ✅ Sydney
-SF12: /\/\/\/\/\/\ 4096 (slow)
+SF7:  /\/\           128   ✅ NSW (fastest)
+SF10: /\/\/\/\       1024  (moderate)
+SF11: /\/\/\/\/\     2048  (slow)
+SF12: /\/\/\/\/\/\   4096  (slowest)
 
-Higher SF = longer range
+Lower SF = faster transmission
 ```
 
 | SF | Chirps per Symbol | Time on Air | Range | Sensitivity | Data Rate |
 |----|-------------------|-------------|-------|-------------|-----------|
-| **SF7** | 128 | Shortest | Shortest | -123 dBm | ~5.5 kbps |
+| **SF7** ✅ | 128 | **Shortest** | Short (at 250kHz) | -123 dBm (at 250kHz) | ~5.5 kbps |
 | **SF8** | 256 | Short | Short | -126 dBm | ~3.1 kbps |
 | **SF9** | 512 | Moderate | Moderate | -129 dBm | ~1.8 kbps |
 | **SF10** | 1024 | Long | Long | -132 dBm | ~1.0 kbps |
-| **SF11** ✅ | 2048 | Longer | Longer | -134.5 dBm | ~0.5 kbps |
+| **SF11** | 2048 | Longer | Longer | -134.5 dBm | ~0.5 kbps |
 | **SF12** | 4096 | Longest | Longest | -137 dBm | ~0.3 kbps |
 
 **How it works:**
@@ -857,30 +881,31 @@ Higher SF = longer range
 | ✅ Longer range | ✅ Faster transmission |
 | ✅ Better sensitivity | ✅ Lower airtime/power usage |
 | ✅ Better penetration through obstacles | ✅ Higher throughput |
-| ❌ Slower data rate | ❌ Shorter range |
+| ❌ Slower data rate | ❌ Shorter range (at same bandwidth) |
 | ❌ Higher airtime (battery drain) | ❌ More susceptible to interference |
-| ❌ More susceptible to collisions | ❌ Requires stronger signal |
+| ❌ More susceptible to collisions | ❌ Requires stronger signal (at same bandwidth) |
 
-**Why SF11 for Sydney?**
-- Sydney's mesh covers a large geographic area with users spread far apart
-- SF11 provides ~3 dB better sensitivity than the standard Australia preset (SF10)
-- This translates to roughly **40% more range** in ideal conditions
-- The slower data rate is acceptable given the text-based nature of mesh messages
+**Why SF7 for NSW?**
+- **Fast transmission times** — Messages take 8-16x less airtime than SF11-12, dramatically reducing collision risk
+- **Channel efficiency** — More messages can fit in the same time window
+- **Compensated by narrow bandwidth** — The 62.5 kHz bandwidth provides excellent sensitivity even at SF7
+- **Compensated by CR8** — Maximum error correction improves reliability
+- **Combined effect** — SF7 + 62.5kHz + CR8 achieves similar range to higher SF configurations while keeping messages short
 
-> ⚠️ **Compatibility Note:** SF11 nodes **cannot communicate** with SF10 nodes. All Sydney mesh participants must use SF11.
+> ⚠️ **Compatibility Note:** SF7 nodes **cannot communicate** with SF10/SF11 nodes. All NSW mesh participants must use the same settings.
 
 ---
 
-#### Coding Rate (CR) — 5
+#### Coding Rate (CR) — 8
 
 Coding Rate (also written as 4/5, 4/6, 4/7, or 4/8) determines the amount of Forward Error Correction (FEC) applied to transmissions.
 
 | CR Setting | Ratio | Overhead | Error Correction | Airtime Impact |
 |------------|-------|----------|------------------|----------------|
-| **CR5** ✅ | 4/5 | 25% | Basic | Fastest |
+| **CR5** | 4/5 | 25% | Basic | Fastest |
 | **CR6** | 4/6 | 50% | Moderate | +20% slower |
 | **CR7** | 4/7 | 75% | Good | +40% slower |
-| **CR8** | 4/8 | 100% | Maximum | +60% slower |
+| **CR8** ✅ | 4/8 | 100% | **Maximum** | +60% slower |
 
 **How it works:**
 - For every 4 bits of data, additional redundant bits are added
@@ -896,7 +921,13 @@ Coding Rate (also written as 4/5, 4/6, 4/7, or 4/8) determines the amount of For
 | ❌ Slower data rate | ❌ Less error tolerance |
 | ❌ Higher airtime | ❌ May need retransmissions |
 
-**Why CR 4/5 for Sydney?** The combination of SF11 already provides excellent noise immunity. CR 4/5 keeps airtime reasonable while still providing basic error correction. Higher CR would significantly increase already-long transmission times at SF11.
+**Why CR 4/8 for NSW?**
+- **Compensates for lower SF** — SF7 is more susceptible to noise than higher spreading factors; CR8 adds the redundancy needed for reliable decoding
+- **Maximum error correction** — Can recover from burst errors and interference that would corrupt messages at lower CR
+- **Airtime tradeoff is acceptable** — The +60% overhead from CR8 is more than offset by the 8-16x time savings from using SF7 instead of SF11-12
+- **Net result** — Messages are still much shorter than high-SF configurations while maintaining excellent reliability
+
+> 💡 **The Australia: Victoria Formula:** By combining narrow bandwidth (sensitivity), low SF (speed), and high CR (reliability), the preset achieves an optimal balance that outperforms traditional "high SF, wide bandwidth" approaches.
 
 ---
 
@@ -933,19 +964,20 @@ While not explicitly set in the radio string, TX power determines how strong you
 
 #### Combined Effect Summary
 
-The Sydney mesh settings (915.8 MHz, 250 kHz BW, SF11, CR 4/5) are optimized for:
+The NSW mesh settings (915.575 MHz, 62.5 kHz BW, SF7, CR 4/8) — the **Australia: Victoria** preset — are optimized for:
 
 | Goal | How Settings Achieve It |
 |------|------------------------|
-| **Maximum range** | SF11 provides excellent sensitivity (-134.5 dBm) |
-| **Reasonable speed** | 250 kHz BW and CR 4/5 keep airtime manageable |
+| **Excellent sensitivity** | 62.5 kHz bandwidth provides maximum receiver sensitivity (~-137 dBm effective) |
+| **Fast transmissions** | SF7 keeps messages short, reducing collision risk and channel congestion |
+| **Maximum reliability** | CR 4/8 provides 100% redundancy for robust error correction |
 | **Network compatibility** | All nodes use identical settings |
 | **Regulatory compliance** | Within Australian ISM band limits |
 
 **Approximate performance at these settings:**
-- **Effective bitrate:** ~490 bps (after coding overhead)
-- **Typical message airtime:** 1-3 seconds depending on length
-- **Theoretical max range:** 15-20+ km line-of-sight (real-world varies significantly)
+- **Effective bitrate:** ~2.7 kbps (SF7 base rate, with CR8 overhead)
+- **Typical message airtime:** 200-600ms depending on length (much faster than SF11)
+- **Theoretical max range:** 15-25+ km line-of-sight (narrow bandwidth compensates for lower SF)
 
 ---
 
@@ -977,12 +1009,12 @@ Controls how long a repeater waits before retransmitting a packet it needs to fo
 ```
 Delay windows by role:
 
-        ├─Delay Window─┤
-LOCAL   │██│▓▓▓░░│      │ (0.3) early
-STD     │██│▓▓▓▓▓▓▓░│   │ (0.8) mid
-CRIT    │██│▓▓▓▓▓▓▓▓▓▓▓▓│ (2.0) late
+        ├──Delay Window──┤
+LOCAL   │██│▓▓░░         │  (0.3) early
+STD     │██│▓▓▓▓▓▓░░     │  (0.8) mid
+CRIT    │██│▓▓▓▓▓▓▓▓▓▓▓▓▓│  (2.0) late
 
-██ = RX   ▓▓ = Delay   ░░ = Available
+██ = RX    ▓▓ = Delay    ░░ = Available
 
 Higher txdelay = Waits longer
 ```
@@ -1065,9 +1097,9 @@ Enforces a "radio silence" period after each transmission, implementing a **duty
 ```
 TX/Silence duty cycles:
 
-af=1: │TX│░░│TX│░░│TX│  50% (1:1)
-af=2: │TX│░░░░│TX│░░░░│  33% (1:2)
-af=3: │TX│░░░░░░│TX│   25% (1:3)
+af=1: │TX│░░│TX│░░│TX│      50% (1:1)
+af=2: │TX│░░░░│TX│░░░░│     33% (1:2)
+af=3: │TX│░░░░░░│TX│        25% (1:3)
 
 TX = Transmit    ░░ = Silence
 
@@ -1135,17 +1167,17 @@ The `rxdelay` setting uses **signal strength** to determine which copy of a pack
 ```
 Same packet from different sources:
 
-Node A: -85dBm  (strong) → 50ms delay
-Node B: -125dBm (weak)   → 800ms delay
+Node A: -85dBm  (strong) --> 50ms delay
+Node B: -125dBm (weak)   --> 800ms delay
 
 Processing order:
-0ms──────50ms────────────800ms───▶
-          │                │
-     ┌────┴────┐     ┌─────┴────┐
-     │ A: PROC │     │B: DISCARD│
-     └─────────┘     └──────────┘
-         ▲              (dup!)
-    Seen first
+0ms─────────50ms─────────────────800ms────>
+             │                     │
+        ┌────┴────┐          ┌─────┴─────┐
+        │ A: PROC │          │B: DISCARD │
+        └─────────┘          └───────────┘
+             ▲                   (dup!)
+        Seen first
 
 Result: Best path (A) wins
 ```
