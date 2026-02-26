@@ -14,7 +14,7 @@ As of 26 February 2026, Meshcore identifies repeaters and roomservers using the 
 | 04 | Deaddog Shire 🐭 | 0443c2da46677eb3c417880bd5236aad0fb52cc9c47c4b746829f42fe2685d38 | 2026-02-25T19:17:10+11:00 | ✔ | ✔ |  |
 | 04 | TEST REPEATER | 0453f29bc1a672372b0a18b79f544b4c661537ae7a43b435a63fb11a0efc04f2 | 2026-02-19T22:01:50+11:00 | ✔ | ✔ |  |
 | 05 | ⚡₂ - Kanangra | 05095b197301f0fabe7f57136de9e65d26492822a39daf21c8221c8e69309436 | 2026-02-26T09:06:59+11:00 | ✔ | ✔ |  |
-| 06 | 🂎 - Rozelle F | 065b3b1ac951fe7655e6eb4b9d9bf07bc68d177d189f3fbbfcaa1daa3b25d647 | 2026-02-26T04:02:27+11:00 | ✔ | ✔ |  |
+| 06 | 🂎 - Rozelle F | 065b3b1ac951fe7655e6eb4b9d9bf07bc68d177d189f3fbbfcaa1daa3b25d647 | 2026-02-26T16:02:27+11:00 | ✔ | ✔ |  |
 | 07 | Camden Repeater | 07b5adee0492fe3829ed59cdcd1a6cd0a95f5dcf515893b2322ef62376fa3dd3 | 2026-02-26T02:47:24+11:00 | ✔ | ✔ |  |
 | 07 | 🛜LUX12 - Cringila Hi | 07e350d61983defd89e3a6677c3bf581ec28e83be6a97d1a90757de6974cec6f | 2025-11-26T09:55:44+11:00 | ✔ |  |  |
 | 08 | t1000 ✝️ | 08ac584ac0816b3dce7080d870bb3e73f2939a57a4161c35fbec99043b99c1a8 |  |  |  |  |
@@ -67,6 +67,7 @@ As of 26 February 2026, Meshcore identifies repeaters and roomservers using the 
 | 2C | GATE_TEMP | 2c0009c5314c6e50f61f70e375d94fbe4b3c847ad4907588ba83953cecbd0e84 | 2026-02-08T15:18:48+11:00 | ✔ | ✔ |  |
 | 2C | ♾️ MMTV - BlackTemp | 2c06974655595fd54ccd3324066fb2062509918d197910009e50a9ae5b876c63 | 2026-02-12T19:55:33+11:00 |  |  |  |
 | 2C | 〽️ - Frenchs Forest | 2c86bd4688284ebfa3c1fe6195d1f65b1a8b85a8b5f8d075689e040a30612efb | 2026-02-26T12:00:57+11:00 | ✔ | ✔ |  |
+| 2C | 🐝 Mt Walker Repeater | 2cd01aafa545410b08a1f7100923f752323eb6505b90f695cb279250b32287c0 |  |  |  |  |
 | 2D | GymReps_M1_pi | 2d6c66b083b9cba46f3a30b4314d4b027aa300e363fac212f80557dca3a8d2b1 | 2026-02-25T22:45:06+11:00 | ✔ |  |  |
 | 2D | GymReps_V4 | 2d5f94d4379bc6dcff3608510970f276067dde0b2520a84bf97dae1a3e5a8fe2 | 2026-01-11T13:40:06+11:00 | ✔ |  |  |
 | 2E | pyRpt1340 | 2e8813f36a328c8903d825da6ba160d763d37440fad25fd2798d55912b819768 | 2026-02-25T13:23:35+11:00 |  |  |  |

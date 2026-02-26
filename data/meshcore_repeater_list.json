@@ -55,8 +55,8 @@
     },
     "065b3b1ac951fe7655e6eb4b9d9bf07bc68d177d189f3fbbfcaa1daa3b25d647": {
         "name": "🂎 - Rozelle F",
-        "last_advert": 1772038947,
-        "last_seen": "2026-02-26T04:02:27+11:00",
+        "last_advert": 1772082147,
+        "last_seen": "2026-02-26T16:02:27+11:00",
         "advert_location": true,
         "internet_location": true,
         "status": "active",
@@ -487,6 +487,11 @@
         "internet_location": true,
         "status": "active",
         "public_key": "2c86bd4688284ebfa3c1fe6195d1f65b1a8b85a8b5f8d075689e040a30612efb"
+    },
+    "2cd01aafa545410b08a1f7100923f752323eb6505b90f695cb279250b32287c0": {
+        "name": "🐝 Mt Walker Repeater",
+        "status": "active",
+        "public_key": "2cd01aafa545410b08a1f7100923f752323eb6505b90f695cb279250b32287c0"
     },
     "2d6c66b083b9cba46f3a30b4314d4b027aa300e363fac212f80557dca3a8d2b1": {
         "name": "GymReps_M1_pi",
