@@ -1410,6 +1410,11 @@
         "status": "active",
         "public_key": "77feed2e8615ccdb662ba288dbd88c3e2ab9e2119c93f19ea6c38ec94438493c"
     },
+    "77aaa1ceec21270acd956495fd39503b0769fef267b4989ff3a1fe2d27dbe264": {
+        "name": "🍕Marrickville West",
+        "status": "active",
+        "public_key": "77aaa1ceec21270acd956495fd39503b0769fef267b4989ff3a1fe2d27dbe264"
+    },
     "780cded5bbb9660725ec6d6be529ec15e52527d3b227ff286da4bc8cf0820621": {
         "name": "BTQ - TBA1",
         "status": "active",
