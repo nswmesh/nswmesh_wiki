@@ -297,7 +297,7 @@ As of 28 February 2026, Meshcore identifies repeaters and roomservers using the 
 | C5 | Cleric uConsole | c5aef8e0bdffdeceb93ab8a813748f4d0194a463263c3f703cea4eb972e91727 | 2025-11-16T20:05:11+11:00 |  |  |  |
 | C6 | ⚡ - Mt Jellore | c6789559dcd194671d258daf16a843e6ebd3b564ef378a1735d34b9f542f6337 | 2026-01-22T07:19:44+11:00 | ✔ | ✔ |  |
 | C6 | 🇦🇺 TEMP RPT02 | c6d0c81dd69443709f5a4bed9ef10209fbcf786d9b5b32f80519e4c314b2060f | 2026-02-26T16:21:52+11:00 | ✔ | ✔ |  |
-| C7 | 🧿 Wentworth Pt Brg | c77a8062554cc78882f5f12b5c8671adc40d3909ad021649a26428e2dc837f94 | 2026-02-28T01:55:47+11:00 | ✔ | ✔ |  |
+| C7 | 🧿 Wentworth Pt Brg | c77a8062554cc78882f5f12b5c8671adc40d3909ad021649a26428e2dc837f94 | 2026-02-28T13:55:47+11:00 | ✔ | ✔ |  |
 | C8 | 33t2-RPT/mobile | c8c10c188d58d4871b3eb880696efff697d317d7950511594899500a5b5e6a06 | 2024-05-15T20:52:33+10:00 |  |  |  |
 | C8 | 🛜LUX05 - Bald Hill | c84e5ab84acbd0f2e660ae5213274fb3353d2f7ce1c9d9ff3ba10ebf0e963e1c | 2025-11-25T22:13:17+11:00 | ✔ | ✔ |  |
 | C9 | ✝️ADF OrchardHills | c994088710b5279e7e162f914d8321e73f340bf27c869a0c00feaebe4100ba3a | 2024-06-03T11:52:34+10:00 | ✔ | ✔ |  |
