@@ -71,7 +71,7 @@ Lakesland,2c4bb76f2decfb0fc6a1d266fd6504d4133a23cde1e3eec35378a489a2c3c37b,,dele
 ♾️ MMTV - X 2CFEED,2cfeedda9da175fc6a92787671170dd9eebd223729703caae3f877143e060bc8,,active
 〽️ - Frenchs Forest,2c86bd4688284ebfa3c1fe6195d1f65b1a8b85a8b5f8d075689e040a30612efb,,active
 🐝 Mt Walker Repeater,2cd01aafa545410b08a1f7100923f752323eb6505b90f695cb279250b32287c0,,
-GymReps_V4,2d6c66b083b9cba46f3a30b4314d4b027aa300e363fac212f80557dca3a8d2b1,,active
+GymReps_M1_pi,2d6c66b083b9cba46f3a30b4314d4b027aa300e363fac212f80557dca3a8d2b1,,active
 GymReps_V4,2d5f94d4379bc6dcff3608510970f276067dde0b2520a84bf97dae1a3e5a8fe2,,
 pyRpt1340,2e8813f36a328c8903d825da6ba160d763d37440fad25fd2798d55912b819768,,active
 🛜LUX08 - Knights Hil,2eabc4c665c7785321aafb5dbd8ae8e07355e64739e78d3fbb5cf790871cca05,,
@@ -110,7 +110,7 @@ Kemps Creek,4040d601e1e287f49ad358ccfe6c24393913c35456617c88b07641cc47ba0dbc,,
 ☣️Hornsby Y->E☣,408885c157eccb65be7d3b6478c5c08b69258019a85ed8ba0b8f4865474b488a,,active
 RR2,41d3de71e5690239fead4860bd14679f1f284bcbf36f2d8d87f34a491d205ad6,,
 Heltec Repeater,42cd4d5314a5ee06702d828638c073e040b739e504309f6efd6f291b582e5c20,,active
-📟 - Darling Harbor V,42b17e605d18948f668cf91e3846a11f7b34e2d03bd6ad862aba9d0ed1a4a635,,
+📟 Darling Harbor V3,42b17e605d18948f668cf91e3846a11f7b34e2d03bd6ad862aba9d0ed1a4a635,,
 🌱Spare,4337e2d5be4bdb10f1b1dfb20029d5ca47eac2bad323ce737232acfcc984e3f3,,
 Gresford Repeater 🐉,4451775614cd074863357d0700b770e69065d1697446d613fb7a5e136a3a1f8f,,active
 🌱Bridge Camperdown N,44bd5a8a4008317e20d95d485d67483be35c0b08152c87f2cbbedc7eaab2d280,10,
@@ -293,7 +293,7 @@ Wagra Mountain,b32b2c2f40c49de8d0fe44a130913cbed08e59aef0a7fc83d994932a7a8f6c03,
 😬-Davidson,b61dfc51d85f6ce03e06647d26df2dd9e34f36aed8c6b9d9551438f693ef039f,,active
 ☠ Kenny Hill Rpt,b745d1254f0639695fd7326c23f3a0bcb92aa4c5e08f6cfc43ba9527db88515d,,
 JustSean Austinmer R1,b8f998565f8403ee500e4e98a2cb7058ef1e8101506c21f4fd15524bc433f846,,
-⚡₂ - Mt Colah,b8796e9c404f7ca0b6250c2ab3901fc4ced893b562ecb285767a13f0a1f1d6ea,,active
+⚡₂ - Spare,b8796e9c404f7ca0b6250c2ab3901fc4ced893b562ecb285767a13f0a1f1d6ea,,active
 Odinsdad reserved,b9bb336fae78e1e1d37ada112d82f282ddaf0aacf68d961b16d520c14498a6aa,,parked
 😬-Davidson-RPT,b90b56fe8570fa7889b8cce05ef5fad866812543be6fedeacc62ff344022cd93,,delete
 New Lambton Repeater,ba3c49dc66487b1ceeac1cf9b8cee7fe4aff8800f962cfb8361f9684c9c98d2c,,active
@@ -309,7 +309,7 @@ TNZ Mt Colah,c01dbeef........................................................,,
 ☕️ Coffee,c0ffeec2e137d93acfc51bfab0339685495fd673e4d9fe972723ce5594ab5c3c,,active
 Epping Repeater,c1237b61af7d13a9ee02ed377859f17bf941accea3b191c2bfe2b7a610d7b371,,
 ⚡️ - Roof,c1cc1f7ba116e955fb0552432570ec76a99473b6563ccd6c8231375448d86a98,5,
-⚡₂ - Jellore Soon,c26db9bb5136b6f127eef0d600f0565e458dfe84753be0f674fa7d67ed476965,,active
+⚡₂ - Jellore,c26db9bb5136b6f127eef0d600f0565e458dfe84753be0f674fa7d67ed476965,,active
 📟Mosman-Balmoral,c2a73ce3e6924b6e09ae2357fca65a6a1ebdb1245e9aba09327480ee2cf36742,,
 JustSean Repeater 1,c349ffeb68ed1169be0775af01085e7c0fdabd18e1e327f8b56b4499835c7645,,
 🂎 - Rozelle L,c3d46652f52cf5f8bc365713e634258f0f168b883b346ac6e8ff2cdfb645e8ee,,active
@@ -385,7 +385,7 @@ MMTV - Black Temp,eefeed9ebf7b0549a95cf144f70492674d061d8f771ecaad6957c3fc870e72
 ✝️ Penrith Station,f1fc699ff05e41738524af480a24ccf5ada1f3248bd23d83f47ae69f44060193,,
 ♾️ MMTV - Martin Pl,f2feedc0a1a6e76181adfe8ad906e325dc3b0e5e5e1db20bf5d8ac753892fda1,,
 v4_ESPNOW_RPTR,f3d832d2e33e528a6aa60925933f9ed81f474c702e3a2e4f2143dc84568a6bec,,active
-⚡₂ - Pennant Hills,f38c1ddbd389c29273af11fa2ecc6bf7b34467a883d79f81ae0f92e3c62c51c5,,active
+⚡₂ - Terry Hills,f38c1ddbd389c29273af11fa2ecc6bf7b34467a883d79f81ae0f92e3c62c51c5,,active
 ♾️ MMTV ATRO C-PARK,f4feedec6c3b5680a7adfeb2be301441d5e79e75b32da5938ba9fdb4c1cda1a6,,
 Ryde Repeater 🔁,f5b41c43d5600c89bdf60fd411b94bd734ab1c764a1bc49e92e669a36d3be913,,active
 ♾️ MMTV - F5FEED,f5feed4fe4e98dd5cc1afb92abeae836e0dc761b6b1d8a5e8c51b8c0334498c3,,active
@@ -394,7 +394,7 @@ Ryde Repeater 🔁,f5b41c43d5600c89bdf60fd411b94bd734ab1c764a1bc49e92e669a36d3be
 SA - 2190 Greenacre 2,f7aeb38db6e6410ec8aa363834834276179d1409548be26873f0649a42ca610b,,active
 〽️ - Greenacre WL,f72b520247a7ee704c2ad22d9a29d6b95f861faa38e662f90298b91169c47498,,active
 🌱Test V3,f7bc3088b2cdf48e90fd45057b2d9241aacc16d0f30d013e9b0e5c2309984ecc,,delete
-Upperbundah,f8fc72c0cf4c4c04f0cce887355949fdd873c639deec7576b5188caf538d7c53,,active
+Upperbundah 🦉,f8fc72c0cf4c4c04f0cce887355949fdd873c639deec7576b5188caf538d7c53,,active
 ♾️ MMTV - Wynyard,f8feedc41a29d932c7895324c0d26e34bd6a273651f9ab5f9666a1276a80b56b,,
 Mt Hugel near Adelong-Tumut,f9b87d3ec231b2dd58f0a7ef664eb833b6f474013b1031b081f8d3233e9f47fe,,
 XiaoS3 Repeater,f93549c8600ee5c7c063b66e7636d237bd49470c61dcb5ec8cc310e85ae9afab,,delete
