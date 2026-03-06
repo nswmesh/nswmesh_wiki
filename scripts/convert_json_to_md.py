@@ -53,16 +53,16 @@ def tick_or_blank(value: Any) -> str:
 def settings_shorthand(band: Optional[str]) -> str:
     """
     Map Frequency Band to shorthand:
-    - Narrow -> 'Narrow'
+    - Narrow -> 'Aus Narrow'
     - Wide   -> 'NSW Wide'
-    - Medium -> 'Medium'
+    - Medium -> 'NSW Medium'
     """
     if not band:
         return ""
     mapping = {
-        "narrow": "Narrow",
+        "narrow": "Aus Narrow",
         "wide": "NSW Wide",
-        "medium": "Medium"
+        "medium": "NSW Medium"
     }
     return mapping.get(band.strip().lower(), band)
 
