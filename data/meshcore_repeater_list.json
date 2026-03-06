@@ -187,8 +187,8 @@
     },
     "0e94becbbd62c1ca39abdf3f464a505b80f238b8ae8ded05acffe9ffd815b76e": {
         "name": "🛜LUX02 - Mt Keira St",
-        "last_advert": 1772746998,
-        "last_seen": "2026-03-06T08:43:18+11:00",
+        "last_advert": 1772790198,
+        "last_seen": "2026-03-06T20:43:18+11:00",
         "advert_location": true,
         "frequency_band": "Wide",
         "status": "active",
@@ -213,16 +213,6 @@
         "status": "active",
         "public_key": "0f6c790b75d6af043a2630a14a54d7b57530641be572cd689bd8544f76dfd916"
     },
-    "10126e49163959fa977e873b3627a0f1c2ac29401696c3c9d140947c0743cdb7": {
-        "name": "🌱Bridge Camperdown W",
-        "last_advert": 1772654741,
-        "last_seen": "2026-03-05T07:05:41+11:00",
-        "advert_location": true,
-        "internet_location": true,
-        "frequency_band": "Wide",
-        "status": "active",
-        "public_key": "10126e49163959fa977e873b3627a0f1c2ac29401696c3c9d140947c0743cdb7"
-    },
     "113e9bce50a7a003c97fc13edeb093975a06087fbf16a3b62411931d0ac4f642": {
         "name": "🌱Chester St",
         "last_advert": 1772773577,
@@ -232,14 +222,6 @@
         "frequency_band": "Narrow",
         "status": "active",
         "public_key": "113e9bce50a7a003c97fc13edeb093975a06087fbf16a3b62411931d0ac4f642"
-    },
-    "1244c5f64e7b65c419bd7f65da2a2416edf1efe84fd04e868ad77af0f131d4f7": {
-        "name": "🌱mobile v4",
-        "last_advert": 1772787275,
-        "last_seen": "2026-03-06T19:54:35+11:00",
-        "frequency_band": "Narrow",
-        "status": "parked",
-        "public_key": "1244c5f64e7b65c419bd7f65da2a2416edf1efe84fd04e868ad77af0f131d4f7"
     },
     "1362d09c71a15f24d18e26255dfc4c5844c4f87e8f0783907b5401e4fc4fa578": {
         "name": "🌱Moore Park",
@@ -599,8 +581,8 @@
     },
     "2d6c66b083b9cba46f3a30b4314d4b027aa300e363fac212f80557dca3a8d2b1": {
         "name": "GymReps_V4",
-        "last_advert": 1772746501,
-        "last_seen": "2026-03-06T08:35:01+11:00",
+        "last_advert": 1772789701,
+        "last_seen": "2026-03-06T20:35:01+11:00",
         "advert_location": true,
         "frequency_band": "Wide",
         "status": "active",
@@ -689,8 +671,8 @@
     },
     "32d8f527e7a40cd2921e17d41d8379c0d49122cf3afe01fef84e9fb776dfe2c9": {
         "name": "⚡️ - Staples",
-        "last_advert": 1772747295,
-        "last_seen": "2026-03-06T08:48:15+11:00",
+        "last_advert": 1772790488,
+        "last_seen": "2026-03-06T20:48:08+11:00",
         "advert_location": true,
         "internet_location": true,
         "frequency_band": "Narrow",
@@ -741,16 +723,6 @@
         "frequency_band": "Narrow",
         "status": "active",
         "public_key": "35e847fa68ad63e0082c7eaf546dc19f34d1f7783d222a7f0205a734029610ee"
-    },
-    "36e2d2f59c5cc149aa7217787dba78ea3d29a85f86d4a40f2c50823bf93eb092": {
-        "name": "🌱Camperdown🌤",
-        "last_advert": 1772698460,
-        "last_seen": "2026-03-05T19:14:20+11:00",
-        "advert_location": true,
-        "internet_location": true,
-        "frequency_band": "Narrow",
-        "status": "active",
-        "public_key": "36e2d2f59c5cc149aa7217787dba78ea3d29a85f86d4a40f2c50823bf93eb092"
     },
     "3737f169fbea4a1dfb300c91a8d9b7efc3c216e377090f925fdbaad41e9b8a96": {
         "name": "Odinsdad reserved",
@@ -806,15 +778,6 @@
         "frequency_band": "Wide",
         "status": "active",
         "public_key": "3b21550eaffd719d97c816f25d64b75a01067395fed0576bb6e19a812e68ef50"
-    },
-    "3c732b37f8a046b1c3f60a96aaed9641720f1678704f0dd141a1ac8f4eadce17": {
-        "name": "🌱Bridge 433.95🌤",
-        "last_advert": 1772682038,
-        "last_seen": "2026-03-05T14:40:38+11:00",
-        "internet_location": true,
-        "frequency_band": "Narrow",
-        "status": "active",
-        "public_key": "3c732b37f8a046b1c3f60a96aaed9641720f1678704f0dd141a1ac8f4eadce17"
     },
     "3d2d43f27ca9293938fa7007678348f7f6b41f7cd537c047720dd531afa30b2e": {
         "name": "Overkill - Balloon",
@@ -910,18 +873,10 @@
         "status": "active",
         "public_key": "4451775614cd074863357d0700b770e69065d1697446d613fb7a5e136a3a1f8f"
     },
-    "44bd5a8a4008317e20d95d485d67483be35c0b08152c87f2cbbedc7eaab2d280": {
-        "name": "🌱Bridge Camperdown N",
-        "last_advert": 1772654671,
-        "last_seen": "2026-03-05T07:04:31+11:00",
-        "frequency_band": "Narrow",
-        "status": "active",
-        "public_key": "44bd5a8a4008317e20d95d485d67483be35c0b08152c87f2cbbedc7eaab2d280"
-    },
     "45cb34e93fa2109b6de1ea9b034c90c8ca638fd9e5d86c297a67e4c9f9d8798b": {
         "name": "☠️Elderslie Rpt",
-        "last_advert": 1772749645,
-        "last_seen": "2026-03-06T09:27:25+11:00",
+        "last_advert": 1772792845,
+        "last_seen": "2026-03-06T21:27:25+11:00",
         "advert_location": true,
         "internet_location": true,
         "frequency_band": "Wide",
@@ -949,8 +904,8 @@
     },
     "47b843a0309a6fb832084ee1ed43fc671b0ad2a0fb126b3e763925cf79a21c49": {
         "name": "🦔 - Castlecrag",
-        "last_advert": 1772619097,
-        "last_seen": "2026-03-04T21:11:37+11:00",
+        "last_advert": 1772791897,
+        "last_seen": "2026-03-06T21:11:37+11:00",
         "advert_location": true,
         "internet_location": true,
         "frequency_band": "Narrow",
@@ -1045,8 +1000,8 @@
     },
     "4eddb6db310d70fd821c6783d0e3a8ac6d337b8d5c255f78e3f1bd86d5a0dcda": {
         "name": "⚡₂ - Cherrybrook",
-        "last_advert": 1772705789,
-        "last_seen": "2026-03-05T21:16:29+11:00",
+        "last_advert": 1772792190,
+        "last_seen": "2026-03-06T21:16:30+11:00",
         "advert_location": true,
         "internet_location": true,
         "frequency_band": "Narrow",
@@ -1252,8 +1207,8 @@
     },
     "62c6ba722167c03908fc00c25391998392842619e3301aaa745000be0e3bd8b2": {
         "name": "👾 Quakers Hill",
-        "last_advert": 1772748266,
-        "last_seen": "2026-03-06T09:04:26+11:00",
+        "last_advert": 1772791466,
+        "last_seen": "2026-03-06T21:04:26+11:00",
         "advert_location": true,
         "internet_location": true,
         "frequency_band": "Wide",
@@ -1523,8 +1478,8 @@
     },
     "76c3b2e48b2caf54adf2a9256279daf62f8533c6bea8e407e237f3d6d1233b40": {
         "name": "BTQ Hornsby roof",
-        "last_advert": 1772788154,
-        "last_seen": "2026-03-06T20:09:14+11:00",
+        "last_advert": 1772791754,
+        "last_seen": "2026-03-06T21:09:14+11:00",
         "advert_location": true,
         "internet_location": true,
         "frequency_band": "Narrow",
@@ -1742,8 +1697,8 @@
     },
     "8903b198269360a64f50f9d47b474590e55a6c048a7b1e84b4c77e1e7283abd6": {
         "name": "☂️HP Tallawong RP",
-        "last_advert": 1772782068,
-        "last_seen": "2026-03-06T18:27:48+11:00",
+        "last_advert": 1772792868,
+        "last_seen": "2026-03-06T21:27:48+11:00",
         "advert_location": true,
         "internet_location": true,
         "frequency_band": "Narrow",
@@ -2263,8 +2218,8 @@
     },
     "b33d88a0c14646c1ba3a38661ade6db0812637b86f754f1289cee99c02036dda": {
         "name": "☣️Hornsby☣️",
-        "last_advert": 1772779294,
-        "last_seen": "2026-03-06T17:41:34+11:00",
+        "last_advert": 1772790094,
+        "last_seen": "2026-03-06T20:41:34+11:00",
         "advert_location": true,
         "internet_location": true,
         "frequency_band": "Narrow",
@@ -2796,8 +2751,8 @@
     },
     "d9f06e7d5afba41ba31426db0adca8b67eaa108cb862de22f24fef6a7068fe3c": {
         "name": "☎️ Glenbrook",
-        "last_advert": 1772747455,
-        "last_seen": "2026-03-06T08:50:55+11:00",
+        "last_advert": 1772790655,
+        "last_seen": "2026-03-06T20:50:55+11:00",
         "advert_location": true,
         "internet_location": true,
         "frequency_band": "Wide",
@@ -2924,8 +2879,8 @@
     },
     "e4093953a6408506c962a158b65d07eac37782f4d428d23e6eb11ddc6652e4fd": {
         "name": "🛜LUX04 - Port Kembla",
-        "last_advert": 1772771116,
-        "last_seen": "2026-03-06T15:25:16+11:00",
+        "last_advert": 1772792716,
+        "last_seen": "2026-03-06T21:25:16+11:00",
         "advert_location": true,
         "internet_location": true,
         "frequency_band": "Wide",
@@ -3092,8 +3047,8 @@
     },
     "f2feedc0a1a6e76181adfe8ad906e325dc3b0e5e5e1db20bf5d8ac753892fda1": {
         "name": "♾️ MMTV - Martin Pl",
-        "last_advert": 1772768104,
-        "last_seen": "2026-03-06T14:35:04+11:00",
+        "last_advert": 1772789704,
+        "last_seen": "2026-03-06T20:35:04+11:00",
         "advert_location": true,
         "frequency_band": "Narrow",
         "status": "active",
@@ -3118,8 +3073,8 @@
     },
     "f4feedec6c3b5680a7adfeb2be301441d5e79e75b32da5938ba9fdb4c1cda1a6": {
         "name": "♾️ MMTV - Croydon P",
-        "last_advert": 1772769373,
-        "last_seen": "2026-03-06T14:56:13+11:00",
+        "last_advert": 1772790973,
+        "last_seen": "2026-03-06T20:56:13+11:00",
         "advert_location": true,
         "internet_location": true,
         "frequency_band": "Narrow",
