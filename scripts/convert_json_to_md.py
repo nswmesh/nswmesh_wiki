@@ -191,8 +191,11 @@ def apply_heights(rows: List[Dict[str, Any]], height_map: Dict[str, str]) -> Non
 
 
 def table_markdown(rows: List[Dict[str, Any]], wrap: int) -> str:
+    """
+    Updated Markdown table with Public Key as the last column.
+    """
     header = (
-        "| public_key_prefix | name | public_key | settings | last_seen | advert_location | internet_location | antenna height above ground (m) |\n"
+        "| public_key_prefix | name | settings | last_seen | advert_location | internet_location | antenna height (m) | public_key |\n"
         "| --- | --- | --- | --- | --- | --- | --- | --- |"
     )
     body_lines = []
@@ -201,8 +204,9 @@ def table_markdown(rows: List[Dict[str, Any]], wrap: int) -> str:
         pubkey_cell = wrap_hex(r["public_key"], wrap)
         advert_cell = tick_or_blank(r.get("advert_location"))
         internet_cell = tick_or_blank(r.get("internet_location"))
+        
         body_lines.append(
-            f"| {r['public_key_prefix']} | {safe_name} | {pubkey_cell} | {r['settings']} | {r['last_seen']} | {advert_cell} | {internet_cell} | {r['height_m']} |"
+            f"| {r['public_key_prefix']} | {safe_name} | {r['settings']} | {r['last_seen']} | {advert_cell} | {internet_cell} | {r['height_m']} | {pubkey_cell} |"
         )
     return header + "\n" + "\n".join(body_lines) + "\n"
 
@@ -223,6 +227,7 @@ def main():
     apply_heights(rows, height_map)
 
     if not args.no_sort:
+        # Sorting by 2-octet prefix (4 chars) then name
         rows.sort(key=lambda r: (r["public_key_prefix"], r["name"].lower()))
 
     with open(args.meta_json, "r") as f:
