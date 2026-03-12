@@ -148,16 +148,6 @@
         "status": "active",
         "public_key": "0b1949485bd52f92a55ed16682625d63784e8b89c157987e634997f4c1ffc7c1"
     },
-    "0bd43b5d2064cf8b1f147ce052def49366c26618b24b35eb3466399e5832df1f": {
-        "name": "Delete Me",
-        "last_advert": 1772948157,
-        "last_seen": "2026-03-08T16:35:57+11:00",
-        "advert_location": true,
-        "internet_location": true,
-        "frequency_band": "Wide",
-        "status": "active",
-        "public_key": "0bd43b5d2064cf8b1f147ce052def49366c26618b24b35eb3466399e5832df1f"
-    },
     "0c10e443b3ac29f67750f6a65fc140cf61fca6852bb38fe9964c4e8efa82a68d": {
         "name": "☢️ TBA",
         "last_advert": 1773347806,
@@ -293,14 +283,6 @@
         "frequency_band": "Narrow",
         "status": "active",
         "public_key": "16395388cd4fc2717d6d6122a2e6670f6dab3af6a5eb187e0b429d86efc6fa7f"
-    },
-    "172b75d61fba084d2b288688090f8a0fd2e8b937951e419a7c4374ba81997db8": {
-        "name": "Delete Me",
-        "last_advert": 1773179735,
-        "last_seen": "2026-03-11T08:55:35+11:00",
-        "frequency_band": "Wide",
-        "status": "active",
-        "public_key": "172b75d61fba084d2b288688090f8a0fd2e8b937951e419a7c4374ba81997db8"
     },
     "1808398943cb12730da5ef4f682b41d55fac7403459d2925ca0a773304c0eaee": {
         "name": "🌱mobile",
@@ -2381,14 +2363,6 @@
         "last_seen": "2025-11-15T11:09:51+11:00",
         "status": "active",
         "public_key": "a70565285faeacff0b330779577cb25865d215fcc23664080ba5ab3c8602b89c"
-    },
-    "a7c10d98e6337da94c6bbf5388bab22ee5b296668274f16f5d44734c8dc5a571": {
-        "name": "Delete me",
-        "last_advert": 1773274236,
-        "last_seen": "2026-03-12T11:10:36+11:00",
-        "frequency_band": "Wide",
-        "status": "active",
-        "public_key": "a7c10d98e6337da94c6bbf5388bab22ee5b296668274f16f5d44734c8dc5a571"
     },
     "a8c9e1d93f3fb6f66e46ce6b4d9ac1865ef0583b22973da90e75a4989cfe6cd2": {
         "name": "Kearns Rpt",

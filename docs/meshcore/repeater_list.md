@@ -25,7 +25,6 @@ As of 13 March 2026, Meshcore identifies repeaters and roomservers using the fir
 | 0A00 | Mount Rankin Repeater | NSW Wide | 2026-03-07T16:13:34+11:00 | ✔ | ✔ |  | 0a004adfec20d74a537dd13e6f700f671f0f9bf642eb3e2fa4a821e778350254 |
 | 0A8B | ☢ Alpine | NSW Wide | 2026-03-13T08:26:35+11:00 | ✔ | ✔ |  | 0a8b3986485daf3967295341e57355e93c946164fb4fe387cb4535cff9098973 |
 | 0B19 | ☣️Hornsby B-N☣️ | Aus Narrow | 2026-02-24T16:16:26+11:00 | ✔ |  |  | 0b1949485bd52f92a55ed16682625d63784e8b89c157987e634997f4c1ffc7c1 |
-| 0BD4 | Delete Me | NSW Wide | 2026-03-08T16:35:57+11:00 | ✔ | ✔ |  | 0bd43b5d2064cf8b1f147ce052def49366c26618b24b35eb3466399e5832df1f |
 | 0C10 | ☢️ TBA | NSW Wide | 2026-03-13T07:36:46+11:00 |  |  |  | 0c10e443b3ac29f67750f6a65fc140cf61fca6852bb38fe9964c4e8efa82a68d |
 | 0CDB | ✝️Wst Syd Airport |  | 2025-10-30T02:22:03+11:00 | ✔ | ✔ |  | 0cdb20c2f916c35e1479d663b53f9380cb236ca7de0a25195251cb909d60ca6b |
 | 0D8E | jujulilianan testrepeat | NSW Wide | 2026-03-09T02:42:34+11:00 | ✔ |  |  | 0d8e275fb76bb652bea9b678a72e259d65aba607d4e986040136e297c645ef8e |
@@ -41,7 +40,6 @@ As of 13 March 2026, Meshcore identifies repeaters and roomservers using the fir
 | 1520 | Mt. Tennent | Aus Narrow | 2026-03-12T19:47:20+11:00 | ✔ |  |  | 1520eb70934f47f856bb40ea24ba9c719344445322d5a551d94e60ebd8e2e7d3 |
 | 1560 | Wallys Rpt Thornleigh | Aus Narrow | 2026-01-11T16:13:23+11:00 | ✔ | ✔ | 3 | 156020ec5d2ff6bd2e371b8942cf7b4b57c7feec5d21467e05a380dd79d287a1 |
 | 1639 | 🌱Bridge Petersham N | Aus Narrow | 2026-03-12T15:33:21+11:00 |  |  |  | 16395388cd4fc2717d6d6122a2e6670f6dab3af6a5eb187e0b429d86efc6fa7f |
-| 172B | Delete Me | NSW Wide | 2026-03-11T08:55:35+11:00 |  |  |  | 172b75d61fba084d2b288688090f8a0fd2e8b937951e419a7c4374ba81997db8 |
 | 1808 | 🌱mobile | Aus Narrow | 2026-03-02T18:43:56+11:00 |  | ✔ |  | 1808398943cb12730da5ef4f682b41d55fac7403459d2925ca0a773304c0eaee |
 | 18DC | PetaDaRepeta 👀 | Aus Narrow | 2026-03-11T21:00:07+11:00 | ✔ | ✔ |  | 18dca8cb99f1907f56638bc49210ebc2d54dd7bbee4ca923d3afae285e103d67 |
 | 1939 | ✝️ Cleric TEST |  | 2024-05-18T20:52:33+10:00 | ✔ |  |  | 1939344650993341aef52069d604c876dce413db7ef6743571b06970a91b8a6c |
@@ -279,7 +277,6 @@ As of 13 March 2026, Meshcore identifies repeaters and roomservers using the fir
 | A5B3 | 🗡️ Rooty Hill WF | NSW Wide | 2025-12-27T23:29:02+11:00 | ✔ | ✔ |  | a5b3cd5a86b165442e1ec2ac4d5dca1140474f1bc3cee04569ea09d402417fdd |
 | A6E6 | 🗡️ Rooty Hill EF |  | 2025-12-01T21:44:44+11:00 | ✔ |  |  | a6e6669d7f2cbd0801cb8cb5970b00ef7ecc416d5579f9da137dee3cf61d599a |
 | A705 | ✝️Cleric 🛻 |  | 2025-11-15T11:09:51+11:00 |  |  |  | a70565285faeacff0b330779577cb25865d215fcc23664080ba5ab3c8602b89c |
-| A7C1 | Delete me | NSW Wide | 2026-03-12T11:10:36+11:00 |  |  |  | a7c10d98e6337da94c6bbf5388bab22ee5b296668274f16f5d44734c8dc5a571 |
 | A8C9 | Kearns Rpt | NSW Wide | 2025-12-27T20:19:30+11:00 | ✔ |  |  | a8c9e1d93f3fb6f66e46ce6b4d9ac1865ef0583b22973da90e75a4989cfe6cd2 |
 | A916 | 🥨 Lane Cove | Aus Narrow | 2026-03-12T09:39:58+11:00 | ✔ |  |  | a916e25addeef7ef076b4e6d7c1a4dd8f23c77347d11f128863b9214ae43fea4 |
 | A97B | ☠ Greendale Rpt | NSW Wide | 2026-01-11T12:40:35+11:00 | ✔ | ✔ |  | a97b453e4f9622cd013acf59bfbf3d0eb510d2d13b3b218ba4c700780ac8e8ea |
