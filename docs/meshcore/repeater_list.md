@@ -26,18 +26,18 @@ As of 13 March 2026, Meshcore identifies repeaters and roomservers using the fir
 | 0A8B | ☢ Alpine | NSW Wide | 2026-03-13T08:26:35+11:00 | ✔ | ✔ |  | 0a8b3986485daf3967295341e57355e93c946164fb4fe387cb4535cff9098973 |
 | 0B19 | ☣️Hornsby B-N☣️ | Aus Narrow | 2026-02-24T16:16:26+11:00 | ✔ |  |  | 0b1949485bd52f92a55ed16682625d63784e8b89c157987e634997f4c1ffc7c1 |
 | 0BD4 | Delete Me | NSW Wide | 2026-03-08T16:35:57+11:00 | ✔ | ✔ |  | 0bd43b5d2064cf8b1f147ce052def49366c26618b24b35eb3466399e5832df1f |
-| 0C10 | ☢️ TBA | NSW Wide | 2026-03-12T19:36:46+11:00 |  |  |  | 0c10e443b3ac29f67750f6a65fc140cf61fca6852bb38fe9964c4e8efa82a68d |
+| 0C10 | ☢️ TBA | NSW Wide | 2026-03-13T07:36:46+11:00 |  |  |  | 0c10e443b3ac29f67750f6a65fc140cf61fca6852bb38fe9964c4e8efa82a68d |
 | 0CDB | ✝️Wst Syd Airport |  | 2025-10-30T02:22:03+11:00 | ✔ | ✔ |  | 0cdb20c2f916c35e1479d663b53f9380cb236ca7de0a25195251cb909d60ca6b |
 | 0D8E | jujulilianan testrepeat | NSW Wide | 2026-03-09T02:42:34+11:00 | ✔ |  |  | 0d8e275fb76bb652bea9b678a72e259d65aba607d4e986040136e297c645ef8e |
 | 0DFE | ♾️ MMTV - X 0DFEED | Aus Narrow | 2026-02-26T22:15:40+11:00 |  |  |  | 0dfeed7a6319b208478150dde106ec3e6ab7a32de490382d0d079c222535b6db |
 | 0E2F | L34-Springwood | NSW Wide | 2026-03-07T09:51:50+11:00 | ✔ | ✔ |  | 0e2f21b2a2ce2db1bef72cc9dc16a3b50b91439fdb9e87b86e0e0e330f264167 |
 | 0E60 | ⚡₂ - 1 | Aus Narrow | 2026-02-14T16:54:47+11:00 |  |  |  | 0e609a99afedadb93d6c8ba82ca451fb489437b4cf9461af974fb0f3d10e1957 |
-| 0E94 | 🛜LUX02 - Mt Keira St | NSW Wide | 2026-03-12T08:43:19+11:00 | ✔ |  |  | 0e94becbbd62c1ca39abdf3f464a505b80f238b8ae8ded05acffe9ffd815b76e |
+| 0E94 | 🛜LUX02 - Mt Keira St | NSW Wide | 2026-03-13T08:43:19+11:00 | ✔ |  |  | 0e94becbbd62c1ca39abdf3f464a505b80f238b8ae8ded05acffe9ffd815b76e |
 | 0EC8 | 🂎 - Rozelle L | Aus Narrow | 2026-03-10T21:08:16+11:00 | ✔ | ✔ |  | 0ec88f8f764f8381f70c66be1087842388fea7a492a393505566eca82e196589 |
 | 0F6C | Isso (N) 🌉🐼 | Aus Narrow | 2026-03-10T15:47:26+11:00 | ✔ | ✔ |  | 0f6c790b75d6af043a2630a14a54d7b57530641be572cd689bd8544f76dfd916 |
 | 113E | 🌱Chester St | Aus Narrow | 2026-03-12T16:06:17+11:00 | ✔ | ✔ | 10 | 113e9bce50a7a003c97fc13edeb093975a06087fbf16a3b62411931d0ac4f642 |
 | 1362 | 🌱Moore Park |  | 2026-01-16T00:54:07+11:00 | ✔ |  |  | 1362d09c71a15f24d18e26255dfc4c5844c4f87e8f0783907b5401e4fc4fa578 |
-| 1420 | ☂️HP Arncliffe RP | Aus Narrow | 2026-03-13T04:43:12+11:00 | ✔ | ✔ |  | 1420cc930316bc0811f6e144191347507707e76adeeaae0fe0f12a7a86394609 |
+| 1420 | ☂️HP Arncliffe RP | Aus Narrow | 2026-03-13T07:43:12+11:00 | ✔ | ✔ |  | 1420cc930316bc0811f6e144191347507707e76adeeaae0fe0f12a7a86394609 |
 | 1520 | Mt. Tennent | Aus Narrow | 2026-03-12T19:47:20+11:00 | ✔ |  |  | 1520eb70934f47f856bb40ea24ba9c719344445322d5a551d94e60ebd8e2e7d3 |
 | 1560 | Wallys Rpt Thornleigh | Aus Narrow | 2026-01-11T16:13:23+11:00 | ✔ | ✔ | 3 | 156020ec5d2ff6bd2e371b8942cf7b4b57c7feec5d21467e05a380dd79d287a1 |
 | 1639 | 🌱Bridge Petersham N | Aus Narrow | 2026-03-12T15:33:21+11:00 |  |  |  | 16395388cd4fc2717d6d6122a2e6670f6dab3af6a5eb187e0b429d86efc6fa7f |
@@ -54,7 +54,7 @@ As of 13 March 2026, Meshcore identifies repeaters and roomservers using the fir
 | 1E12 | 🛡️Lakesland | NSW Wide | 2026-02-27T09:23:10+11:00 | ✔ |  |  | 1e124333cc85b452f09980266317ab58fa0ec0c9e45730eeedf8d6c8dd62f600 |
 | 1F7A | (🍄) Repeater | Aus Narrow | 2026-03-11T14:11:15+11:00 | ✔ |  |  | 1f7ab4b59246246c7d3e9900bf4ba92d128b77699409cc5805fb42f22c887d21 |
 | 202F | 🌏 2211 Padstow |  | 2025-12-13T14:37:35+11:00 | ✔ |  |  | 202f1356b085c24490c9bacb13c9032b95c6991f8bbf28bb856c40a50b1463e5 |
-| 20B0 | Garran | NSW Wide | 2026-03-12T09:25:25+11:00 |  |  |  | 20b0317dfc89387e27a30ae3e7d12bc57ae624aab3a8beb90f81cb939379aa4d |
+| 20B0 | Garran | NSW Wide | 2026-03-13T09:25:25+11:00 |  |  |  | 20b0317dfc89387e27a30ae3e7d12bc57ae624aab3a8beb90f81cb939379aa4d |
 | 20CC | 🌔 Bondi Junction | Aus Narrow | 2026-02-22T22:44:07+11:00 | ✔ |  |  | 20cc49ee3825a061b41c74cf8f08ee0cfb256ef52540ef1fd13b1f92be7ba904 |
 | 2148 | L34-EdPark | NSW Wide | 2026-03-12T15:04:27+11:00 | ✔ |  |  | 21488729788dcfb34fc41a3b4dfea70766e80b864ee743c09995073c493d1762 |
 | 2198 | 🌱Petersham | Aus Narrow | 2026-03-12T18:17:23+11:00 | ✔ |  |  | 21980d422c1cf3ad05049a46d85b9b68db33049c16cfcec9b0f34a6c097a3d37 |
@@ -62,7 +62,7 @@ As of 13 March 2026, Meshcore identifies repeaters and roomservers using the fir
 | 22E3 | ✝️ Cleric Test Repe |  |  |  |  |  | 22e3daa55da62589ee5c93fe0313762d9268f7f5243fb20ba1d279ccf4a53524 |
 | 2370 | ⚡️₂ - PYMC | Aus Narrow | 2026-03-12T16:47:16+11:00 | ✔ |  |  | 237020acadee2c69bfd95f24e0a4ead7e531eaf6d1e84da7eaa0d279986e43d6 |
 | 23FC | Gregory Hills Rpt |  | 2025-10-29T14:59:10+11:00 | ✔ | ✔ |  | 23fc50160778f87caf7af401d786692b74efded66d9bff5b20cf40395341d688 |
-| 2430 | 🌏 2211 Padstow 02 | Aus Narrow | 2026-03-12T08:22:37+11:00 | ✔ | ✔ |  | 2430ca4c321b88eafd261443710de91130a5921fe0dcb1275e600fc4766f70bd |
+| 2430 | 🌏 2211 Padstow 02 | Aus Narrow | 2026-03-13T08:22:37+11:00 | ✔ | ✔ |  | 2430ca4c321b88eafd261443710de91130a5921fe0dcb1275e600fc4766f70bd |
 | 2511 | 👽Abbotsbury 1 | Aus Narrow | 2026-03-09T20:30:24+11:00 | ✔ | ✔ |  | 2511afbd5064709ebc08a651aea722da0fb852ccd19e6f3b91f7540de8627ec3 |
 | 2601 | 🐝 Lithgow SAF Repeater |  |  |  | ✔ |  | 2601751a890ff04f53c9fa6261f15f4407b060b1ccb1d746239a906a2fcb12a4 |
 | 26EE | 🦘Horsley Park | Aus Narrow | 2025-12-30T10:34:08+11:00 | ✔ | ✔ |  | 26ee27ffba58f7ab77b21952881973968fc014f01dfa37a818e3bbaa12623b9f |
@@ -73,7 +73,7 @@ As of 13 March 2026, Meshcore identifies repeaters and roomservers using the fir
 | 28C2 | ☠️ Mount Annan Rpt | NSW Wide | 2026-03-12T22:49:20+11:00 | ✔ | ✔ |  | 28c222747e12122a04b8a4196e82d7f2dd490d8a5789b194bd8d6514845b4b16 |
 | 291A | 🎩 Island Mesh 🏝 | Aus Narrow | 2026-03-12T21:30:19+11:00 | ✔ |  |  | 291ad40e1178faddef3da063d5ce5d32614011c030269e1dd52778dd894e5c1c |
 | 29E0 | 👽WazMac Field Rep |  | 2026-01-09T13:32:15+11:00 | ✔ |  |  | 29e03bfa6399b389f0d7179393981fb2124b8242e0b7022f457852cdb09245e8 |
-| 2A0F | XiaoS3 Repeater R3 | NSW Wide | 2026-03-12T21:35:54+11:00 | ✔ | ✔ |  | 2a0f22fbb2806dfd8be344e30424b15d1175432a8de9044c33b5b8d16f173f9a |
+| 2A0F | XiaoS3 Repeater R3 | NSW Wide | 2026-03-13T09:36:36+11:00 | ✔ | ✔ |  | 2a0f22fbb2806dfd8be344e30424b15d1175432a8de9044c33b5b8d16f173f9a |
 | 2AC7 | 🐉Nth Kelllyville (We |  | 2026-01-21T00:09:55+11:00 | ✔ | ✔ |  | 2ac7a1b2bf36d2b40b06b4d639b2631788c1f1b229fdcd361fe1569a461e9154 |
 | 2B81 | 🌏 2200 Bankstown | Aus Narrow | 2026-03-13T01:20:58+11:00 | ✔ | ✔ |  | 2b81fee228716d9566b2f38afac6649b7aa5990ae0f071c2fba2b20cab748031 |
 | 2C00 | GATE_TEMP | Aus Narrow | 2026-03-11T07:43:41+11:00 | ✔ | ✔ |  | 2c0009c5314c6e50f61f70e375d94fbe4b3c847ad4907588ba83953cecbd0e84 |
@@ -95,7 +95,7 @@ As of 13 March 2026, Meshcore identifies repeaters and roomservers using the fir
 | 3194 | mesh 2 | Aus Narrow | 2026-02-24T03:58:31+11:00 |  |  |  | 31943ffddeb69d0233803210e42773036a5e2ff2349916fc3a9d295c54fd0efe |
 | 31D1 | Gilmore Repeater v2 | Aus Narrow | 2026-02-24T22:58:56+11:00 | ✔ | ✔ |  | 31d15bf3d455b8a7114222c1321fe86f5e24a0599b24ab9748baa7696598a426 |
 | 31F8 | ProMicro Repeater3 | NSW Wide | 2026-03-12T14:49:58+11:00 |  |  |  | 31f8e3d2e399786648b6d2a3a2140eb1ae99c3aaa123b08386d553a03e3a194e |
-| 32D8 | ⚡️ - Staples | Aus Narrow | 2026-03-11T21:41:50+11:00 | ✔ | ✔ | 43 | 32d8f527e7a40cd2921e17d41d8379c0d49122cf3afe01fef84e9fb776dfe2c9 |
+| 32D8 | ⚡️ - Staples | Aus Narrow | 2026-03-13T09:41:50+11:00 | ✔ | ✔ | 43 | 32d8f527e7a40cd2921e17d41d8379c0d49122cf3afe01fef84e9fb776dfe2c9 |
 | 330D | ⚡ - Mt Colah Backup |  | 2026-01-24T11:40:38+11:00 | ✔ |  |  | 330d2ff9cff5264b463aedfdb0a7cce7618830f1bd4a54f82960802cfa08977f |
 | 3329 | ⚡₂ - Mt Colah | Aus Narrow | 2026-03-13T05:48:00+11:00 | ✔ |  |  | 33293803dbea7b712ef471ff8241b82f18f172800d3ecb4196ceaa35804d4d17 |
 | 3424 | ⛰️ CC Fill | Aus Narrow | 2026-03-12T03:20:54+11:00 | ✔ |  |  | 3424534bf381d5904e208213a0e592224de3b41a36461b2067249964405ca734 |
@@ -118,27 +118,27 @@ As of 13 March 2026, Meshcore identifies repeaters and roomservers using the fir
 | 42B1 | 📟 Darling Harbor V3 | Aus Narrow | 2026-03-06T09:06:17+11:00 | ✔ | ✔ |  | 42b17e605d18948f668cf91e3846a11f7b34e2d03bd6ad862aba9d0ed1a4a635 |
 | 42CD | Heltec Repeater | NSW Wide | 2025-11-05T02:13:12+11:00 | ✔ | ✔ |  | 42cd4d5314a5ee06702d828638c073e040b739e504309f6efd6f291b582e5c20 |
 | 4337 | 🌱Spare | Aus Narrow | 2026-02-09T22:47:18+11:00 |  |  |  | 4337e2d5be4bdb10f1b1dfb20029d5ca47eac2bad323ce737232acfcc984e3f3 |
-| 4447 | ☠️ Not Deployed | NSW Wide | 2026-03-12T18:08:34+11:00 | ✔ |  |  | 444736a77c9c9c987349c92719b3b19fb8c7f08054d6a257886b524eba9a9031 |
+| 4447 | ☠️ Not Deployed | NSW Wide | 2026-03-13T06:08:34+11:00 | ✔ |  |  | 444736a77c9c9c987349c92719b3b19fb8c7f08054d6a257886b524eba9a9031 |
 | 4451 | Gresford Repeater 🐉 | Aus Narrow | 2026-03-12T22:31:32+11:00 | ✔ |  |  | 4451775614cd074863357d0700b770e69065d1697446d613fb7a5e136a3a1f8f |
 | 45CB | ☠️Elderslie Rpt | NSW Wide | 2026-03-06T21:27:25+11:00 | ✔ | ✔ |  | 45cb34e93fa2109b6de1ea9b034c90c8ca638fd9e5d86c297a67e4c9f9d8798b |
 | 465F | 🌱Nelson St☀️ | Aus Narrow | 2026-03-05T19:30:59+11:00 | ✔ | ✔ | 2 | 465fd4bacf9e86fb62135899955497f2f9083f38e8e31ea538c087b0a6f12f90 |
 | 4703 | 🍆Haberfield MerrMan |  | 2025-11-01T23:11:18+11:00 | ✔ | ✔ |  | 4703c8e6363830fddc200d6953e5c4b902086bb6cbde2e3de7efb3555494f1e4 |
-| 47B8 | 🦔 - Castlecrag | Aus Narrow | 2026-03-09T21:11:37+11:00 | ✔ | ✔ |  | 47b843a0309a6fb832084ee1ed43fc671b0ad2a0fb126b3e763925cf79a21c49 |
+| 47B8 | 🦔 - Castlecrag | Aus Narrow | 2026-03-13T09:11:38+11:00 | ✔ | ✔ |  | 47b843a0309a6fb832084ee1ed43fc671b0ad2a0fb126b3e763925cf79a21c49 |
 | 4853 | 🤠 Cammeray | Aus Narrow | 2026-03-11T10:31:08+11:00 | ✔ | ✔ |  | 4853c66d6d2b3c028dbfc36da22921423ac71aeedddc1c3f43d29cc59dd21b8c |
 | 4929 | ⚡️₂ - St Leonards | Aus Narrow | 2026-03-12T09:53:54+11:00 | ✔ | ✔ | 60 | 49296fae69a742e2c7be2092712860320cd2cec80d69bf64b637d4eeda9ebdff |
-| 4AAA | 🏴‍☠️Faulco | NSW Wide | 2026-03-12T21:27:11+11:00 | ✔ | ✔ |  | 4aaaaaa50d884b58fa81edf982d1d719b8c6b403e0121ee73b4f3fff12a64022 |
+| 4AAA | 🏴‍☠️Faulco | NSW Wide | 2026-03-13T09:27:11+11:00 | ✔ | ✔ |  | 4aaaaaa50d884b58fa81edf982d1d719b8c6b403e0121ee73b4f3fff12a64022 |
 | 4B87 | 🦔 - St Ives | Aus Narrow | 2026-03-12T16:47:04+11:00 | ✔ | ✔ |  | 4b870ed907ee71047d106933d81c064c3ecd673c2a7a79cbb9ec340ba85a5ce5 |
 | 4BA9 | Dingus repeater | NSW Wide | 2025-12-31T05:05:11+11:00 |  |  |  | 4ba9c51b34d518ec8f22bf3f93621d1a11b67368818ae228adc63dbff250dd6a |
 | 4BEC | ⚡₂ - Newcastle TBA | Aus Narrow | 2026-02-02T00:24:30+11:00 |  | ✔ |  | 4beca7a538a9193af89452bcb4f77ef62315a2f7b63e22816df39f7af77d7e04 |
 | 4C05 | 🛜LUX03 - Keira Nth | NSW Wide | 2026-03-10T21:28:22+11:00 | ✔ |  |  | 4c05703c81e953185a2d4282827c3e8a3aef846749a32e7b1a215e1edc03911a |
 | 4CE7 | Bosco Repeater | NSW Wide | 2025-12-22T19:13:04+11:00 | ✔ | ✔ |  | 4ce7f924255d56e44b3afc071b6fa64e2fd3ed4c4242a19a9a0abf99973fa7d0 |
 | 4DC5 | Mayfield Repeater | Aus Narrow | 2026-03-12T14:03:49+11:00 | ✔ |  |  | 4dc5d2f61efd6da4e753dc09a6d07aeb6adf82b105d112b69cbffb9dc1873c91 |
-| 4EDD | ⚡₂ - Cherrybrook | Aus Narrow | 2026-03-12T20:32:04+11:00 | ✔ | ✔ |  | 4eddb6db310d70fd821c6783d0e3a8ac6d337b8d5c255f78e3f1bd86d5a0dcda |
+| 4EDD | ⚡₂ - Cherrybrook | Aus Narrow | 2026-03-13T08:32:04+11:00 | ✔ | ✔ |  | 4eddb6db310d70fd821c6783d0e3a8ac6d337b8d5c255f78e3f1bd86d5a0dcda |
 | 4F75 | MintyMcMeshface🍀🐼 | Aus Narrow | 2026-02-26T21:24:48+11:00 | ✔ |  |  | 4f75fd3bc309353538922b58a5167e77251767d680f10a22affa5d6c173db0b4 |
 | 5072 | 🂎 - Rozelle F S | Aus Narrow | 2026-03-12T23:42:28+11:00 | ✔ | ✔ |  | 507268f59df5fb8faa4ef7e691b5204bf5ea9a21ff00f07837c924e1efaf3604 |
 | 51B5 | ☢️ Out Of Order | NSW Wide | 2026-03-06T13:00:04+11:00 |  |  |  | 51b567a8321f2b772c5ca24e874eb96321912da36e81ef9dae81b197b68ac569 |
 | 52E9 | 🥽pi repeater | NSW Wide | 2026-01-05T03:24:54+11:00 | ✔ |  |  | 52e9dc94769258068aceae2e3b9e156fbcf9110dd97d5f8293808392947fdb99 |
-| 53EB | ENGADINE REPEATER | NSW Wide | 2026-03-13T15:37:27+11:00 | ✔ | ✔ |  | 53eb11e51bae391c09d1aa7869dbbac4e40cfc1064feb2519afd3ba8e0d3024c |
+| 53EB | ENGADINE REPEATER | NSW Wide | 2026-03-13T18:37:27+11:00 | ✔ | ✔ |  | 53eb11e51bae391c09d1aa7869dbbac4e40cfc1064feb2519afd3ba8e0d3024c |
 | 54D9 | 〽️ - Greenacre | Aus Narrow | 2026-03-13T05:10:04+11:00 | ✔ |  |  | 54d958e6abb929ee6f292329bd8c0936accf7d7e8521f7a8af3030cb4d4d6866 |
 | 555D | H401R | NSW Wide | 2026-03-12T06:18:18+11:00 |  |  |  | 555d3d4e032f050b78573ac0d9dcd019241fe77da09d9e6d58915455e919d7bc |
 | 55F4 | 💢 ATRO - STRATHFIELD | Aus Narrow | 2026-03-13T00:38:51+11:00 | ✔ | ✔ |  | 55f4b5df5b7bfbc9d1bf872024249a150ba723f44110625f669a22d8f0dff3f9 |
@@ -152,7 +152,7 @@ As of 13 March 2026, Meshcore identifies repeaters and roomservers using the fir
 | 5ABB | ☣️Hornsby B-W☣️ | NSW Wide | 2026-02-24T16:15:34+11:00 |  |  |  | 5abb73f6a6acb78dfd7ef9d66a93293f474828ad82e1df51e5b409e6348e0668 |
 | 5AE2 | 🐧MeshyRPT *Redfrn_ts | Aus Narrow | 2025-10-30T18:35:30+11:00 | ✔ | ✔ |  | 5ae24e7d3900e968b137fd25e4b58cf95dfab5d62500dc8e24dfb87b6ad36408 |
 | 5B9F | 🦷 Quakers Hill Test | NSW Wide | 2026-03-12T04:36:02+11:00 |  |  |  | 5b9f1d8d370ce0d22179ef44aec43dec635ac4657678ee2d15339c87fe673279 |
-| 5BA5 | Kirrawee Repeater | Aus Narrow | 2026-03-13T03:25:31+11:00 | ✔ |  |  | 5ba5de7d67d0811cebd4cfe9eea869fc0bca9cddc02bd1bf39394e4da5f4d47d |
+| 5BA5 | Kirrawee Repeater | Aus Narrow | 2026-03-13T09:25:32+11:00 | ✔ |  |  | 5ba5de7d67d0811cebd4cfe9eea869fc0bca9cddc02bd1bf39394e4da5f4d47d |
 | 5BF2 | Camden Test Repeater | NSW Wide | 2026-03-08T17:33:51+11:00 | ✔ |  |  | 5bf2c74dadebba68622682869e7be4fb4c7b1ee5354657b0da909f505634a212 |
 | 5C66 | trublion | NSW Wide | 2025-11-29T14:18:05+11:00 |  | ✔ |  | 5c66d2077e7e4d8ac60474f84ccfb0338c93f6765b83bdb6ae96e2f2d24239a0 |
 | 5D32 | ⚡ - Building Jellore |  | 2026-01-18T02:04:51+11:00 |  |  |  | 5d329c36ed43d9d389e4132c630996270b0cccb1a2dd57f7007f3ee337b26f7a |
@@ -165,12 +165,12 @@ As of 13 March 2026, Meshcore identifies repeaters and roomservers using the fir
 | 6207 | Patterson V4 🍄 | Aus Narrow | 2026-03-11T04:18:59+11:00 | ✔ | ✔ |  | 620706a4eaada3f4fe53a0906d75441f97271a98c6ebcafb29b122f716cc6154 |
 | 6285 | 2C-PAC Temp2 |  |  |  |  |  | 628574bb5341e808b44d8783b1ce376a866e9a079d447a75f6a59cd5b379e7c4 |
 | 6292 | "Laura"_Monterey_Rptr | NSW Wide | 2026-03-07T16:52:07+11:00 | ✔ | ✔ |  | 6292f6ce55965b28df65bf2af78473221fe15f050e22ed4c69c4282ff32e5c41 |
-| 62C6 | 👾 Quakers Hill | NSW Wide | 2026-03-12T21:04:27+11:00 | ✔ | ✔ |  | 62c6ba722167c03908fc00c25391998392842619e3301aaa745000be0e3bd8b2 |
+| 62C6 | 👾 Quakers Hill | NSW Wide | 2026-03-13T09:04:27+11:00 | ✔ | ✔ |  | 62c6ba722167c03908fc00c25391998392842619e3301aaa745000be0e3bd8b2 |
 | 63BE | 🐄 Hawkesbury Heights | NSW Wide | 2026-03-11T07:09:56+11:00 | ✔ | ✔ |  | 63beefc6559f3411c0d9d2eb7472ed5f0ec22cc1a537dd551f44faf127962441 |
 | 63CB | Berowra Observer | Aus Narrow | 2026-03-12T22:35:52+11:00 | ✔ |  |  | 63cbc8d18f37965e2d2c8ebcc438082011ac967d120ceebaf7b9494e2d96629b |
 | 64BE | 🐄 Hawkesbury Heights | NSW Wide | 2026-01-17T09:21:57+11:00 | ✔ | ✔ | 2 | 64beefb0250ae525979e02f1ebdbce266a1acccff2cbffb24ec9d99236e09d59 |
-| 64F0 | 👽Wazmac Bridge N | Aus Narrow | 2026-03-12T18:54:04+11:00 | ✔ |  |  | 64f08a73466da69317b33856f534db0077dec56208ff50bab432d34b3c07bed4 |
-| 65BE | 🐄 North Sydney | NSW Wide | 2026-03-12T18:36:47+11:00 | ✔ | ✔ | 10 | 65beef87abb2539dc4761bab7a2c7b30409b6271ad7707837c51cc2f3d722957 |
+| 64F0 | 👽Wazmac Bridge N | Aus Narrow | 2026-03-13T06:40:41+11:00 | ✔ |  |  | 64f08a73466da69317b33856f534db0077dec56208ff50bab432d34b3c07bed4 |
+| 65BE | 🐄 North Sydney | NSW Wide | 2026-03-13T06:36:47+11:00 | ✔ | ✔ | 10 | 65beef87abb2539dc4761bab7a2c7b30409b6271ad7707837c51cc2f3d722957 |
 | 66B4 | VIC-Mansfield 🐇 | Aus Narrow | 2026-03-12T09:26:27+11:00 | ✔ | ✔ |  | 66b44a32b49051f083f285fb184699d352c892ea2726b684bc079bfa5f6e9d25 |
 | 66FA | 33t2-mobile repeater | Aus Narrow | 2026-01-26T10:40:33+11:00 | ✔ | ✔ |  | 66facbbed204c766052803f612edf79032ecbf5b813dedf71ea73cc8710b938b |
 | 66FE | ♾️ MMTV X - 66FEED | Aus Narrow | 2026-03-12T19:23:16+11:00 |  |  |  | 66feedfee864826a39b18d2eb199a30f88c429d6f0fe54078fb1716c828096fe |
@@ -180,14 +180,14 @@ As of 13 March 2026, Meshcore identifies repeaters and roomservers using the fir
 | 6951 | ✝️ESP TEST RPTR_2 |  | 2025-11-05T19:08:58+11:00 |  |  |  | 6951b4d07279c64e5e545367ad6cfc893516b6cca8e12e579c86651a23f9eeaf |
 | 6969 | RobCo / Darling Harbor | Aus Narrow | 2026-02-24T13:42:26+11:00 | ✔ | ✔ |  | 6969be2bd73967a4d26a34c52744ad225d5ce94e9ef28dd8e0a295925c1bdcb8 |
 | 69DD | Wallsmond | Aus Narrow | 2026-02-26T14:03:35+11:00 | ✔ | ✔ |  | 69dd4baa2786732563caca05ffed0446c3f26260d3b2bbba3e30e80ac6c7f73d |
-| 6A89 | Berry Park Repeater🐭 | Aus Narrow | 2026-03-12T22:38:24+11:00 | ✔ | ✔ |  | 6a89147ed89a2bfdab246ac9aefaf5defa47241a97a297b04cd4029913bd7e96 |
+| 6A89 | Berry Park Repeater🐭 | Aus Narrow | 2026-03-13T10:38:28+11:00 | ✔ | ✔ |  | 6a89147ed89a2bfdab246ac9aefaf5defa47241a97a297b04cd4029913bd7e96 |
 | 6ABE | 🐄 Pemulway | NSW Wide | 2026-03-13T01:40:01+11:00 | ✔ | ✔ |  | 6abeef998291eefa67d59825d26c220ea6ea62ecf3c0d60d7a934e4d0f848943 |
 | 6B2A | Badgee_Vadgee |  | 2025-12-19T22:01:05+11:00 | ✔ | ✔ |  | 6b2a6449087e16068aacb9e04d95b5eef688aa981552f62649d46b7a01af735e |
 | 6BB6 | Waratah/Mayfield Room Server |  |  |  |  |  | 6bb6c2e5ddf46e684cc3da697155fa4e34b8067668832f23c3c99405e06706a6 |
 | 6C30 | 🧿 Wentworth Pt 01 | Aus Narrow | 2026-03-12T11:44:43+11:00 | ✔ | ✔ |  | 6c305622b9596d8b5277406c76fd869b2b11f53e807c868a7775e24e9aaa19e6 |
 | 6D4E | 🛜LUX06 - Kiama | NSW Wide | 2024-06-07T05:52:35+10:00 | ✔ | ✔ |  | 6d4ec1f2204fafe7f778490dbdfcf1f96553a00ca16c33f2e942eaaa022b631c |
 | 6E6E | Cleric 🥾 ✝️ |  |  |  |  |  | 6e6ee46839fc0f22ac4e15e34af5cba1807301e4ad4b3d31bac3e13c9c0748f5 |
-| 6E7D | l34-Springwood | NSW Wide | 2026-03-12T11:08:07+11:00 | ✔ |  |  | 6e7dacdd1abfce9a6a8ec0fa0235be8b188d4acd4da9ab913a7ab8b77f92af4c |
+| 6E7D | l34-Springwood | NSW Wide | 2026-03-13T07:08:12+11:00 | ✔ |  |  | 6e7dacdd1abfce9a6a8ec0fa0235be8b188d4acd4da9ab913a7ab8b77f92af4c |
 | 6E81 | ☢ Campbelltown | NSW Wide | 2026-03-12T19:37:05+11:00 | ✔ | ✔ |  | 6e8117f0edcb51a4c12cbad78a38cf58d1c9e2a45ff367ddee081d62909cbafc |
 | 6F24 | 🌱TEcho Lite Bat.test |  | 2026-01-04T03:45:37+11:00 | ✔ |  |  | 6f24f27e881c5de2aa718e51e65a771c85be1696225cf62b96ae1371213afcd0 |
 | 6FBE | 🐄 Spare 3 | NSW Wide |  |  |  |  | 6fbeefa9d0ed891e201fd1b67c56ab909316208b533a0818b5eaebcc7890f465 |
@@ -201,7 +201,7 @@ As of 13 March 2026, Meshcore identifies repeaters and roomservers using the fir
 | 74AE | BTQ Hornsby Fence | NSW Wide | 2026-01-20T09:27:44+11:00 |  |  |  | 74ae7f4d30f0a513196477aea65193f7af40edbf4b5e1a1a0d6b3251da6cfb7a |
 | 751E | 🛜LUX11 - Figtree | NSW Wide | 2026-03-02T12:33:54+11:00 | ✔ |  |  | 751ef72da4781301b88a004950ab41cea8edf74e135a86c2e9aa790f82bafaf6 |
 | 75BF | ⚡️ - Normanhurst |  | 2026-01-21T01:45:02+11:00 | ✔ | ✔ | 35 | 75bfd1352a36cb8832a7659e6f94d222dfa23c1689a40add38bbae72d6ba405b |
-| 76C3 | BTQ Hornsby roof | Aus Narrow | 2026-03-13T05:09:14+11:00 | ✔ | ✔ |  | 76c3b2e48b2caf54adf2a9256279daf62f8533c6bea8e407e237f3d6d1233b40 |
+| 76C3 | BTQ Hornsby roof | Aus Narrow | 2026-03-13T09:09:14+11:00 | ✔ | ✔ |  | 76c3b2e48b2caf54adf2a9256279daf62f8533c6bea8e407e237f3d6d1233b40 |
 | 77AA | 🍕Marrickville West |  |  |  |  |  | 77aaa1ceec21270acd956495fd39503b0769fef267b4989ff3a1fe2d27dbe264 |
 | 77F5 | BTQ Portable 4 |  | 2026-01-11T22:04:23+11:00 |  |  |  | 77f5829de4fe5dc4212408f1013d613fa98b6a32b827006aba6e559fbdcdc01c |
 | 77FE | ♾️ MMTV - X 77FEED | Aus Narrow | 2026-02-27T00:28:25+11:00 | ✔ |  |  | 77feed2e8615ccdb662ba288dbd88c3e2ab9e2119c93f19ea6c38ec94438493c |
@@ -220,7 +220,7 @@ As of 13 March 2026, Meshcore identifies repeaters and roomservers using the fir
 | 81B1 | Steven BOS Yellow Rock | Aus Narrow | 2026-01-08T07:07:05+11:00 | ✔ | ✔ |  | 81b15e8c04cd72e5b218a0b17c342e4fdab2c6c87053a0594421bf29d59e56e6 |
 | 82FB | 🎩 SIR v2.0 | Aus Narrow | 2026-03-12T15:25:06+11:00 | ✔ |  |  | 82fb6b9e0c3563990d7ef653731af07e79f4f26544d56f48522433aab92311b4 |
 | 83FF | 🦘Railway Repeater | NSW Wide | 2026-02-25T04:27:28+11:00 | ✔ | ✔ |  | 83fff8676e6bfcec630a0118c6ae18bb8399ca9316c1cf1fd25e8d3a8163dca6 |
-| 843A | Berowra | Aus Narrow | 2026-03-12T18:31:35+11:00 | ✔ |  |  | 843a677c74af459feff5bfd7d2535b9bfefeb3fca3e70fb81b3aba83ec1625a1 |
+| 843A | Berowra | Aus Narrow | 2026-03-13T06:31:39+11:00 | ✔ |  |  | 843a677c74af459feff5bfd7d2535b9bfefeb3fca3e70fb81b3aba83ec1625a1 |
 | 847E | 🗿St Peters Outpost | NSW Wide | 2026-02-26T19:25:50+11:00 | ✔ | ✔ |  | 847e68e4b386ec65cfbdc2ccd8109a541f220312237cb60393e512d01ae17ee3 |
 | 851A | Camden Test Repeater | NSW Wide | 2026-03-09T10:19:37+11:00 | ✔ |  |  | 851af0addf36f6e6bd627af6354f275e43966eebc87bd237505d875187443942 |
 | 853E | Heltec Repeater |  | 2025-11-18T23:51:30+11:00 |  |  |  | 853e5cd165e58030c0cff604c7268580c1d5ae915ad2ea4694a30725c4852fc5 |
@@ -245,9 +245,9 @@ As of 13 March 2026, Meshcore identifies repeaters and roomservers using the fir
 | 9172 | Shortland Testing | Aus Narrow | 2026-03-08T02:49:07+11:00 | ✔ |  |  | 9172e2fa9eda7a7d682ec226dd138ecdb97334b8ae86fcc43126cca78adbe198 |
 | 919A | VK2CAQ No2 |  |  |  |  |  | 919ae38b687a9394041ffab7fc66a2b0120b7bbffefc1b6f038a7cbeb890dd70 |
 | 92C6 | Blackheath |  | 2025-12-26T00:07:42+11:00 | ✔ |  |  | 92c62c22e5117d957dc53320864c3d7ea4303d7e2d6161b1cd72663fb88d0545 |
-| 93AD | Renwick | NSW Wide | 2026-03-12T19:04:19+11:00 | ✔ |  |  | 93adb2ab16fd48231ded90c4a428ddcf92c2e6ad8ce09fe618e1f27a8f61efcd |
+| 93AD | Renwick | NSW Wide | 2026-03-13T07:04:19+11:00 | ✔ |  |  | 93adb2ab16fd48231ded90c4a428ddcf92c2e6ad8ce09fe618e1f27a8f61efcd |
 | 93FA | E22 Repeater | NSW Wide | 2026-02-27T12:52:59+11:00 |  |  |  | 93fa4c4986bd0d30d6a16c14f367879d51540e27d857195a5aceb288a019bfbb |
-| 9403 | DENISTONE RPT | Aus Narrow | 2026-03-12T19:52:04+11:00 | ✔ |  |  | 94035a7ce619ffefe01f9a80af36586ec3835c247c6cf3f760fb252f453c55ab |
+| 9403 | DENISTONE RPT | Aus Narrow | 2026-03-13T07:52:04+11:00 | ✔ |  |  | 94035a7ce619ffefe01f9a80af36586ec3835c247c6cf3f760fb252f453c55ab |
 | 9457 | XploreDev | NSW Wide | 2026-03-11T06:35:50+11:00 | ✔ |  |  | 9457bb93ee36e916bf01709e17ad22d4863dba0285c11e9e08e1cbefccd8a1b9 |
 | 94DE | 🛥️Haberfield 777 | Aus Narrow | 2026-03-11T18:28:46+11:00 | ✔ | ✔ |  | 94debdd1bbdbfffcd1519beb1da95c1878d8eb63888d96310b72a73ce8dad08a |
 | 95A6 | CarlSagan-G2 |  | 2026-01-11T15:54:26+11:00 | ✔ |  |  | 95a6ae9f43ff31e8d1541ed017b48e79486bdd4df00c42f9eb34e7f9b415d476 |
@@ -305,7 +305,7 @@ As of 13 March 2026, Meshcore identifies repeaters and roomservers using the fir
 | B2AC | 💢 ATRO PEAKHURST | Aus Narrow | 2026-03-10T13:47:19+11:00 | ✔ |  |  | b2acedafc195a8a1f709ac7f0d85c0a17904147187754d2a7c48453d0cf3133c |
 | B2DA | 🦍 guerrilla 02 | NSW Wide | 2026-03-09T03:31:30+11:00 |  |  |  | b2da2003961ad00432df4ca949d93581ba90215414535b0d3cd2f49be467bb0d |
 | B32B | Wagra Mountain |  |  |  | ✔ |  | b32b2c2f40c49de8d0fe44a130913cbed08e59aef0a7fc83d994932a7a8f6c03 |
-| B33D | ☣️Hornsby☣️ | Aus Narrow | 2026-03-13T04:01:26+11:00 | ✔ | ✔ |  | b33d88a0c14646c1ba3a38661ade6db0812637b86f754f1289cee99c02036dda |
+| B33D | ☣️Hornsby☣️ | Aus Narrow | 2026-03-13T07:01:26+11:00 | ✔ | ✔ |  | b33d88a0c14646c1ba3a38661ade6db0812637b86f754f1289cee99c02036dda |
 | B41C | ☢️ Raby | NSW Wide | 2026-03-13T00:05:47+11:00 | ✔ | ✔ |  | b41c02a02b9425d7d4c2d612ef348456f56d47c1a739e2255ff71c28e0cf4924 |
 | B513 | ⛰️ Plateau RPT | Aus Narrow | 2026-01-30T12:28:31+11:00 | ✔ | ✔ |  | b513ebb098245bdf2fd2b4d87b4eebbed155ddcf5c4e741513b0fa64760d7a95 |
 | B523 | ⛰️ CBD Fill |  | 2026-01-22T03:56:08+11:00 | ✔ | ✔ |  | b5233e937c0bfab524b714c072a031c630aa7a6fe8af3d8b2ea845414ecbe532 |
@@ -313,11 +313,11 @@ As of 13 March 2026, Meshcore identifies repeaters and roomservers using the fir
 | B700 | ☢️ Alexandria Desk | NSW Wide | 2026-03-13T03:08:40+11:00 | ✔ |  |  | b7007214d874e8019d30b18480fa65780fa2fb9de7737049528fa871fe18230f |
 | B745 | ☠ Kenny Hill Rpt | NSW Wide | 2026-01-18T10:44:53+11:00 | ✔ | ✔ |  | b745d1254f0639695fd7326c23f3a0bcb92aa4c5e08f6cfc43ba9527db88515d |
 | B879 | ⚡₂ - Spare | Aus Narrow | 2026-03-04T03:38:55+11:00 | ✔ |  |  | b8796e9c404f7ca0b6250c2ab3901fc4ced893b562ecb285767a13f0a1f1d6ea |
-| B8E1 | WazMac Bridge W | NSW Wide | 2026-03-12T19:04:12+11:00 | ✔ |  |  | b8e105b8bde29917c52536d8a0e6a2283cba5f1d1f374e80b910a3356eda7d0f |
+| B8E1 | 👽WazMac Bridge W | NSW Wide | 2026-03-13T06:40:52+11:00 | ✔ |  |  | b8e105b8bde29917c52536d8a0e6a2283cba5f1d1f374e80b910a3356eda7d0f |
 | B8F9 | JustSean Austinmer R1 |  |  |  | ✔ |  | b8f998565f8403ee500e4e98a2cb7058ef1e8101506c21f4fd15524bc433f846 |
 | B9BB | Odinsdad reserved |  |  |  |  |  | b9bb336fae78e1e1d37ada112d82f282ddaf0aacf68d961b16d520c14498a6aa |
 | BA3C | New Lambton Repeater | NSW Wide | 2026-03-12T16:33:20+11:00 | ✔ | ✔ |  | ba3c49dc66487b1ceeac1cf9b8cee7fe4aff8800f962cfb8361f9684c9c98d2c |
-| BAE7 | 👽Abbotsbury 3 | Aus Narrow | 2026-03-13T01:24:17+11:00 | ✔ | ✔ |  | bae752f552512fcfc97874444931039e79557011e2fc10e5d8895f83603e1487 |
+| BAE7 | 👽Abbotsbury 3 | Aus Narrow | 2026-03-13T07:24:17+11:00 | ✔ | ✔ |  | bae752f552512fcfc97874444931039e79557011e2fc10e5d8895f83603e1487 |
 | BB18 | ✝️Nepean River |  |  |  | ✔ |  | bb18fef9928d2582f07bc4cfb77e2d057c0bbfd6873381a64f433961d0da71da |
 | BBFE | ♾️ MMTV  Test 0.99W | Aus Narrow | 2026-03-12T21:54:33+11:00 |  | ✔ |  | bbfeedb920ca888484b5248901f11414261bfe2bac9d695ddfd0febc4db6ec7c |
 | BC24 | 〽️ - Greenacre PWR | Aus Narrow | 2026-03-12T23:08:13+11:00 | ✔ | ✔ |  | bc2453a8063bce347445b5c1c5c769261a5af5e5916bfab1c1d9cdae28ce5b7f |
@@ -328,7 +328,7 @@ As of 13 March 2026, Meshcore identifies repeaters and roomservers using the fir
 | BDA8 | Petetsham South temp | Aus Narrow | 2026-03-10T19:59:46+11:00 | ✔ |  |  | bda87b8d88e82ce363c18a8aee21a27885bc3c29d143dd04e2c0b5ce9301e91f |
 | BEE5 | Bee - Waratah West | Aus Narrow |  |  | ✔ |  | bee5120a7a2a4cf17b67fc2ec984c382a90a52944ff9b1e7b47fc52cf6cdea2d |
 | BFF1 | 〽️ - Wiley Park SLR | Aus Narrow | 2026-03-12T22:13:15+11:00 | ✔ | ✔ |  | bff18b65ff23ea30915511c905902a636752e14acfcde1028608b972ee931b10 |
-| C01D | 🧮 Mount Colah North | Aus Narrow | 2026-03-13T05:05:26+11:00 | ✔ |  |  | c01dbeef00f1a88745a2762f20a4119cf06b31a4590b9a41d4fff719af59ee73 |
+| C01D | 🧮 Mount Colah North | Aus Narrow | 2026-03-13T08:05:26+11:00 | ✔ |  |  | c01dbeef00f1a88745a2762f20a4119cf06b31a4590b9a41d4fff719af59ee73 |
 | C0FF | ☕️ Coffee | Aus Narrow | 2026-03-08T15:13:52+11:00 | ✔ |  |  | c0ffeec2e137d93acfc51bfab0339685495fd673e4d9fe972723ce5594ab5c3c |
 | C123 | Epping Repeater |  |  |  |  |  | c1237b61af7d13a9ee02ed377859f17bf941accea3b191c2bfe2b7a610d7b371 |
 | C1CC | ⚡️ - Roof |  | 2025-12-24T16:27:45+11:00 | ✔ | ✔ | 5 | c1cc1f7ba116e955fb0552432570ec76a99473b6563ccd6c8231375448d86a98 |
@@ -349,7 +349,7 @@ As of 13 March 2026, Meshcore identifies repeaters and roomservers using the fir
 | CB29 | 🫃WBDN RPTR II (WIP) | NSW Wide | 2026-03-10T19:14:05+11:00 |  |  |  | cb29c99a0cc158b7537d64accf52b9cdaf3271cd6ce14e81a9212e71f4b26204 |
 | CBBE | Blakehurst Repeater | NSW Wide | 2026-01-09T07:05:58+11:00 | ✔ | ✔ |  | cbbe1b7f417e09b85cb9147a63b83678e1b5e6428eda1ee55de3f912cd38d8f5 |
 | CBCC | 🧿 Silverwater Marker | Aus Narrow | 2026-03-13T04:11:00+11:00 | ✔ | ✔ |  | cbcc6600b15872f39d7cc7eef460b17d7407b314def71694c7f33b0c6afc3170 |
-| CC41 | Not In Use | NSW Wide | 2026-03-13T03:49:16+11:00 | ✔ | ✔ |  | cc411f384826b3cec55c38134198a7c212435f5776e7796eaa75c5dd13db2b61 |
+| CC41 | Not In Use | NSW Wide | 2026-03-13T09:52:30+11:00 | ✔ | ✔ |  | cc411f384826b3cec55c38134198a7c212435f5776e7796eaa75c5dd13db2b61 |
 | CCA0 | 🧿 Wentworth Pt Pod | Aus Narrow | 2026-03-03T23:37:17+11:00 | ✔ | ✔ |  | cca082c919fda5782ff82931650b61108906bd01aac5745ab2d6e746d7b81c2b |
 | CD64 | 🧿 Wentworth Pt 03 | Aus Narrow | 2026-03-11T17:55:23+11:00 | ✔ | ✔ |  | cd6429f4eb38f0f4db86bceb4a450b1cb7f3090ddc63c59e51852959166042bc |
 | CE43 | 🌏 2196 Roselands | Aus Narrow | 2026-03-13T01:52:55+11:00 | ✔ | ✔ |  | ce43eb701b43da3d53eebc1e26eed92802d216c9af99185745d2cc0afd2f7687 |
@@ -397,7 +397,7 @@ As of 13 March 2026, Meshcore identifies repeaters and roomservers using the fir
 | E409 | 🛜LUX04 - Port Kembla | NSW Wide | 2026-03-14T08:27:54+11:00 | ✔ |  |  | e4093953a6408506c962a158b65d07eac37782f4d428d23e6eb11ddc6652e4fd |
 | E44A | VK2NAP V3 Repeater |  | 2026-02-01T05:04:46+11:00 | ✔ | ✔ |  | e44a383a203c7efe4bc7d95f1bfde1e822a47bdeb07dabde1f33a3ca15724d24 |
 | E564 | 🤠 Zak Mobile |  | 2026-01-16T00:57:30+11:00 | ✔ | ✔ |  | e564de87cbd7eb111d754e2a720e8813a4ddc9fb24d9cbaf565c3ac75e025063 |
-| E6D5 | 🌐WoononaRepeater | NSW Wide | 2026-01-02T05:58:00+11:00 | ✔ |  |  | e6d5e897850d78e7448e8718100ffa9f6eb58f07b114e26c17bc42847abb3da3 |
+| E6D5 | 🌐WoononaRepeater | NSW Wide | 2026-03-13T07:49:57+11:00 | ✔ |  |  | e6d5e897850d78e7448e8718100ffa9f6eb58f07b114e26c17bc42847abb3da3 |
 | E724 | 🦖TestRptr | NSW Wide | 2025-12-11T23:52:25+11:00 | ✔ |  |  | e7240e0cb85fc6e433ca86e91d8e804258bef1113d7cfc248434be5eaab8ad0a |
 | E832 | ⚡₂ - Normanhurst | Aus Narrow | 2026-03-12T23:13:35+11:00 | ✔ |  |  | e832aec88f4710acf16ac4608401076d693d9a3627519fe2401c58498d773bd3 |
 | E951 | ✝️Fairlight |  | 2025-11-16T15:55:40+11:00 | ✔ | ✔ |  | e95170cc52e2d5a39bacc92fb60922bfefff12d553bc56e733533709943dfcab |
@@ -418,10 +418,10 @@ As of 13 March 2026, Meshcore identifies repeaters and roomservers using the fir
 | F0CC | 📸Totes Not Asis | Aus Narrow | 2026-03-11T14:06:50+11:00 | ✔ |  |  | f0cc8c14359ef0b6f2b8d84e96b31f5968a5f5a7b8563c9e2394d453db07834c |
 | F0FE | ♾️ MMTV - Belfield | Aus Narrow | 2026-03-13T00:22:13+11:00 | ✔ | ✔ |  | f0feed6f965294a6cbd448ecc43ce46b0ebf8dc083e83003e16921e652707e5d |
 | F1FC | ✝️ Penrith Station | NSW Wide | 2026-03-15T08:06:33+11:00 | ✔ | ✔ |  | f1fc699ff05e41738524af480a24ccf5ada1f3248bd23d83f47ae69f44060193 |
-| F2FE | ♾️ MMTV - Martin Pl | Aus Narrow | 2026-03-13T02:35:05+11:00 | ✔ |  |  | f2feedc0a1a6e76181adfe8ad906e325dc3b0e5e5e1db20bf5d8ac753892fda1 |
+| F2FE | ♾️ MMTV - Martin Pl | Aus Narrow | 2026-03-13T08:35:05+11:00 | ✔ |  |  | f2feedc0a1a6e76181adfe8ad906e325dc3b0e5e5e1db20bf5d8ac753892fda1 |
 | F38C | ⚡₂ - Terry Hills | Aus Narrow | 2026-03-12T23:39:30+11:00 | ✔ | ✔ |  | f38c1ddbd389c29273af11fa2ecc6bf7b34467a883d79f81ae0f92e3c62c51c5 |
 | F3D8 | v4_ESPNOW_RPTR |  | 2025-11-16T18:05:07+11:00 |  |  |  | f3d832d2e33e528a6aa60925933f9ed81f474c702e3a2e4f2143dc84568a6bec |
-| F4FE | ♾️ MMTV - Croydon P | Aus Narrow | 2026-03-13T02:56:13+11:00 | ✔ | ✔ |  | f4feedec6c3b5680a7adfeb2be301441d5e79e75b32da5938ba9fdb4c1cda1a6 |
+| F4FE | ♾️ MMTV - Croydon P | Aus Narrow | 2026-03-13T08:56:13+11:00 | ✔ | ✔ |  | f4feedec6c3b5680a7adfeb2be301441d5e79e75b32da5938ba9fdb4c1cda1a6 |
 | F58E | ✝️ St Finbar's |  | 2025-11-02T23:14:06+11:00 |  | ✔ |  | f58e1ca5e95ca03d516b80c4839ecd8c76855f63e9e9dea371f3384b24a1b705 |
 | F5B4 | Ryde Repeater 🔁 | Aus Narrow | 2026-01-20T21:54:32+11:00 | ✔ | ✔ |  | f5b41c43d5600c89bdf60fd411b94bd734ab1c764a1bc49e92e669a36d3be913 |
 | F5FE | ♾️ MMTV - F5FEED | Aus Narrow | 2026-02-25T02:39:38+11:00 |  |  |  | f5feed4fe4e98dd5cc1afb92abeae836e0dc761b6b1d8a5e8c51b8c0334498c3 |
@@ -433,8 +433,7 @@ As of 13 March 2026, Meshcore identifies repeaters and roomservers using the fir
 | F9AE | 🎩 SI - Drone |  | 2025-12-03T19:51:34+11:00 | ✔ |  |  | f9ae2afdc00781c2faa399c4125bd6ee3a9c64a4656f1f9e54455a378f5d540e |
 | F9B8 | Mt Hugel near Adelong-Tumut |  |  |  | ✔ |  | f9b87d3ec231b2dd58f0a7ef664eb833b6f474013b1031b081f8d3233e9f47fe |
 | F9FE | ♾️ MMTV - TBA - Sol | Aus Narrow | 2026-03-12T22:49:44+11:00 | ✔ | ✔ |  | f9feedfa9b091d3b9a3b71d242a720080b9cb438bf47d40b0232a731319815a1 |
-| FA1F | 𝄞Fa | NSW Wide | 2026-03-12T20:21:33+11:00 | ✔ |  |  | fa1f28b7ccdd0172bd42f8ccc615941e6ba6fc33630d751f4e0cf4d73c388b47 |
-| FAAC | FarKurnell (T114) | NSW Wide | 2026-03-13T04:38:04+11:00 | ✔ |  |  | faac132f5fc5be8c0a5a636e63e2e843ec2f244401f8347d36e24ea7d264a75d |
+| FAAC | FarKurnell (T114) | NSW Wide | 2026-03-13T07:38:04+11:00 | ✔ |  |  | faac132f5fc5be8c0a5a636e63e2e843ec2f244401f8347d36e24ea7d264a75d |
 | FACE | RockFace Repeater | NSW Wide | 2026-03-13T02:41:36+11:00 |  |  |  | faceeb2d3052a4caeda7cfcf5e3510bd3823ea7c273fb719bd697311ea43d07f |
 | FAEC | GymReps_M1_pyMC | NSW Wide | 2026-03-11T09:26:43+11:00 | ✔ |  |  | faece56ec57fd3bba0952dd7a5ba4d8acead6ce113b37408823425e95bc91235 |
 | FAFE | ♾️ MMTV - V4 FAFEED | Aus Narrow | 2026-03-13T05:06:58+11:00 | ✔ | ✔ |  | fafeed5bf63d9e59d05884a93e9550a23ac8849a2fd659ae79c886a3af88d67e |
