@@ -30,6 +30,7 @@ Isso (N) 🌉🐼,0f6c790b75d6af043a2630a14a54d7b57530641be572cd689bd8544f76dfd9
 🪁 Bald Hill,1066d25a7a60b3c2db041735e7a05209b96402e5c187da2e4a1143afc429e6aa,,active
 🌱Chester St,113e9bce50a7a003c97fc13edeb093975a06087fbf16a3b62411931d0ac4f642,10,active
 🌱mobile v4,1244c5f64e7b65c419bd7f65da2a2416edf1efe84fd04e868ad77af0f131d4f7,,delete
+🌱New Ptrshm Brdg N,13d0ff4f248cfd0adb270a0d4dbab9caeb5f2fd8590fdf75db5b4a58a4454725,,active
 ☂️HP Arncliffe RP,1420cc930316bc0811f6e144191347507707e76adeeaae0fe0f12a7a86394609,,
 Mt. Tennent,1520eb70934f47f856bb40ea24ba9c719344445322d5a551d94e60ebd8e2e7d3,,active
 Wallys Rpt Thornleigh,156020ec5d2ff6bd2e371b8942cf7b4b57c7feec5d21467e05a380dd79d287a1,3,
@@ -45,6 +46,7 @@ Engadine Kingswood,1dc33f4fb127c19c7da554e57a6c413ca7a0f696707f2105f6fe37a86086d
 (🍄) Repeater,1f7ab4b59246246c7d3e9900bf4ba92d128b77699409cc5805fb42f22c887d21,,active
 Garran,20b0317dfc89387e27a30ae3e7d12bc57ae624aab3a8beb90f81cb939379aa4d,,active
 🌔 Bondi Junction,20cc49ee3825a061b41c74cf8f08ee0cfb256ef52540ef1fd13b1f92be7ba904,,active
+Location Test Repeater,20d73140ecea26efc14aed594c37438998757b46cd00615f2aebdbaab6f762f8,,active
 L34-EdPark,21488729788dcfb34fc41a3b4dfea70766e80b864ee743c09995073c493d1762,,active
 HP UNSW Repeater,21503F9463DDB37DB53FFB1ABFA562B31B980AD404F3D64498F5D2BFC66486F3,,delete
 🌱Petersham,21980d422c1cf3ad05049a46d85b9b68db33049c16cfcec9b0f34a6c097a3d37,,active
@@ -61,7 +63,7 @@ Mayfield backup 🐱,28ba06be054020633dbf07a9ce7eea84c4f077dd289995e3aa126874f2f
 ☠️ Mount Annan Rpt,28c222747e12122a04b8a4196e82d7f2dd490d8a5789b194bd8d6514845b4b16,,
 🎩 Island Mesh 🏝,291ad40e1178faddef3da063d5ce5d32614011c030269e1dd52778dd894e5c1c,,active
 👽WazMac Field Rep,29e03bfa6399b389f0d7179393981fb2124b8242e0b7022f457852cdb09245e8,,
-XiaoS3 Repeater R3,2a0f22fbb2806dfd8be344e30424b15d1175432a8de9044c33b5b8d16f173f9a,,active
+Not In Use R3,2a0f22fbb2806dfd8be344e30424b15d1175432a8de9044c33b5b8d16f173f9a,,active
 🐉Nth Kelllyville (We,2ac7a1b2bf36d2b40b06b4d639b2631788c1f1b229fdcd361fe1569a461e9154,,
 🌏 2200 Bankstown,2b81fee228716d9566b2f38afac6649b7aa5990ae0f071c2fba2b20cab748031,,active
 GATE_TEMP,2c0009c5314c6e50f61f70e375d94fbe4b3c847ad4907588ba83953cecbd0e84,,active
@@ -129,6 +131,7 @@ Mayfield Repeater,4dc5d2f61efd6da4e753dc09a6d07aeb6adf82b105d112b69cbffb9dc1873c
 ⚡₂ - Cherrybrook,4eddb6db310d70fd821c6783d0e3a8ac6d337b8d5c255f78e3f1bd86d5a0dcda,,active
 ⚡️ - Cherrybrook,4eddfdd6e9ccafa99ce893e5f3d0223befa7d0c9ca7b1c98572a223dd1671e6c,35,delete
 MintyMcMeshface🍀🐼,4f75fd3bc309353538922b58a5167e77251767d680f10a22affa5d6c173db0b4,,active
+Gorman's Trig Station,4fae00fc733fe2be73bb49280a539f96a44bd920f9bff8ebb60779659b4d1cd8,,active
 🂎 - Rozelle F S,507268f59df5fb8faa4ef7e691b5204bf5ea9a21ff00f07837c924e1efaf3604,,active
 ☢️ Out Of Order,51b567a8321f2b772c5ca24e874eb96321912da36e81ef9dae81b197b68ac569,,
 🥽pi repeater,52e9dc94769258068aceae2e3b9e156fbcf9110dd97d5f8293808392947fdb99,,
@@ -146,7 +149,7 @@ ICU R2 Mark II 👀,589f32a135f6fab6e45f3aeb64c50656f30a483a33fac1eb2ed063af94a5
 oatl-meshcore,5980a89f75c99b4e1637e0ec6b0089a5401e92a365cde33f3a69c7d6c7ecceef,,
 ☣️Hornsby B-W☣️,5abb73f6a6acb78dfd7ef9d66a93293f474828ad82e1df51e5b409e6348e0668,,active
 🐧MeshyRPT *Redfrn_ts,5ae24e7d3900e968b137fd25e4b58cf95dfab5d62500dc8e24dfb87b6ad36408,,
-🦷 Quakers Hill Test,5b9f1d8d370ce0d22179ef44aec43dec635ac4657678ee2d15339c87fe673279,,active
+🦷 dave mobile,5b9f1d8d370ce0d22179ef44aec43dec635ac4657678ee2d15339c87fe673279,,active
 Kirrawee Repeater,5ba5de7d67d0811cebd4cfe9eea869fc0bca9cddc02bd1bf39394e4da5f4d47d,,active
 Camden Test Repeater,5bf2c74dadebba68622682869e7be4fb4c7b1ee5354657b0da909f505634a212,,active
 trublion,5c66d2077e7e4d8ac60474f84ccfb0338c93f6765b83bdb6ae96e2f2d24239a0,,active
@@ -162,7 +165,7 @@ Patterson V4 🍄,620706a4eaada3f4fe53a0906d75441f97271a98c6ebcafb29b122f716cc61
 👾 Quakers Hill,62c6ba722167c03908fc00c25391998392842619e3301aaa745000be0e3bd8b2,,active
 🐄 Hawkesbury Heights,63beefc6559f3411c0d9d2eb7472ed5f0ec22cc1a537dd551f44faf127962441,,active
 Berowra Observer,63cbc8d18f37965e2d2c8ebcc438082011ac967d120ceebaf7b9494e2d96629b,,active
-🐄 Hawkesbury Heights,64beefb0250ae525979e02f1ebdbce266a1acccff2cbffb24ec9d99236e09d59,2,
+🐄 Spare 4,64beefb0250ae525979e02f1ebdbce266a1acccff2cbffb24ec9d99236e09d59,2,
 👽Wazmac Bridge N,64f08a73466da69317b33856f534db0077dec56208ff50bab432d34b3c07bed4,,active
 🐄 North Sydney,65beef87abb2539dc4761bab7a2c7b30409b6271ad7707837c51cc2f3d722957,10,
 VIC-Mansfield 🐇,66b44a32b49051f083f285fb184699d352c892ea2726b684bc079bfa5f6e9d25,,active
@@ -371,7 +374,7 @@ Zak Mobile,d1b9fd806c03c44332a3c12bd44b9529aa12b5576c02eadcd9e7bd48c2a620e4,,act
 ICU R3 pico,d87cabf14260ae57417552e0e8e069da2257a91fab91246274b199c84f409015,,active
 TMC Repeater,d88f31dd338d4c29e4a9f20a281c0383688b4e7be376ccfe0c800ce00662fc7e,,
 Holsworthy Repeater,d8ed79b5605fdf7d067dc0c38beb48cd87f28abbdf0eccb1e344e4a4c7730b29,,active
-Spring Farm,d9d2937588a9fb4c867e93e6816828a8a6eaec139ba74860f18fc68b024e0860,,active
+✳️ Spring Farm,d9d2937588a9fb4c867e93e6816828a8a6eaec139ba74860f18fc68b024e0860,,active
 ☎️ Glenbrook,d9f06e7d5afba41ba31426db0adca8b67eaa108cb862de22f24fef6a7068fe3c,,active
 Kearns Rpt 2 testing,da26e5ab39f0136594f2120418fdda6d2b4aaaa8cf7bb4b8742f10100fa23a2f,,
 ⚡₂ - Beecroft,da30eaae04b5210f705488190ef07cf4bb2ea63f9a1248083351189bcff56d52,,active
@@ -389,6 +392,7 @@ HiveMesh.au G2,de728887835917e4148244bf8bd14be7b8f11ba1d4c9daa48cd9ba9dc721e5ab,
 ♾️ MMTV R - DFFEED,dffeed42145b1fa69bf55030a1c8a6650a26daac5f8c45208435d1d48f9d66a8,,active
 ✝️In for Repair,e0ae901ebb6f7f2049076724bb4c67c54f441159d060c0001e6410f03547b734,,active
 Cleric v4 ✝️,e18afe9fca04fb86286e47501a211eb8d19e35a3e9d013b9b67e190278dce15b,,
+♾️ MMTV R - E1FEED,e1feeda207b376846ceb0a4fbc2ab21e507d936dc20c24bf3a9b41eeba9416d8,,active
 🦷 Quakers Hill Wold,e2601d59151789bde72045e9a838e9805ea765c74d473a1e1b41e8557b06618e,,active
 🛜LUX04 - Port Kembla,e4093953a6408506c962a158b65d07eac37782f4d428d23e6eb11ddc6652e4fd,,
 VK2NAP V3 Repeater,e44a383a203c7efe4bc7d95f1bfde1e822a47bdeb07dabde1f33a3ca15724d24,,active
@@ -439,6 +443,7 @@ NSW Mt Wee Jasper 🐲,fb94d23b876c30394db8da710d1d6995273c8a7eb69d009582f3d6c88
 🌱TBA,fc1ae909ec52889f3da27a6c42193e31baba77232a47f39a14c1b8310de558c6,,active
 BlackHill 🍄,fcedee7c9575987a6ce1ee720a81ee8a40cadf20bffd95f3ecc75a1c8835c686,,active
 ♾️ MMTV - FCFEED,fcfeed3ca59fc4c91a7b5cc7e572813d773f5b9324772fbe9d8a3af1a9580dc9,,active
+Berowra Observer,fd43922733335d3ef9cbb7873c48db97797ba3e00adaae5a3cb369ef3861ee6a,,active
 ♾️ MMTV - Mobile,fdfeed057df95175dd6d5b86c936e988b0aef9b2b1cd93dc89b0c24e10e7cc22,,
 ♾️ MMTV - R FEFEED,fefeed524dc21c6870be4324f196c5e7c05093dca153b7b489fb09087df0b7e1,,active
 Reserved by MeshCore,ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff,,
