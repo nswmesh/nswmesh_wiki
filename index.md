@@ -45,11 +45,11 @@ We're experimenters, bushwalkers, emergency‑comms nerds and tinkerers. Jump in
 ## Other Resources
 
 - Meshcore Links and Tools (primary system in use in Sydney currently)
-    - [Live World Meshcore Map](https://meshcore.co.uk/map.html)
-    - [Meshcore site](https://meshcore.co.uk/index.html).
+    - [Live World Meshcore Map](https://meshcore.io/map.html)
+    - [Meshcore site](https://meshcore.io/index.html).
     - [Meshcore Wiki](https://github.com/meshcore-dev/MeshCore/blob/main/docs/faq.md).
     - [How to get started with Meshcore Video](https://youtu.be/t1qne8uJBAc?si=0vyErpZz1wsbG_hJ).
-    - [Meshcore Firmware Web Flasher](https://flasher.meshcore.co.uk/).
+    - [Meshcore Firmware Web Flasher](https://flasher.meshcore.io/).
     - [Official Meshcore Youtube Channel](https://www.youtube.com/@meshcore-official).
     - [Meshcore Web Client](https://app.meshcore.nz/).
     - [Meshcore Repeater/Roomserver USB Setup web client](https://config.meshcore.dev/).
